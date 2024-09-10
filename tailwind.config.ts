@@ -21,7 +21,8 @@ const config: Config = {
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
       boxShadow: {
-        "navbar": "0 4px 15px 0 #C8B6FF;",
+        "dropdown": "0 4px 15px 0 #C8B6FF;",
+        "navbar": "0 25px 25px 0 #C8B6FF;",
         "footer": "0 -4px 15px 0 #C8B6FF;",
       }
     },
