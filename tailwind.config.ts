@@ -15,17 +15,18 @@ const config: Config = {
         shadowp: "#C8B6FF",
       },
     },
-      backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
-      },
-      boxShadow: {
-        "dropdown": "0 4px 15px 0 #C8B6FF;",
-        "navbar": "0 25px 25px 0 #C8B6FF;",
-        "footer": "0 -4px 15px 0 #C8B6FF;",
-      }
+    backgroundImage: {
+      "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
+      "gradient-conic":
+        "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
     },
-    plugins: [],
-  };
+    boxShadow: {
+      dropdown: "0 4px 15px 0 #C8B6FF;",
+      navbar: "0 4px 15px 0 #C8B6FF",
+      footer: "0 -4px 15px 0 #C8B6FF;",
+      img: "0 4px 15px 0 #FFAFCC;",
+    },
+  },
+  plugins: [],
+};
 export default config;
