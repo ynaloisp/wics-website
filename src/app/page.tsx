@@ -4,7 +4,7 @@ export default function Home() {
   return (
     <div className="bg-background min-h-screen">
       <div className="flex justify-center py-14">
-        <img
+        <Image
           src="/images/WiCS-Logo-2.png"
           alt="WiCS Logo"
           width={500}
@@ -19,7 +19,7 @@ export default function Home() {
       </div>
 
       <div className="container mx-auto w-4/5 p-12 pb-20 flex justify-around items-center">
-        <img
+        <Image
           src="/images/photo/IMG_2282.png"
           alt="group pic"
           width={400}
