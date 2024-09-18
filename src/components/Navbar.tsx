@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { SignedIn, SignedOut, SignInButton, UserButton } from "@clerk/nextjs";
 
 export default function Navbar() {
   const [aboutDropdownOpen, setAboutDropdownOpen] = useState(false);
@@ -43,7 +44,7 @@ export default function Navbar() {
                   <ul className="absolute bg-white shadow-dropdown rounded mt-2">
                     <li>
                       <Link
-                        className="block px-4 py-2 hover:bg-gray-200 text-sm"
+                        className="block px-4 py-2 hover:text-lightp text-sm"
                         href="/about"
                       >
                         What We Do
@@ -95,6 +96,14 @@ export default function Navbar() {
                 >
                   Corporate
                 </Link>
+              </li>
+              <li>
+                <SignedOut>
+                  <SignInButton />
+                </SignedOut>
+                <SignedIn>
+                  <UserButton />
+                </SignedIn>
               </li>
             </ul>
           </div>

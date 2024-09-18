@@ -46,6 +46,18 @@ function About() {
             </h1>
           </div>
         </div>
+        <div>
+          <h1 className="text-4xl font-semibold text-center mt-8">Purpose</h1>
+          <h1 className="text-center p-4">
+            We aim to make a positive impact in the Computer Science community
+            at Hunter and serve as a support group for students. We create
+            events and opporunities to help our members develop their technical
+            skills, secure opportunities, and fortify the confidence in their
+            chosen careers. Developing the technical and interpersonal skills
+            required for transiting into the tech industry after graduation is
+            difficult but, we, at WiCS are here to support your journey.
+          </h1>
+        </div>
       </div>
     </div>
   );
