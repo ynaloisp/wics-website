@@ -1,6 +1,53 @@
+"use client";
+import { useAuth, useUser } from "@clerk/nextjs";
+import { db, auth, signInWithCustomToken } from "../firebase";
 import Image from "next/image";
+import { doc, setDoc } from "firebase/firestore";
+import { User as FirebaseUser } from "firebase/auth";
+import React from "react";
 
 export default function Home() {
+  const { getToken, userId } = useAuth();
+  const { user } = useUser();
+
+  console.log("User ID:", userId);
+  console.log("User:", user);
+  console.log("User email:", user?.primaryEmailAddress?.emailAddress);
+  console.log("User name:", `${user?.firstName} ${user?.lastName}`);
+
+  // Handle if the user is not signed in
+  if (!userId) {
+    return <p>You need to sign in with Clerk to access this page.</p>;
+  }
+
+  const storeUserData = async (firebaseUser: FirebaseUser) => {
+    try {
+      await setDoc(doc(db, "users", firebaseUser.uid), {
+        uid: firebaseUser.uid,
+        email: user?.primaryEmailAddress?.emailAddress,
+        fullname: `${user?.firstName} ${user?.lastName}`,
+      });
+      console.log("User data stored successfully");
+    } catch (error) {
+      console.error("Error storing user data:", error);
+    }
+  };
+
+  const signIntoFirebaseWithClerk = async () => {
+    const token = await getToken({ template: "integration_firebase" });
+
+    const userCredentials = await signInWithCustomToken(auth, token || "");
+    console.log("User:", userCredentials.user);
+
+    // Store user data in Firestore
+    storeUserData(userCredentials.user);
+  };
+
+  // Call the sign-in function when the component mounts
+  React.useEffect(() => {
+    signIntoFirebaseWithClerk();
+  }, []);
+
   return (
     <div className="bg-background min-h-screen">
       <div className="flex justify-center py-14">
