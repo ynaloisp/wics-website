@@ -2,7 +2,7 @@
 import { useAuth, useUser } from "@clerk/nextjs";
 import { db, auth, signInWithCustomToken } from "../firebase";
 import Image from "next/image";
-import { doc, setDoc } from "firebase/firestore";
+import { doc, setDoc, getDoc } from "firebase/firestore";
 import { useState, useEffect } from "react";
 import {
   Dialog,
@@ -17,6 +17,7 @@ export default function Home() {
   // const { getToken, userId } = useAuth();
   const { user } = useUser();
   const [isDialogOpen, setIsDialogOpen] = useState(false);
+  const [emplid, setEmplid] = useState("");
 
   // console.log("User ID:", userId);
   // console.log("User:", user);
@@ -24,33 +25,46 @@ export default function Home() {
   // console.log("User name:", `${user?.firstName} ${user?.lastName}`);
 
   useEffect(() => {
-    if (user) {
-      const userData = {
-        email: user.emailAddresses[0]?.emailAddress || "",
-        fullname: `${user.firstName} ${user.lastName}` || "",
-        emplid: "",
-      };
-
-      // Sanitize data
-      if (userData.email && userData.fullname) {
+    async function checkUserEMPLID() {
+      if (user) {
         const userDocRef = doc(db, "users", user.id);
+        const userDoc = await getDoc(userDocRef);
 
-        setDoc(userDocRef, userData)
-          .then(() => {
-            console.log("User data stored successfully");
-          })
-          .catch((error) => {
-            console.error("Error storing user data:", error);
-          });
-      }
-      if (userData.emplid === "") {
-        console.log("enter emplid");
-        setIsDialogOpen(true);
-      } else {
-        console.error("Invalid user data:", userData);
+        if (userDoc.exists()) {
+          const userData = userDoc.data();
+          if (!userData.emplid) {
+            setIsDialogOpen(true);
+          }
+        } else {
+          // If the user document does not exist, create it with initial data
+          const userData = {
+            email: user.emailAddresses[0]?.emailAddress || "",
+            fullname: `${user.firstName} ${user.lastName}` || "",
+            emplid: "",
+          };
+
+          // Sanitize data
+          if (userData.email && userData.fullname) {
+            await setDoc(userDocRef, userData);
+            setIsDialogOpen(true);
+          } else {
+            console.error("Invalid user data:", userData);
+          }
+        }
       }
     }
+
+    checkUserEMPLID();
   }, [user]);
+
+  function storeEMPLID(EMPLID: string) {
+    if (user) {
+      setDoc(doc(db, "users", user.id), { emplid: EMPLID }, { merge: true });
+      console.log("EMPLID stored successfully");
+    } else {
+      console.error("User is null or undefined");
+    }
+  }
 
   // const storeUserData = async (firebaseUser: FirebaseUser) => {
   //   try {
@@ -87,13 +101,23 @@ export default function Home() {
           <button style={{ display: "none" }}>Open Dialog</button>
         </DialogTrigger>
         <DialogContent>
-          <DialogTitle>Enter Your Emplid</DialogTitle>
-          <DialogDescription>
-            Please enter your EMPLID to continue.
-          </DialogDescription>
-          <input type="text" placeholder="Emplid" />
+          <DialogTitle>Enter Your EMPLID</DialogTitle>
+          <DialogDescription>Please enter your EMPLID</DialogDescription>
+          <input
+            type="text"
+            placeholder="EMPLID"
+            value={emplid}
+            onChange={(e) => setEmplid(e.target.value)}
+          />
           <DialogClose asChild>
-            <button onClick={() => setIsDialogOpen(false)}>Close</button>
+            <button
+              onClick={() => {
+                storeEMPLID(emplid);
+                setIsDialogOpen(false);
+              }}
+            >
+              Save
+            </button>
           </DialogClose>
         </DialogContent>
       </Dialog>
