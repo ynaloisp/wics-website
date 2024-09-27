@@ -10,7 +10,7 @@ export default function Navbar() {
   const [eventsDropdownOpen, setEventsDropdownOpen] = useState(false);
 
   return (
-    <header className="bg-white text-pink py-4 shadow-navbar">
+    <header className="bg-white text-pink py-4 drop-shadow-xl ">
       <div className="container mx-auto px-6">
         <div className="flex justify-between items-center">
           <div className="flex items-center">
