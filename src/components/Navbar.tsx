@@ -69,7 +69,7 @@ export default function Navbar() {
                     </li>
                     <li>
                       <Link
-                        className="block px-4 py-2 hover:bg-gray-200 text-sm"
+                        className="block px-4 py-2 hover:text-lightp text-sm"
                         href="/about/officers"
                         onClick={() => {
                           setAboutDropdownOpen(false);
