@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function Corporate() {
   return (
-    <div className="bg-background min-h-screen">
+    <div className="bg-[#fef8f8] min-h-screen">
       <div className="bg-banner bg-cover bg-center h-96 flex items-center justify-center">
         <div className="bg-white bg-opacity-60 p-10 rounded-lg text-center">
           <h1 className="text-black text-5xl font-semibold">
