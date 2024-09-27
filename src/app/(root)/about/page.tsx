@@ -2,9 +2,9 @@ import Image from "next/image";
 
 function About() {
   return (
-    <div className="bg-background min-h-screen">
+    <div className="bg-[#fef8f8] min-h-screen">
       <div className="bg-banner bg-cover bg-center h-96 flex items-center justify-center">
-        <div className="bg-white bg-opacity-50 p-8 rounded-lg text-center">
+        <div className="bg-white bg-opacity-50 p-12 rounded-lg text-center">
           <h1 className="text-black text-4xl font-bold">
             &lt; / WOMXN IN COMPUTER SCIENCE &gt;
           </h1>
@@ -24,9 +24,8 @@ function About() {
             height={300}
             className="max-w-1/2"
           />
-          <div className="w-1/2 text-center">
-            <h1 className="text-4xl font-semibold mt-8">Mission</h1>
-
+          <div className="w-1/4 p-4">
+            <h1 className="text-4xl font-semibold mt-8 text-center">Mission</h1>
             <h1 className="p-4">
               Historically, Technology and Computer Science have been
               male-dominated fields. Our goal is to close the gap between men
@@ -46,7 +45,7 @@ function About() {
             </h1>
           </div>
         </div>
-        <div>
+        <div className="w-5/6 container mx-auto mt-20">
           <h1 className="text-4xl font-semibold text-center mt-8">Purpose</h1>
           <h1 className="text-center p-4">
             We aim to make a positive impact in the Computer Science community
