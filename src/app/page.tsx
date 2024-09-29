@@ -35,12 +35,16 @@ export default function Home() {
           if (!userData.emplid) {
             setIsDialogOpen(true);
           }
+          if (userData.points === undefined) {
+            await setDoc(userDocRef, { points: 0 }, { merge: true });
+          }
         } else {
           // If the user document does not exist, create it with initial data
           const userData = {
             email: user.emailAddresses[0]?.emailAddress || "",
             fullname: `${user.firstName} ${user.lastName}` || "",
             emplid: "",
+            points: 0,
           };
 
           // Sanitize data
