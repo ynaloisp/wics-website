@@ -3,13 +3,19 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { SignedIn, SignedOut, SignInButton, UserButton } from "@clerk/nextjs";
+import {
+  SignedIn,
+  SignedOut,
+  SignInButton,
+  UserButton,
+  useUser,
+} from "@clerk/nextjs";
 import { ChevronDown } from "lucide-react";
 
 export default function Navbar() {
   const [aboutDropdownOpen, setAboutDropdownOpen] = useState(false);
   const [eventsDropdownOpen, setEventsDropdownOpen] = useState(false);
-  const [searchOpen, setSearchOpen] = useState(false);
+  const { user } = useUser();
 
   return (
     <header className="bg-white text-pink py-4 drop-shadow-xl">
@@ -59,10 +65,6 @@ export default function Navbar() {
                       <Link
                         className="block px-4 py-2 hover:text-lightp text-sm"
                         href="/about"
-                        onClick={() => {
-                          setAboutDropdownOpen(false);
-                          setEventsDropdownOpen(false);
-                        }}
                       >
                         What We Do
                       </Link>
@@ -71,10 +73,6 @@ export default function Navbar() {
                       <Link
                         className="block px-4 py-2 hover:text-lightp text-sm"
                         href="/about/officers"
-                        onClick={() => {
-                          setAboutDropdownOpen(false);
-                          setEventsDropdownOpen(false);
-                        }}
                       >
                         Officers
                       </Link>
@@ -134,9 +132,26 @@ export default function Navbar() {
                   Corporate
                 </Link>
               </li>
+              {user?.primaryEmailAddress?.emailAddress ===
+                "hunterwics@gmail.com" && (
+                <li>
+                  <Link
+                    className="hover:text-lightp font-bold text-sm"
+                    href="/admin"
+                    onClick={() => {
+                      setAboutDropdownOpen(false);
+                      setEventsDropdownOpen(false);
+                    }}
+                  >
+                    Admin
+                  </Link>
+                </li>
+              )}
               <li>
                 <SignedOut>
-                  <SignInButton />
+                  <div className="bg-pink text-white px-4 py-2 rounded hover:bg-lightp transition duration-300">
+                    <SignInButton />
+                  </div>
                 </SignedOut>
                 <SignedIn>
                   <UserButton />
