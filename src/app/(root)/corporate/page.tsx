@@ -66,7 +66,7 @@ export default function Corporate() {
           className="p-4"
         />
       </div>
-      <div className="w-5/6 text-center text-2xl font-semibold container mx-auto mb-20">
+      <div className="w-5/6 text-center text-2xl font-semibold container mx-auto pb-20">
         <h1 className="text-center">Become a Sponsor!</h1>
         <h1 className="text-xl font-medium p-4">
           If you would like to partner with us, contact us at

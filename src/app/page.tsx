@@ -58,9 +58,22 @@ export default function Home() {
   }, [user]);
 
   function storeEMPLID(EMPLID: string) {
+    const emplidPattern = /^\d{8}$/; // Regular expression to match exactly 8 digits
+
+    if (!emplidPattern.test(EMPLID)) {
+      console.error("Invalid EMPLID. It must be exactly 8 digits.");
+      return;
+    }
+
     if (user) {
-      setDoc(doc(db, "users", user.id), { emplid: EMPLID }, { merge: true });
-      console.log("EMPLID stored successfully");
+      setDoc(doc(db, "users", user.id), { emplid: EMPLID }, { merge: true })
+        .then(() => {
+          console.log("EMPLID stored successfully");
+          setIsDialogOpen(false);
+        })
+        .catch((error) => {
+          console.error("Error storing EMPLID:", error);
+        });
     } else {
       console.error("User is null or undefined");
     }
@@ -101,24 +114,38 @@ export default function Home() {
           <button style={{ display: "none" }}>Open Dialog</button>
         </DialogTrigger>
         <DialogContent>
-          <DialogTitle>Enter Your EMPLID</DialogTitle>
-          <DialogDescription>Please enter your EMPLID</DialogDescription>
+          <DialogTitle className="text-pink">Enter Your EMPLID</DialogTitle>
+          <DialogDescription className="text-black">
+            Please enter your EMPLID in order to track your points for a prize.
+          </DialogDescription>
           <input
             type="text"
-            placeholder="EMPLID"
+            placeholder="Enter EMPLID"
             value={emplid}
             onChange={(e) => setEmplid(e.target.value)}
+            className="w-full p-2 my-4 border-2 border-pink rounded-md"
           />
-          <DialogClose asChild>
-            <button
-              onClick={() => {
-                storeEMPLID(emplid);
-                setIsDialogOpen(false);
-              }}
-            >
-              Save
-            </button>
-          </DialogClose>
+          <div className="flex justify-between">
+            <DialogClose asChild>
+              <button
+                onClick={() => setIsDialogOpen(false)}
+                className="text-pink bg-white border-pink border-2 rounded-md p-2"
+              >
+                I don't have an EMPLID
+              </button>
+            </DialogClose>
+            <DialogClose asChild>
+              <button
+                onClick={() => {
+                  storeEMPLID(emplid);
+                  setIsDialogOpen(false);
+                }}
+                className="text-pink bg-white border-pink border-2 rounded-md p-2"
+              >
+                Save EMPLID
+              </button>
+            </DialogClose>
+          </div>
         </DialogContent>
       </Dialog>
       <div className="flex justify-center py-14">
