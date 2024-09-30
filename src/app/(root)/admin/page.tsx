@@ -1,6 +1,6 @@
 "use client";
 import { useState, useEffect } from "react";
-import { collection, getDocs } from "@firebase/firestore";
+import { collection, getDocs, doc, setDoc } from "@firebase/firestore";
 import { db } from "@/firebase";
 
 interface User {
@@ -8,10 +8,14 @@ interface User {
   email: string;
   emplid: string;
   fullname: string;
+  points: number;
 }
 
 export default function AdminPage() {
   const [users, setUsers] = useState<User[]>([]);
+  const [editingPoints, setEditingPoints] = useState<{ [key: string]: number }>(
+    {}
+  );
 
   useEffect(() => {
     async function fetchUsers() {
@@ -25,6 +29,7 @@ export default function AdminPage() {
           email: userData.email,
           emplid: userData.emplid,
           fullname: userData.fullname,
+          points: userData.points || 0,
         });
       });
 
@@ -34,17 +39,54 @@ export default function AdminPage() {
     fetchUsers();
   }, []);
 
+  const handlePointsChange = (userId: string, points: number) => {
+    setEditingPoints((prev) => ({ ...prev, [userId]: points }));
+  };
+
+  const savePoints = async (userId: string) => {
+    const points = editingPoints[userId];
+    const userDocRef = doc(db, "users", userId);
+    await setDoc(userDocRef, { points }, { merge: true });
+    setUsers((prev) =>
+      prev.map((user) => (user.id === userId ? { ...user, points } : user))
+    );
+    console.log("Points updated successfully");
+  };
+
   return (
-    <div className="bg-[#fef8f8] min-h-screen">
-      <h1>Users</h1>
+    <div className="bg-[#fef8f8] min-h-screen p-8">
+      <h1 className="text-3xl font-bold mb-6">Users</h1>
       {users && users.length > 0 ? (
-        users.map((user) => (
-          <div key={user.id} className="bg-white p-6 rounded-lg shadow-md">
-            <p>{user.fullname}</p>
-            <p>{user.email}</p>
-            <p>{user.emplid}</p>
-          </div>
-        ))
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {users.map((user) => (
+            <div key={user.id} className="bg-white p-6 rounded-lg shadow-md">
+              <h2 className="text-xl font-semibold mb-2">{user.fullname}</h2>
+              <p className="text-gray-700 mb-1">
+                <strong>Email:</strong> {user.email}
+              </p>
+              <p className="text-gray-700 mb-1">
+                <strong>EMPLID:</strong> {user.emplid}
+              </p>
+              <p className="text-gray-700 mb-1">
+                <strong>Points:</strong> {user.points}
+              </p>
+              <input
+                type="number"
+                value={editingPoints[user.id] ?? user.points}
+                onChange={(e) =>
+                  handlePointsChange(user.id, parseInt(e.target.value))
+                }
+                className="mb-2 p-2 border border-gray-300 rounded"
+              />
+              <button
+                onClick={() => savePoints(user.id)}
+                className="bg-blue-500 text-white px-4 py-2 rounded"
+              >
+                Save Points
+              </button>
+            </div>
+          ))}
+        </div>
       ) : (
         <p>No users found</p>
       )}
