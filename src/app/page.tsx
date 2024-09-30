@@ -58,12 +58,12 @@ export default function Home() {
   }, [user]);
 
   function storeEMPLID(EMPLID: string) {
-    const emplidPattern = /^\d{8}$/; // Regular expression to match exactly 8 digits
+    // const emplidPattern = /^\d{8}$/; // Regular expression to match exactly 8 digits
 
-    if (!emplidPattern.test(EMPLID)) {
-      console.error("Invalid EMPLID. It must be exactly 8 digits.");
-      return;
-    }
+    // if (!emplidPattern.test(EMPLID)) {
+    //   console.error("Invalid EMPLID. It must be exactly 8 digits.");
+    //   return;
+    // }
 
     if (user) {
       setDoc(doc(db, "users", user.id), { emplid: EMPLID }, { merge: true })
@@ -131,7 +131,7 @@ export default function Home() {
                 onClick={() => setIsDialogOpen(false)}
                 className="text-pink bg-white border-pink border-2 rounded-md p-2"
               >
-                I don't have an EMPLID
+                I don&apos;t have an EMPLID
               </button>
             </DialogClose>
             <DialogClose asChild>
