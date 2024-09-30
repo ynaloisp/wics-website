@@ -16,7 +16,7 @@ import {
 export default function Home() {
   // const { getToken, userId } = useAuth();
   const { user } = useUser();
-  const [isDialogOpen, setIsDialogOpen] = useState(false);
+  const [isDialogOpen, setIsDialogOpen] = useState(true);
   const [emplid, setEmplid] = useState("");
 
   // console.log("User ID:", userId);
