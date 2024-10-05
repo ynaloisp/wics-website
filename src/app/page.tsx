@@ -154,7 +154,7 @@ export default function Home() {
       </Dialog>
       <div className="flex justify-center py-14">
         <Image
-          src="/images/WiCS-Logo-2.png"
+          src="/images/WiCS-Logo.png"
           alt="WiCS Logo"
           width={500}
           height={200}
