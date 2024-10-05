@@ -19,7 +19,7 @@ export default function Navbar() {
 
   return (
     <header className="bg-white text-pink py-4 drop-shadow-xl">
-      <div className="container mx-auto px-6">
+      <div className="container mx-auto px-6 w-6/12">
         <div className="flex justify-between items-center">
           <div className="flex items-center">
             <Image
@@ -57,7 +57,7 @@ export default function Navbar() {
                   }}
                 >
                   About
-                  <ChevronDown className="ml-1 w-3.5" />
+                  <ChevronDown className="ml-1 w-3" />
                 </button>
                 {aboutDropdownOpen && (
                   <ul className="absolute bg-white shadow-dropdown rounded mt-2 p-2 w-48 border border-black">
@@ -89,7 +89,7 @@ export default function Navbar() {
                   }}
                 >
                   Events
-                  <ChevronDown className="ml-1 w-3.5" />
+                  <ChevronDown className="ml-1 w-3" />
                 </button>
                 {eventsDropdownOpen && (
                   <ul className="absolute bg-white shadow-dropdown rounded mt-2 p-2 w-48 border border-black">
