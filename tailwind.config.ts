@@ -61,10 +61,16 @@ const config: Config = {
         banner: "url('/images/sponsors/banner.jpg')",
       },
       boxShadow: {
+        "officer-card":
+          "-10px -10px #fef8f8, 10px 10px #fef8f8, -15px -13px #1b162980, 15px 13px #1b162980",
+        card: "0 5px 10px 0 #6A515E;",
         dropdown: "0 4px 15px 0 #C8B6FF;",
         navbar: "0 4px 15px 0 #C8B6FF",
         footer: "0 -4px 15px 0 #C8B6FF;",
         img: "0 4px 15px 0 #FFAFCC;",
+      },
+      textShadow: {
+        "officer-name": "2px 2px #6A515E",
       },
       borderRadius: {
         lg: "var(--radius)",
@@ -73,7 +79,7 @@ const config: Config = {
       },
     },
   },
-  plugins: [require("tailwindcss-animate")],
+  plugins: [require("tailwindcss-animate"), require("tailwindcss-textshadow")],
 };
 
 export default config;

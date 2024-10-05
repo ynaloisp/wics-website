@@ -99,7 +99,7 @@ export default function Home() {
   // }, []);
 
   return (
-    <div className="bg-[#fef8f8] min-h-screen">
+    <div className="bg-[#fef8f8] min-h-screen pt-16">
       <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
         <DialogTrigger asChild>
           <button style={{ display: "none" }}>Open Dialog</button>
