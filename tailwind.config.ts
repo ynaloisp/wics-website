@@ -71,6 +71,7 @@ const config: Config = {
       },
       textShadow: {
         "officer-name": "2px 2px #6A515E",
+        "officer-icon": "1px 1px #fceee9",
       },
       borderRadius: {
         lg: "var(--radius)",

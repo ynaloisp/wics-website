@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { Mail, Linkedin, Github } from "lucide-react";
 
 export default function Officers() {
   return (
@@ -25,15 +26,27 @@ export default function Officers() {
               Sarah Ita Levitan
             </h1>
             <h1 className="text-2xl font-normal mb-2">Faculty Advisor</h1>
-            <p className="mb-1.5">Assistant Professor of Computer Science</p>
+            <p className="mb-4">Assistant Professor of Computer Science</p>
+            <div className="flex items-center justify-center">
+              <a href="mailto: sarah.levitan@hunter.cuny.edu">
+                <Mail className="hover:scale-150 w-5 h-auto ml-2.5 mr-2.5" />
+              </a>
+              <a
+                href="https://www.linkedin.com/in/sarah-ita-levitan-026a33126/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <Linkedin className="hover:scale-150 hover:text-shadow-white w-5 h-auto ml-2.5 mr-2.5" />
+              </a>
+            </div>
           </div>
         </div>
       </div>
 
       {/* board members begin */}
-      <div className="container mx-auto w-4/5 p-12 pb-20 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 justify-items-center">
+      <div className="container mx-auto w-4/5 p-12 pb-20 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 2xl:grid-cols-4 gap-8 justify-items-center">
         {/* Emily-Ann Willix */}
-        <div className="bg-[#cee1b9] h-auto w-96 py-4 m-16 text-center rounded-xl shadow-officer-card flex flex-col items-center">
+        <div className="bg-[#cee1b9] h-auto w-96 py-4 m-16 text-center rounded-xl md:max-w-56 lg:max-w-72 shadow-officer-card flex flex-col items-center">
           <Image
             src="/images/officers/emily-ann-willix.jpeg"
             alt="Emily-Ann Willix"
@@ -47,11 +60,24 @@ export default function Officers() {
             </h1>
             <h1 className="text-xl text-[#f9679d]">Executive Board Member</h1>
             <h1 className="text-2xl font-normal mb-2">President</h1>
-            <p className="mb-1.5">Computer Science Major</p>
+            <p className="mb-4">Computer Science Major</p>
+            <div className="flex items-center justify-center">
+              <a href="mailto: emilyann.willix77@myhunter.cuny.edu">
+                <Mail className="hover:scale-150 w-5 h-auto ml-2.5 mr-2.5" />
+              </a>
+              <a
+                href="https://www.linkedin.com/in/emily-ann-willix-878874260/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <Linkedin className="hover:scale-150 hover:text-shadow-white w-5 h-auto ml-2.5 mr-2.5" />
+              </a>
+              <Github className="hover:text-red-700 w-5 h-auto ml-2.5 mr-2.5" />
+            </div>
           </div>
         </div>
         {/* Ynalois Pangilinan */}
-        <div className="bg-[#cee1b9] h-auto w-96 py-4 m-16 text-center rounded-xl shadow-officer-card flex flex-col items-center">
+        <div className="bg-[#cee1b9] h-auto w-96 py-4 m-16 text-center rounded-xl md:max-w-56 lg:max-w-72 shadow-officer-card flex flex-col items-center">
           <Image
             src="/images/officers/ynalois-pangilinan2.jpg"
             alt="Ynalois Pangilinan"
@@ -65,11 +91,30 @@ export default function Officers() {
             </h1>
             <h1 className="text-xl text-[#f9679d]">Executive Board Member</h1>
             <h1 className="text-2xl font-normal mb-2">Vice President</h1>
-            <p className="mb-1.5">Computer Science Major</p>
+            <p className="mb-4">Computer Science Major</p>
+            <div className="flex items-center justify-center">
+              <a href="mailto: ynalois.pangilinan14@myhunter.cuny.edu">
+                <Mail className="hover:scale-150 w-5 h-auto ml-2.5 mr-2.5" />
+              </a>
+              <a
+                href="https://www.linkedin.com/in/ynalois-pangilinan/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <Linkedin className="hover:scale-150 hover:text-shadow-white w-5 h-auto ml-2.5 mr-2.5" />
+              </a>
+              <a
+                href="https://github.com/ynaloisp"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <Github className="hover:scale-150 w-5 h-auto ml-2.5 mr-2.5" />
+              </a>
+            </div>
           </div>
         </div>
         {/* Ella Song */}
-        <div className="bg-[#cee1b9] h-auto w-96 py-4 m-16 text-center rounded-xl shadow-officer-card flex flex-col items-center">
+        <div className="bg-[#cee1b9] h-auto w-96 py-4 m-16 text-center rounded-xl md:max-w-56 lg:max-w-72 shadow-officer-card flex flex-col items-center">
           <Image
             src="/images/officers/ella-song.jpeg"
             alt="Ella Song"
@@ -83,11 +128,24 @@ export default function Officers() {
             </h1>
             <h1 className="text-xl text-[#f9679d]">Executive Board Member</h1>
             <h1 className="text-2xl font-normal mb-2">Secretary</h1>
-            <p className="mb-1.5">Computer Science Major</p>
+            <p className="mb-4">Computer Science & Psychology Major</p>
+            <div className="flex items-center justify-center">
+              <a href="mailto: ella.song17@myhunter.cuny.edu">
+                <Mail className="hover:scale-150 w-5 h-auto ml-2.5 mr-2.5" />
+              </a>
+              <a
+                href="https://www.linkedin.com/in/ella-song/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <Linkedin className="hover:scale-150 hover:text-shadow-white w-5 h-auto ml-2.5 mr-2.5" />
+              </a>
+              <Github className="hover:text-red-700 w-5 h-auto ml-2.5 mr-2.5" />
+            </div>
           </div>
         </div>
         {/* Madina Monowara */}
-        <div className="bg-[#cee1b9] h-auto w-96 py-4 m-16 text-center rounded-xl shadow-officer-card flex flex-col items-center">
+        <div className="bg-[#cee1b9] h-auto w-96 py-4 m-16 text-center rounded-xl md:max-w-56 lg:max-w-72 shadow-officer-card flex flex-col items-center">
           <Image
             src="/images/officers/madina-monowara.jpg"
             alt="Madina Monowara"
@@ -100,13 +158,26 @@ export default function Officers() {
               Madina Monowara
             </h1>
             <h1 className="text-2xl font-normal mb-2">Co-Secretary</h1>
-            <p className="mb-1.5">Computer Science Major</p>
+            <p className="mb-4">Computer Science Major</p>
+            <div className="flex items-center justify-center">
+              <a href="mailto: madina.monowara04@myhunter.cuny.edu">
+                <Mail className="hover:scale-150 w-5 h-auto ml-2.5 mr-2.5" />
+              </a>
+              <a
+                href="https://www.linkedin.com/in/madinamonowara/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <Linkedin className="hover:scale-150 hover:text-shadow-white w-5 h-auto ml-2.5 mr-2.5" />
+              </a>
+              <Github className="hover:text-red-700 w-5 h-auto ml-2.5 mr-2.5" />
+            </div>
           </div>
         </div>
         {/* Monae White */}
-        <div className="bg-[#cee1b9] h-auto w-96 py-4 m-16 text-center rounded-xl shadow-officer-card flex flex-col items-center">
+        <div className="bg-[#cee1b9] h-auto w-96 py-4 m-16 text-center rounded-xl md:max-w-56 lg:max-w-72 shadow-officer-card flex flex-col items-center">
           <Image
-            src="/images/officers/monae-white.jpeg"
+            src="/images/officers/monae-white.jpg"
             alt="Monae White"
             width={300}
             height={300}
@@ -118,11 +189,24 @@ export default function Officers() {
             </h1>
             <h1 className="text-xl text-[#f9679d]">Executive Board Member</h1>
             <h1 className="text-2xl font-normal mb-2">Treasurer</h1>
-            <p className="mb-1.5">Computer Science Major</p>
+            <p className="mb-4">Computer Science Major</p>
+            <div className="flex items-center justify-center">
+              <a href="mailto: monae.white17@myhunter.cuny.edu">
+                <Mail className="hover:scale-150 w-5 h-auto ml-2.5 mr-2.5" />
+              </a>
+              <a
+                href="https://www.linkedin.com/in/monae-white/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <Linkedin className="hover:scale-150 hover:text-shadow-white w-5 h-auto ml-2.5 mr-2.5" />
+              </a>
+              <Github className="hover:text-red-700 w-5 h-auto ml-2.5 mr-2.5" />
+            </div>
           </div>
         </div>
         {/* Tarina Priti */}
-        <div className="bg-[#cee1b9] h-auto w-96 py-4 m-16 text-center rounded-xl shadow-officer-card flex flex-col items-center">
+        <div className="bg-[#cee1b9] h-auto w-96 py-4 m-16 text-center rounded-xl md:max-w-56 lg:max-w-72 shadow-officer-card flex flex-col items-center">
           <Image
             src="/images/officers/tarina-priti.jpeg"
             alt="Tarina Priti"
@@ -135,11 +219,24 @@ export default function Officers() {
               Tarina Priti
             </h1>
             <h1 className="text-2xl font-normal mb-2">Community Officer</h1>
-            <p className="mb-1.5">Computer Science Major</p>
+            <p className="mb-4">Computer Science Major</p>
+            <div className="flex items-center justify-center">
+              <a href="mailto: tarina.priti30@myhunter.cuny.edu">
+                <Mail className="hover:scale-150 w-5 h-auto ml-2.5 mr-2.5" />
+              </a>
+              <a
+                href="https://www.linkedin.com/in/tarinapriti/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <Linkedin className="hover:scale-150 hover:text-shadow-white w-5 h-auto ml-2.5 mr-2.5" />
+              </a>
+              <Github className="hover:text-red-700 w-5 h-auto ml-2.5 mr-2.5" />
+            </div>
           </div>
         </div>
         {/* Kripamoye Biswas */}
-        <div className="bg-[#cee1b9] h-auto w-96 py-4 m-16 text-center rounded-xl shadow-officer-card flex flex-col items-center">
+        <div className="bg-[#cee1b9] h-auto w-96 py-4 m-16 text-center rounded-xl md:max-w-56 lg:max-w-72 shadow-officer-card flex flex-col items-center">
           {/* <Image
             src="/images/officers/tarina-priti.jpeg"
             alt="Kripamoye Biswas"
@@ -152,10 +249,23 @@ export default function Officers() {
               Kripamoye Biswas
             </h1>
             <h1 className="text-2xl font-normal mb-2">Social Media Manager</h1>
-            <p className="mb-1.5">Computer Science Major</p>
+            <p className="mb-4">Computer Science & Math Major</p>
+            <div className="flex items-center justify-center">
+              <a href="mailto: kripamoye.biswas99@myhunter.cuny.edu">
+                <Mail className="hover:scale-150 w-5 h-auto ml-2.5 mr-2.5" />
+              </a>
+              <a
+                href="https://www.linkedin.com/in/kripamoyebiswas/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <Linkedin className="hover:scale-150 hover:text-shadow-white w-5 h-auto ml-2.5 mr-2.5" />
+              </a>
+              <Github className="hover:text-red-700 w-5 h-auto ml-2.5 mr-2.5" />
+            </div>
           </div>
         </div>
-        <div className="bg-[#cee1b9] h-auto w-96 py-4 m-16 text-center rounded-xl shadow-officer-card flex flex-col items-center">
+        <div className="bg-[#cee1b9] h-auto w-96 py-4 m-16 text-center rounded-xl md:max-w-56 lg:max-w-72 shadow-officer-card flex flex-col items-center">
           <Image
             src="/images/officers/angela-z.jpeg"
             alt="Angela Zhang"
@@ -170,7 +280,20 @@ export default function Officers() {
             <h1 className="text-2xl font-normal mb-2">
               Co-Social Media Manager
             </h1>
-            <p className="mb-1.5">Computer Science Major</p>
+            <p className="mb-4">Computer Science Major</p>
+            <div className="flex items-center justify-center">
+              <a href="mailto: angela.zhang99@myhunter.cuny.edu">
+                <Mail className="hover:scale-150 w-5 h-auto ml-2.5 mr-2.5" />
+              </a>
+              <a
+                href="https://www.linkedin.com/in/apzhang7/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <Linkedin className="hover:scale-150 hover:text-shadow-white w-5 h-auto ml-2.5 mr-2.5" />
+              </a>
+              <Github className="hover:text-red-700 w-5 h-auto ml-2.5 mr-2.5" />
+            </div>
           </div>
         </div>
       </div>
