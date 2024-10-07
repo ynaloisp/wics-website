@@ -12,10 +12,10 @@ export default function Officers() {
           Want to get more involved? Contact us at hunterwics@gmail.com
         </h1>
       </div>
-      <div className="container mx-auto w-4/5 p-12 pb-20 flex justify-around">
-        <div className="bg-[#cee1b9] h-auto w-96 py-4 m-16 text-center rounded-xl shadow-officer-card flex flex-col items-center">
+      <div className="container mx-auto w-4/5 p-8 flex justify-around">
+        <div className="bg-[#cee1b9] h-auto w-72 py-4 m-16 text-center rounded-xl shadow-officer-card flex flex-col items-center">
           <Image
-            src="/images/officers/sarah-levitan.jpg"
+            src="/images/officers/Sarah-Levitan.jpg"
             alt="Sarah Levitan"
             width={300}
             height={300}
@@ -48,7 +48,7 @@ export default function Officers() {
         {/* Emily-Ann Willix */}
         <div className="bg-[#cee1b9] h-auto w-96 py-4 m-16 text-center rounded-xl md:max-w-56 lg:max-w-72 shadow-officer-card flex flex-col items-center">
           <Image
-            src="/images/officers/emily-ann-willix.jpeg"
+            src="/images/officers/Emily-Ann-Willix.jpeg"
             alt="Emily-Ann Willix"
             width={300}
             height={300}
@@ -116,7 +116,7 @@ export default function Officers() {
         {/* Ella Song */}
         <div className="bg-[#cee1b9] h-auto w-96 py-4 m-16 text-center rounded-xl md:max-w-56 lg:max-w-72 shadow-officer-card flex flex-col items-center">
           <Image
-            src="/images/officers/ella-song.jpeg"
+            src="/images/officers/Ella-Song.jpeg"
             alt="Ella Song"
             width={300}
             height={300}
@@ -147,7 +147,7 @@ export default function Officers() {
         {/* Madina Monowara */}
         <div className="bg-[#cee1b9] h-auto w-96 py-4 m-16 text-center rounded-xl md:max-w-56 lg:max-w-72 shadow-officer-card flex flex-col items-center">
           <Image
-            src="/images/officers/madina-monowara.jpg"
+            src="/images/officers/Madina-Monowara.jpg"
             alt="Madina Monowara"
             width={300}
             height={300}
@@ -177,7 +177,7 @@ export default function Officers() {
         {/* Monae White */}
         <div className="bg-[#cee1b9] h-auto w-96 py-4 m-16 text-center rounded-xl md:max-w-56 lg:max-w-72 shadow-officer-card flex flex-col items-center">
           <Image
-            src="/images/officers/monae-white.jpg"
+            src="/images/officers/Monae-White.jpg"
             alt="Monae White"
             width={300}
             height={300}
@@ -208,7 +208,7 @@ export default function Officers() {
         {/* Tarina Priti */}
         <div className="bg-[#cee1b9] h-auto w-96 py-4 m-16 text-center rounded-xl md:max-w-56 lg:max-w-72 shadow-officer-card flex flex-col items-center">
           <Image
-            src="/images/officers/tarina-priti.jpeg"
+            src="/images/officers/Tarina-Priti.jpeg"
             alt="Tarina Priti"
             width={300}
             height={300}
