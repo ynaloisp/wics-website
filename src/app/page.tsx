@@ -141,21 +141,28 @@ export default function Home() {
       </div>
 
       <div className="container mx-auto w-4/5 p-12 pb-20 flex justify-around items-center">
-        <Image
-          src="/images/photo/IMG_2282.png"
-          alt="group pic"
-          width={400}
-          height={400}
-          className="rounded-3xl"
-        />
-        <h1 className="w-96 text-center">
-          All are welcome to join our club, come to events, and participate on
-          our board regardless of your major, gender, or declared major. <br />
-          <br />
-          You must be an ally and supporter of womxn in tech! <br />
-          <br /> We are so excited for you to join us in empowering and
-          promoting womxn in tech :)
-        </h1>
+        <div className="grid grid-cols-2 sm:grid-cols-1 md:grid-cols-2 gap-8">
+          <Image
+            src="/images/photo/IMG_2282.png"
+            alt="group pic"
+            width={400}
+            height={400}
+            className="rounded-3xl"
+          />
+          <div className="w-auto p-4">
+            <h1 className="w-96 text-center pb-4">
+              All are welcome to join our club, come to events, and participate
+              on our board regardless of your major, gender, or declared major.
+            </h1>
+            <h1 className="w-96 text-center pb-4">
+              You must be an ally and supporter of womxn in tech!
+            </h1>
+            <h1 className="w-96 text-center pb-4">
+              We are so excited for you to join us in empowering and promoting
+              womxn in tech :)
+            </h1>
+          </div>
+        </div>
       </div>
     </div>
   );

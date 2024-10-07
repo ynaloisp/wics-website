@@ -79,19 +79,19 @@ export default function Navbar() {
                     <li>
                       <Link
                         href="/about"
-                        className="block px-4 py-2 hover:bg-gray-200"
+                        className="block px-4 py-2 hover:text-lightp"
                         onClick={() => setAboutDropdownOpen(false)}
                       >
-                        About Us
+                        What We Do
                       </Link>
                     </li>
                     <li>
                       <Link
-                        href="/about/team"
-                        className="block px-4 py-2 hover:bg-gray-200"
+                        href="/about/officers"
+                        className="block px-4 py-2 hover:text-lightp"
                         onClick={() => setAboutDropdownOpen(false)}
                       >
-                        Our Team
+                        Officers
                       </Link>
                     </li>
                   </ul>
@@ -113,7 +113,7 @@ export default function Navbar() {
                     <li>
                       <Link
                         href="/events"
-                        className="block px-4 py-2 hover:bg-gray-200"
+                        className="block px-4 py-2 hover:text-lightp"
                         onClick={() => setEventsDropdownOpen(false)}
                       >
                         Upcoming Events
@@ -122,7 +122,7 @@ export default function Navbar() {
                     <li>
                       <Link
                         href="/events/past"
-                        className="block px-4 py-2 hover:bg-gray-200"
+                        className="block px-4 py-2 hover:text-lightp"
                         onClick={() => setEventsDropdownOpen(false)}
                       >
                         Past Events

@@ -39,7 +39,7 @@ export default function Menu({ isOpen, onClose }: MenuProps) {
                   onClick={onClose}
                   className="hover:text-lightp text-sm"
                 >
-                  About us
+                  What We Do
                 </Link>
               </li>
               <li>
@@ -48,7 +48,7 @@ export default function Menu({ isOpen, onClose }: MenuProps) {
                   onClick={onClose}
                   className="hover:text-lightp text-sm"
                 >
-                  Our Team
+                  Officers
                 </Link>
               </li>
             </ul>
