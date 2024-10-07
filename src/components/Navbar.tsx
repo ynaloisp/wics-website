@@ -36,7 +36,7 @@ export default function Navbar() {
               </Link>
             </h1>
           </div>
-          <div className="lg:hidden">
+          <div className="md:hidden">
             <button
               onClick={() => setMenuOpen(!menuOpen)}
               className="text-pink focus:outline-none"
@@ -48,7 +48,7 @@ export default function Navbar() {
               )}
             </button>
           </div>
-          <div className="hidden lg:flex lg:flex-row items-center gap-4 text-pink">
+          <div className="hidden md:flex md:flex-row items-center gap-4 text-pink">
             <ul className="flex flex-row items-center gap-4">
               <li className="pb-0.5">
                 <Link
@@ -97,7 +97,7 @@ export default function Navbar() {
                   </ul>
                 )}
               </li>
-              <li className="relative">
+              {/* <li className="relative">
                 <button
                   className="hover:text-lightp font-semibold text-sm flex items-center"
                   onClick={() => {
@@ -130,7 +130,7 @@ export default function Navbar() {
                     </li>
                   </ul>
                 )}
-              </li>
+              </li> */}
               <li className="pb-0.5">
                 <Link
                   className="hover:text-lightp font-semibold text-sm"
@@ -148,7 +148,7 @@ export default function Navbar() {
                 "hunterwics@gmail.com" && (
                 <li className="pb-0.5">
                   <Link
-                    className="hover:text-lightp font-bold text-sm"
+                    className="hover:text-lightp font-semibold text-sm"
                     href="/admin"
                     onClick={() => {
                       setAboutDropdownOpen(false);

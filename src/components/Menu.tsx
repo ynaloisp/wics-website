@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Link from "next/link";
+import { useUser } from "@clerk/nextjs";
 
 interface MenuProps {
   isOpen: boolean;
@@ -8,7 +9,7 @@ interface MenuProps {
 
 export default function Menu({ isOpen, onClose }: MenuProps) {
   const [aboutOpen, setAboutOpen] = useState(false);
-  const [eventsOpen, setEventsOpen] = useState(false);
+  const { user } = useUser();
 
   if (!isOpen) return null;
 
@@ -54,7 +55,7 @@ export default function Menu({ isOpen, onClose }: MenuProps) {
             </ul>
           )}
         </li>
-        <li>
+        {/* <li>
           <button
             onClick={() => setEventsOpen(!eventsOpen)}
             className="hover:text-lightp font-semibold text-sm"
@@ -83,7 +84,7 @@ export default function Menu({ isOpen, onClose }: MenuProps) {
               </li>
             </ul>
           )}
-        </li>
+        </li> */}
         <li>
           <Link
             href="/corporate"
@@ -93,16 +94,18 @@ export default function Menu({ isOpen, onClose }: MenuProps) {
             Corporate
           </Link>
         </li>
-        <li>
-          <Link
-            href="/about/officers"
-            onClick={onClose}
-            className="hover:text-lightp font-semibold text-sm"
-          >
-            Officers
-          </Link>
-        </li>
-        <li>
+        {user?.primaryEmailAddress?.emailAddress === "hunterwics@gmail.com" && (
+          <li className="pb-0.5">
+            <Link
+              className="hover:text-lightp font-semibold text-sm"
+              href="/admin"
+              onClick={onClose}
+            >
+              Admin
+            </Link>
+          </li>
+        )}
+        {/* <li>
           <Link
             href="/blog"
             onClick={onClose}
@@ -110,7 +113,7 @@ export default function Menu({ isOpen, onClose }: MenuProps) {
           >
             Blog
           </Link>
-        </li>
+        </li> */}
       </ul>
     </div>
   );

@@ -125,7 +125,7 @@ export default function Home() {
           </DialogClose>
         </DialogContent>
       </Dialog>
-      <div className="flex justify-center py-14">
+      <div className="flex justify-center py-14 px-6">
         <Image
           src="/images/WiCS-Logo.png"
           alt="WiCS Logo"
@@ -134,32 +134,32 @@ export default function Home() {
           className="rounded-3xl shadow-img"
         />
       </div>
-      <div className="flex justify-center py-8">
-        <h1 className="text-4xl font-bold text-center">
-          &lt; / WOMXN IN COMPUTER SCIENCE &gt; <br /> @ HUNTER COLLEGE
+      <div className="flex justify-center py-8 px-6">
+        <h1 className="sm:text-xl md:text-3xl text-2xl font-bold text-center">
+          &lt;/ WOMEN IN COMPUTER SCIENCE &gt; <br /> @ HUNTER COLLEGE
         </h1>
       </div>
 
-      <div className="container mx-auto w-4/5 p-12 pb-20 flex justify-around items-center">
-        <div className="grid grid-cols-2 sm:grid-cols-1 md:grid-cols-2 gap-8">
+      <div className="container mx-auto w-4/5 pb-20 flex items-center">
+        <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 place-items-center gap-8">
           <Image
             src="/images/photo/IMG_2282.png"
             alt="group pic"
             width={400}
             height={400}
-            className="rounded-3xl"
+            className="rounded-3xl "
           />
-          <div className="w-auto p-4">
-            <h1 className="w-96 text-center pb-4">
+          <div className="w-auto flex flex-col justify-center">
+            <h1 className="w-full text-center pb-4">
               All are welcome to join our club, come to events, and participate
               on our board regardless of your major, gender, or declared major.
             </h1>
-            <h1 className="w-96 text-center pb-4">
+            <h1 className="w-full text-center pb-4">
               You must be an ally and supporter of womxn in tech!
             </h1>
-            <h1 className="w-96 text-center pb-4">
+            <h1 className="w-full text-center pb-4">
               We are so excited for you to join us in empowering and promoting
-              womxn in tech :)
+              women in tech :)
             </h1>
           </div>
         </div>

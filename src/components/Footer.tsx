@@ -14,9 +14,9 @@ export default function Footer() {
       <div className="container mx-auto px-10">
         <div className="flex flex-col gap-5 justify-center items-center">
           <div className="flex flex-row items-center gap-8 text-pink">
-            <ul className="flex items-center gap-8">
+            <ul className="flex flex-col sm:flex-row sm:gap-8 items-center gap-2">
               <li>
-                <Link className="hover:text-lightp " href="/">
+                <Link className="hover:text-lightp" href="/">
                   Home
                 </Link>
               </li>
@@ -25,11 +25,11 @@ export default function Footer() {
                   About
                 </Link>
               </li>
-              <li>
+              {/* <li>
                 <Link className="hover:text-lightp " href="/events">
                   Events
                 </Link>
-              </li>
+              </li> */}
               <li>
                 <Link className="hover:text-lightp " href="/corporate">
                   Corporate
@@ -40,11 +40,11 @@ export default function Footer() {
                   Officers
                 </Link>
               </li>
-              <li>
+              {/* <li>
                 <Link className="hover:text-lightp " href="/blog">
                   Blog
                 </Link>
-              </li>
+              </li> */}
             </ul>
           </div>
           <h1 className="text-lightp pb-2">Hunter WiCS © 2024</h1>
