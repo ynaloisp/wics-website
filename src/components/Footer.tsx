@@ -6,7 +6,7 @@ import {
   faLinkedin,
   faInstagram,
 } from "@fortawesome/free-brands-svg-icons";
-import Menu from "@/components/Menu";
+import { Mail } from "lucide-react";
 
 export default function Footer() {
   return (
@@ -49,6 +49,13 @@ export default function Footer() {
           </div>
           <h1 className="text-lightp pb-2">Hunter WiCS © 2024</h1>
           <div className="flex justify-center">
+            <a
+              href="mailto: hunterwics@gmail.com"
+              target="_blank"
+              className="px-2"
+            >
+              <Mail className="hover:scale-150 hover:text-lightp w-6 h-6" />
+            </a>
             <a
               href="https://www.linkedin.com/company/hunterwics/"
               target="_blank"

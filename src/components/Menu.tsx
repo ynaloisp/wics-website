@@ -15,17 +15,17 @@ export default function Menu({ isOpen, onClose }: MenuProps) {
 
   return (
     <div className="absolute top-16 left-0 w-full bg-white shadow-lg z-50">
-      <ul className="flex flex-col items-center gap-4 py-4">
+      <ul className="flex flex-col items-center gap-4 py-4 border border-black border-3">
         <li>
           <Link
             href="/"
             onClick={onClose}
-            className="hover:text-lightp font-semibold text-sm"
+            className="hover:text-lightp font-semibold text-sm "
           >
             Home
           </Link>
         </li>
-        <li>
+        <li className="text-center">
           <button
             onClick={() => setAboutOpen(!aboutOpen)}
             className="hover:text-lightp font-semibold text-sm"
@@ -37,7 +37,10 @@ export default function Menu({ isOpen, onClose }: MenuProps) {
               <li>
                 <Link
                   href="/about"
-                  onClick={onClose}
+                  onClick={() => {
+                    onClose();
+                    setAboutOpen(false);
+                  }}
                   className="hover:text-lightp text-sm"
                 >
                   What We Do
@@ -46,7 +49,10 @@ export default function Menu({ isOpen, onClose }: MenuProps) {
               <li>
                 <Link
                   href="/about/officers"
-                  onClick={onClose}
+                  onClick={() => {
+                    onClose();
+                    setAboutOpen(false);
+                  }}
                   className="hover:text-lightp text-sm"
                 >
                   Officers
@@ -88,7 +94,10 @@ export default function Menu({ isOpen, onClose }: MenuProps) {
         <li>
           <Link
             href="/corporate"
-            onClick={onClose}
+            onClick={() => {
+              onClose();
+              setAboutOpen(false);
+            }}
             className="hover:text-lightp font-semibold text-sm"
           >
             Corporate
@@ -99,7 +108,10 @@ export default function Menu({ isOpen, onClose }: MenuProps) {
             <Link
               className="hover:text-lightp font-semibold text-sm"
               href="/admin"
-              onClick={onClose}
+              onClick={() => {
+                onClose();
+                setAboutOpen(false);
+              }}
             >
               Admin
             </Link>
