@@ -12,6 +12,7 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
+import { MoveUpRight } from "lucide-react";
 
 export default function Home() {
   // const { getToken, userId } = useAuth();
@@ -156,8 +157,8 @@ export default function Home() {
           <Image
             src="/images/photo/IMG_2282.png"
             alt="group pic"
-            width={400}
-            height={400}
+            width={500}
+            height={500}
             className="rounded-3xl "
           />
           <div className="w-auto flex flex-col justify-center">
@@ -173,6 +174,28 @@ export default function Home() {
               women in tech :)
             </h1>
           </div>
+        </div>
+      </div>
+
+      <div className="pb-16">
+        <h1 className="sm:text-2xl md:text-4xl text-xl font-bold text-center pb-4">
+          Want to be a Member?
+        </h1>
+        <h1 className="w-full text-center pb-4">
+          Join our club by filling out{" "}
+          <a href="https://forms.gle/KuWM3UqUjjrPANCr7" target="_blank">
+            this form!
+          </a>{" "}
+          This form will also put you on our mailing list so you can stay up to
+          date with our events and opportunities.
+        </h1>
+        <div className="flex justify-center">
+          <button className="p-2 bg-pink rounded-sm text-white flex items-center">
+            <a href="https://forms.gle/KuWM3UqUjjrPANCr7" target="_blank">
+              Join Now!
+            </a>
+            <MoveUpRight className="w-4 h-4 ml-2" />
+          </button>
         </div>
       </div>
     </div>
