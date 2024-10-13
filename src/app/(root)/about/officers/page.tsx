@@ -1,19 +1,26 @@
 import Image from "next/image";
 import { Mail, Linkedin, Github } from "lucide-react";
+import {
+  Toast,
+  ToastDescription,
+  ToastTitle,
+  ToastProvider,
+} from "@/components/ui/toast";
+import { SignedOut } from "@clerk/nextjs";
 
 export default function Officers() {
   return (
     <div className="bg-[#fef8f8] min-h-screen">
-      <div className="p-10 pt-20 rounded-lg text-center">
+      <div className="p-7 pt-20 sm:p-10 rounded-lg text-center">
         <h1 className="text-black text-5xl font-medium">
           Meet our Current Officers
         </h1>
-        <h1 className="text-3xl font-normal p-4">
+        <h1 className="text-2xl sm:text-3xl font-normal pt-4 text-center">
           Want to get more involved? Contact us at hunterwics@gmail.com
         </h1>
       </div>
       <div className="container mx-auto w-4/5 p-8 flex justify-around">
-        <div className="bg-[#cee1b9] h-auto w-72 py-4 m-16 text-center rounded-xl shadow-officer-card flex flex-col items-center">
+        <div className="bg-[#cee1b9] h-auto w-72 py-4 m-8 text-center rounded-xl shadow-officer-card flex flex-col items-center">
           <Image
             src="/images/officers/Sarah-Levitan.jpg"
             alt="Sarah Levitan"
@@ -46,7 +53,7 @@ export default function Officers() {
       {/* board members begin */}
       <div className="container mx-auto w-4/5 p-12 pb-20 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 2xl:grid-cols-4 gap-8 justify-items-center">
         {/* Emily-Ann Willix */}
-        <div className="bg-[#cee1b9] h-auto w-96 py-4 m-16 text-center rounded-xl md:max-w-56 lg:max-w-72 shadow-officer-card flex flex-col items-center">
+        <div className="bg-[#cee1b9] h-auto sm:w-96 w-60 py-4 m-8 text-center rounded-xl md:max-w-56 lg:max-w-72 shadow-officer-card flex flex-col items-center">
           <Image
             src="/images/officers/Emily-Ann-Willix.jpeg"
             alt="Emily-Ann Willix"
@@ -77,7 +84,7 @@ export default function Officers() {
           </div>
         </div>
         {/* Ynalois Pangilinan */}
-        <div className="bg-[#cee1b9] h-auto w-96 py-4 m-16 text-center rounded-xl md:max-w-56 lg:max-w-72 shadow-officer-card flex flex-col items-center">
+        <div className="bg-[#cee1b9] h-auto sm:w-96 w-60 py-4 m-8 text-center rounded-xl md:max-w-56 lg:max-w-72 shadow-officer-card flex flex-col items-center">
           <Image
             src="/images/officers/ynalois-pangilinan2.jpg"
             alt="Ynalois Pangilinan"
@@ -114,7 +121,7 @@ export default function Officers() {
           </div>
         </div>
         {/* Ella Song */}
-        <div className="bg-[#cee1b9] h-auto w-96 py-4 m-16 text-center rounded-xl md:max-w-56 lg:max-w-72 shadow-officer-card flex flex-col items-center">
+        <div className="bg-[#cee1b9] h-auto sm:w-96 w-60 py-4 m-8 text-center rounded-xl md:max-w-56 lg:max-w-72 shadow-officer-card flex flex-col items-center">
           <Image
             src="/images/officers/Ella-Song.jpeg"
             alt="Ella Song"
@@ -145,7 +152,7 @@ export default function Officers() {
           </div>
         </div>
         {/* Madina Monowara */}
-        <div className="bg-[#cee1b9] h-auto w-96 py-4 m-16 text-center rounded-xl md:max-w-56 lg:max-w-72 shadow-officer-card flex flex-col items-center">
+        <div className="bg-[#cee1b9] h-auto sm:w-96 w-60 py-4 m-8 text-center rounded-xl md:max-w-56 lg:max-w-72 shadow-officer-card flex flex-col items-center">
           <Image
             src="/images/officers/Madina-Monowara.jpg"
             alt="Madina Monowara"
@@ -175,7 +182,7 @@ export default function Officers() {
           </div>
         </div>
         {/* Monae White */}
-        <div className="bg-[#cee1b9] h-auto w-96 py-4 m-16 text-center rounded-xl md:max-w-56 lg:max-w-72 shadow-officer-card flex flex-col items-center">
+        <div className="bg-[#cee1b9] h-auto sm:w-96 w-60 py-4 m-8 text-center rounded-xl md:max-w-56 lg:max-w-72 shadow-officer-card flex flex-col items-center">
           <Image
             src="/images/officers/Monae-White.jpg"
             alt="Monae White"
@@ -206,7 +213,7 @@ export default function Officers() {
           </div>
         </div>
         {/* Tarina Priti */}
-        <div className="bg-[#cee1b9] h-auto w-96 py-4 m-16 text-center rounded-xl md:max-w-56 lg:max-w-72 shadow-officer-card flex flex-col items-center">
+        <div className="bg-[#cee1b9] h-auto sm:w-96 w-60 py-4 m-8 text-center rounded-xl md:max-w-56 lg:max-w-72 shadow-officer-card flex flex-col items-center">
           <Image
             src="/images/officers/Tarina-Priti.jpeg"
             alt="Tarina Priti"
@@ -236,14 +243,14 @@ export default function Officers() {
           </div>
         </div>
         {/* Kripamoye Biswas */}
-        <div className="bg-[#cee1b9] h-auto w-96 py-4 m-16 text-center rounded-xl md:max-w-56 lg:max-w-72 shadow-officer-card flex flex-col items-center">
-          {/* <Image
-            src="/images/officers/tarina-priti.jpeg"
+        <div className="bg-[#cee1b9] h-auto sm:w-96 w-60 py-4 m-8 text-center rounded-xl md:max-w-56 lg:max-w-72 shadow-officer-card flex flex-col items-center">
+          <Image
+            src="/images/officers/Kripamoye-Biswas.png"
             alt="Kripamoye Biswas"
             width={300}
             height={300}
-            className="rounded-3xl w-3/5 shadow-card"
-          /> */}
+            className="rounded-3xl w-4/5 shadow-card"
+          />
           <div className="p-4">
             <h1 className="text-4xl font-medium text-[#fceee9] text-shadow-officer-name mb-2">
               Kripamoye Biswas
@@ -265,7 +272,7 @@ export default function Officers() {
             </div>
           </div>
         </div>
-        <div className="bg-[#cee1b9] h-auto w-96 py-4 m-16 text-center rounded-xl md:max-w-56 lg:max-w-72 shadow-officer-card flex flex-col items-center">
+        <div className="bg-[#cee1b9] h-auto sm:w-96 w-60 py-4 m-8 text-center rounded-xl md:max-w-56 lg:max-w-72 shadow-officer-card flex flex-col items-center">
           <Image
             src="/images/officers/angela-z.jpeg"
             alt="Angela Zhang"

@@ -1,5 +1,5 @@
 "use client";
-import { useAuth, useUser } from "@clerk/nextjs";
+import { SignedOut, useAuth, useUser } from "@clerk/nextjs";
 import { db, auth, signInWithCustomToken } from "../firebase";
 import Image from "next/image";
 import { doc, setDoc, getDoc } from "firebase/firestore";
@@ -120,7 +120,7 @@ export default function Home() {
               onClick={() => setIsDialogOpen(false)}
               className="p-2 bg-pink rounded-md text-white"
             >
-              I don't have an EMPLID
+              I don&apos;t have an EMPLID
             </button>
             <DialogClose asChild>
               <button
