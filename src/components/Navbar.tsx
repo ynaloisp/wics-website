@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import {
@@ -10,14 +10,33 @@ import {
   UserButton,
   useUser,
 } from "@clerk/nextjs";
+import { Badge } from "@/components/ui/badge";
 import { ChevronDown, Menu as MenuIcon, X } from "lucide-react";
 import Menu from "@/components/Menu";
+import { getDoc, doc } from "firebase/firestore";
+import { db } from "@/firebase";
 
 export default function Navbar() {
   const [aboutDropdownOpen, setAboutDropdownOpen] = useState(false);
   const [eventsDropdownOpen, setEventsDropdownOpen] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const { user } = useUser();
+  const [points, setPoints] = useState(0);
+
+  useEffect(() => {
+    async function fetchPoints() {
+      if (user) {
+        const userDocRef = doc(db, "users", user.id);
+        const userDoc = await getDoc(userDocRef);
+
+        if (userDoc.exists()) {
+          const userData = userDoc.data();
+          setPoints(userData.points);
+        }
+      }
+    }
+    fetchPoints();
+  }, [user]);
 
   return (
     <header className="bg-white text-pink py-4 drop-shadow-xl relative">
@@ -167,7 +186,12 @@ export default function Navbar() {
                   </div>
                 </SignedOut>
                 <SignedIn>
-                  <UserButton />
+                  <div className="flex">
+                    <Badge className="items-center w-auto m-2">
+                      {points} Points
+                    </Badge>
+                    <UserButton />
+                  </div>
                 </SignedIn>
               </li>
             </ul>
