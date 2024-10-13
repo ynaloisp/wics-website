@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import {
@@ -10,16 +10,37 @@ import {
   UserButton,
   useUser,
 } from "@clerk/nextjs";
-import { ChevronDown } from "lucide-react";
+import { Badge } from "@/components/ui/badge";
+import { ChevronDown, Menu as MenuIcon, X } from "lucide-react";
+import Menu from "@/components/Menu";
+import { getDoc, doc } from "firebase/firestore";
+import { db } from "@/firebase";
 
 export default function Navbar() {
   const [aboutDropdownOpen, setAboutDropdownOpen] = useState(false);
   const [eventsDropdownOpen, setEventsDropdownOpen] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
   const { user } = useUser();
+  const [points, setPoints] = useState(0);
+
+  useEffect(() => {
+    async function fetchPoints() {
+      if (user) {
+        const userDocRef = doc(db, "users", user.id);
+        const userDoc = await getDoc(userDocRef);
+
+        if (userDoc.exists()) {
+          const userData = userDoc.data();
+          setPoints(userData.points);
+        }
+      }
+    }
+    fetchPoints();
+  }, [user]);
 
   return (
-    <header className="bg-white text-pink py-4 drop-shadow-xl">
-      <div className="container mx-auto px-6">
+    <header className="bg-white text-pink py-4 drop-shadow-xl relative">
+      <div className="container mx-auto px-6 w-full xl:w-6/12 lg:w-11/12">
         <div className="flex justify-between items-center">
           <div className="flex items-center">
             <Image
@@ -28,21 +49,34 @@ export default function Navbar() {
               width={40}
               height={40}
             />
-            <h1 className="font-extrabold text-xl ml-2">
+            <h1 className="font-semibold text-xl ml-2">
               <Link href="/" className="hover:text-lightp">
                 Hunter WiCS
               </Link>
             </h1>
           </div>
-          <div className="flex flex-row items-center gap-4 text-pink">
-            <ul className="flex items-center gap-4">
-              <li>
+          <div className="md:hidden">
+            <button
+              onClick={() => setMenuOpen(!menuOpen)}
+              className="text-pink focus:outline-none"
+            >
+              {menuOpen ? (
+                <X className="w-6 h-6" />
+              ) : (
+                <MenuIcon className="w-6 h-6" />
+              )}
+            </button>
+          </div>
+          <div className="hidden md:flex md:flex-row items-center gap-4 text-pink">
+            <ul className="flex flex-row items-center gap-4">
+              <li className="pb-0.5">
                 <Link
-                  className="hover:text-lightp font-bold text-sm"
+                  className="hover:text-lightp font-semibold text-sm"
                   href="/"
                   onClick={() => {
                     setAboutDropdownOpen(false);
                     setEventsDropdownOpen(false);
+                    setMenuOpen(false);
                   }}
                 >
                   Home
@@ -50,29 +84,31 @@ export default function Navbar() {
               </li>
               <li className="relative">
                 <button
-                  className="hover:text-lightp font-bold text-sm flex items-center"
+                  className="hover:text-lightp font-semibold text-sm flex items-center"
                   onClick={() => {
                     setAboutDropdownOpen(!aboutDropdownOpen);
                     setEventsDropdownOpen(false);
                   }}
                 >
                   About
-                  <ChevronDown className="ml-1 w-3.5" />
+                  <ChevronDown className="ml-1 w-3" />
                 </button>
                 {aboutDropdownOpen && (
                   <ul className="absolute bg-white shadow-dropdown rounded mt-2 p-2 w-48 border border-black">
                     <li>
                       <Link
-                        className="block px-4 py-2 hover:text-lightp text-sm"
                         href="/about"
+                        className="block px-4 py-2 hover:text-lightp"
+                        onClick={() => setAboutDropdownOpen(false)}
                       >
                         What We Do
                       </Link>
                     </li>
                     <li>
                       <Link
-                        className="block px-4 py-2 hover:text-lightp text-sm"
                         href="/about/officers"
+                        className="block px-4 py-2 hover:text-lightp"
+                        onClick={() => setAboutDropdownOpen(false)}
                       >
                         Officers
                       </Link>
@@ -80,53 +116,48 @@ export default function Navbar() {
                   </ul>
                 )}
               </li>
-              <li className="relative">
+              {/* <li className="relative">
                 <button
-                  className="hover:text-lightp font-bold text-sm flex items-center"
+                  className="hover:text-lightp font-semibold text-sm flex items-center"
                   onClick={() => {
                     setEventsDropdownOpen(!eventsDropdownOpen);
                     setAboutDropdownOpen(false);
                   }}
                 >
                   Events
-                  <ChevronDown className="ml-1 w-3.5" />
+                  <ChevronDown className="ml-1 w-3" />
                 </button>
                 {eventsDropdownOpen && (
                   <ul className="absolute bg-white shadow-dropdown rounded mt-2 p-2 w-48 border border-black">
                     <li>
                       <Link
-                        className="block px-4 py-2 hover:text-lightp text-sm"
                         href="/events"
-                        onClick={() => {
-                          setAboutDropdownOpen(false);
-                          setEventsDropdownOpen(false);
-                        }}
+                        className="block px-4 py-2 hover:text-lightp"
+                        onClick={() => setEventsDropdownOpen(false)}
                       >
                         Upcoming Events
                       </Link>
                     </li>
                     <li>
                       <Link
-                        className="block px-4 py-2 hover:text-lightp text-sm"
-                        href="/events/past-events"
-                        onClick={() => {
-                          setAboutDropdownOpen(false);
-                          setEventsDropdownOpen(false);
-                        }}
+                        href="/events/past"
+                        className="block px-4 py-2 hover:text-lightp"
+                        onClick={() => setEventsDropdownOpen(false)}
                       >
                         Past Events
                       </Link>
                     </li>
                   </ul>
                 )}
-              </li>
-              <li>
+              </li> */}
+              <li className="pb-0.5">
                 <Link
-                  className="hover:text-lightp font-bold text-sm"
+                  className="hover:text-lightp font-semibold text-sm"
                   href="/corporate"
                   onClick={() => {
                     setAboutDropdownOpen(false);
                     setEventsDropdownOpen(false);
+                    setMenuOpen(false);
                   }}
                 >
                   Corporate
@@ -134,13 +165,14 @@ export default function Navbar() {
               </li>
               {user?.primaryEmailAddress?.emailAddress ===
                 "hunterwics@gmail.com" && (
-                <li>
+                <li className="pb-0.5">
                   <Link
-                    className="hover:text-lightp font-bold text-sm"
+                    className="hover:text-lightp font-semibold text-sm"
                     href="/admin"
                     onClick={() => {
                       setAboutDropdownOpen(false);
                       setEventsDropdownOpen(false);
+                      setMenuOpen(false);
                     }}
                   >
                     Admin
@@ -149,18 +181,24 @@ export default function Navbar() {
               )}
               <li>
                 <SignedOut>
-                  <div className="bg-pink text-white px-4 py-2 rounded hover:bg-lightp transition duration-300">
+                  <div className="bg-pink text-white px-3 py-2 rounded hover:bg-lightp transition duration-300">
                     <SignInButton />
                   </div>
                 </SignedOut>
                 <SignedIn>
-                  <UserButton />
+                  <div className="flex">
+                    <Badge className="items-center w-auto m-2">
+                      {points} Points
+                    </Badge>
+                    <UserButton />
+                  </div>
                 </SignedIn>
               </li>
             </ul>
           </div>
         </div>
       </div>
+      <Menu isOpen={menuOpen} onClose={() => setMenuOpen(false)} />
     </header>
   );
 }

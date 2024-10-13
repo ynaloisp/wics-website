@@ -16,6 +16,7 @@ export default function AdminPage() {
   const [editingPoints, setEditingPoints] = useState<{ [key: string]: number }>(
     {}
   );
+  const [searchQuery, setSearchQuery] = useState<string>("");
 
   useEffect(() => {
     async function fetchUsers() {
@@ -53,12 +54,25 @@ export default function AdminPage() {
     console.log("Points updated successfully");
   };
 
+  const filteredUsers = users.filter(
+    (user) =>
+      user.emplid.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      user.fullname.toLowerCase().includes(searchQuery.toLowerCase())
+  );
+
   return (
     <div className="bg-[#fef8f8] min-h-screen p-8">
-      <h1 className="text-3xl font-bold mb-6">Users</h1>
-      {users && users.length > 0 ? (
+      <h1 className="text-3xl font-bold mb-6">Club Members</h1>
+      <input
+        type="text"
+        placeholder="Search by EMPLID or Name"
+        value={searchQuery}
+        onChange={(e) => setSearchQuery(e.target.value)}
+        className="mb-6 p-2 border border-gray-300 rounded"
+      />
+      {filteredUsers && filteredUsers.length > 0 ? (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {users.map((user) => (
+          {filteredUsers.map((user) => (
             <div key={user.id} className="bg-white p-6 rounded-lg shadow-md">
               <h2 className="text-xl font-semibold mb-2">{user.fullname}</h2>
               <p className="text-gray-700 mb-1">

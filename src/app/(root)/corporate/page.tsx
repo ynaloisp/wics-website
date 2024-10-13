@@ -4,8 +4,8 @@ export default function Corporate() {
   return (
     <div className="bg-[#fef8f8] min-h-screen">
       <div className="bg-banner bg-cover bg-center h-96 flex items-center justify-center">
-        <div className="bg-white bg-opacity-60 p-10 rounded-lg text-center">
-          <h1 className="text-black text-5xl font-semibold">
+        <div className="bg-white bg-opacity-60 p-4 py-8 md:p-12 mx-7 md:mx-7 rounded-lg text-center">
+          <h1 className="text-black text-3xl sm:text-5xl font-semibold">
             Corporate Sponsorship
           </h1>
         </div>
@@ -22,6 +22,7 @@ export default function Corporate() {
               alt="Google"
               width={300}
               height={160}
+              className="w-4/5 sm:w-1/5"
             />
           </div>
         </div>
@@ -50,7 +51,7 @@ export default function Corporate() {
           workshops.
         </h1>
       </div>
-      <div className="flex justify-center pb-20">
+      <div className="flex flex-col lg:flex-row justify-center place-items-center pb-20">
         <Image
           src="/images/photo/IMG_2345.png"
           alt="google group pic"
