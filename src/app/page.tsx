@@ -63,9 +63,22 @@ export default function Home() {
   }, [user]);
 
   function storeEMPLID(EMPLID: string) {
+    // const emplidPattern = /^\d{8}$/; // Regular expression to match exactly 8 digits
+
+    // if (!emplidPattern.test(EMPLID)) {
+    //   console.error("Invalid EMPLID. It must be exactly 8 digits.");
+    //   return;
+    // }
+
     if (user) {
-      setDoc(doc(db, "users", user.id), { emplid: EMPLID }, { merge: true });
-      console.log("EMPLID stored successfully");
+      setDoc(doc(db, "users", user.id), { emplid: EMPLID }, { merge: true })
+        .then(() => {
+          console.log("EMPLID stored successfully");
+          setIsDialogOpen(false);
+        })
+        .catch((error) => {
+          console.error("Error storing EMPLID:", error);
+        });
     } else {
       console.error("User is null or undefined");
     }
@@ -108,30 +121,33 @@ export default function Home() {
         <DialogContent>
           <DialogTitle className="text-pink">Enter Your EMPLID</DialogTitle>
           <DialogDescription className="text-black">
-            Please enter your EMPLID to track your points!
+            Please enter your EMPLID in order to track your points for a prize.
           </DialogDescription>
           <input
             type="text"
-            placeholder=" EMPLID"
+            placeholder="Enter EMPLID"
             value={emplid}
             onChange={(e) => setEmplid(e.target.value)}
+            className="w-full p-2 my-4 border-2 border-pink rounded-md"
           />
           <div className="flex justify-between">
-            <button
-              onClick={() => setIsDialogOpen(false)}
-              className="p-2 bg-pink rounded-md text-white"
-            >
-              I don&apos;t have an EMPLID
-            </button>
+            <DialogClose asChild>
+              <button
+                onClick={() => setIsDialogOpen(false)}
+                className="text-pink bg-white border-pink border-2 rounded-md p-2"
+              >
+                I don&apos;t have an EMPLID
+              </button>
+            </DialogClose>
             <DialogClose asChild>
               <button
                 onClick={() => {
                   storeEMPLID(emplid);
                   setIsDialogOpen(false);
                 }}
-                className="p-2 bg-pink rounded-md text-white"
+                className="text-pink bg-white border-pink border-2 rounded-md p-2"
               >
-                Save
+                Save EMPLID
               </button>
             </DialogClose>
           </div>
