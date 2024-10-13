@@ -105,24 +105,35 @@ export default function Home() {
           <button style={{ display: "none" }}>Open Dialog</button>
         </DialogTrigger>
         <DialogContent>
-          <DialogTitle>Enter Your EMPLID</DialogTitle>
-          <DialogDescription>Please enter your EMPLID</DialogDescription>
+          <DialogTitle className="text-pink">Enter Your EMPLID</DialogTitle>
+          <DialogDescription className="text-black">
+            Please enter your EMPLID to track your points!
+          </DialogDescription>
           <input
             type="text"
-            placeholder="EMPLID"
+            placeholder=" EMPLID"
             value={emplid}
             onChange={(e) => setEmplid(e.target.value)}
           />
-          <DialogClose asChild>
+          <div className="flex justify-between">
             <button
-              onClick={() => {
-                storeEMPLID(emplid);
-                setIsDialogOpen(false);
-              }}
+              onClick={() => setIsDialogOpen(false)}
+              className="p-2 bg-pink rounded-md text-white"
             >
-              Save
+              I don't have an EMPLID
             </button>
-          </DialogClose>
+            <DialogClose asChild>
+              <button
+                onClick={() => {
+                  storeEMPLID(emplid);
+                  setIsDialogOpen(false);
+                }}
+                className="p-2 bg-pink rounded-md text-white"
+              >
+                Save
+              </button>
+            </DialogClose>
+          </div>
         </DialogContent>
       </Dialog>
       <div className="flex justify-center py-14 px-6">
