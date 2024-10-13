@@ -4,11 +4,11 @@ function About() {
   return (
     <div className="bg-[#fef8f8] min-h-screen">
       <div className="bg-banner bg-cover bg-center h-96 flex items-center justify-center">
-        <div className="bg-white bg-opacity-50 p-12 rounded-lg text-center">
-          <h1 className="text-black text-4xl font-bold">
+        <div className="bg-white bg-opacity-50 p-4 py-8 md:p-12 mx-7 md:mx-7 rounded-lg text-center">
+          <h1 className="text-black text-lg sm:text-4xl font-bold">
             &lt; / WOMXN IN COMPUTER SCIENCE &gt;
           </h1>
-          <h4 className="text-black mt-4">
+          <h4 className="text-black mt-4 text-md sm:text-xl">
             the pre-professional organization for female and non-binary computer
             science students at CUNY Hunter College
           </h4>
@@ -16,15 +16,15 @@ function About() {
       </div>
 
       <div className="w-full my-20">
-        <div className="flex justify-center items-center gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 justify-center place-items-center items-center gap-8">
           <Image
             src="/images/photo/IMG_3152.png"
             alt="group pic"
             width={600}
             height={300}
-            className="max-w-1/2"
+            className="max-w-1/2 px-4"
           />
-          <div className="w-1/4 p-4">
+          <div className="max-w-5xl p-4 lg:px-10">
             <h1 className="text-4xl font-semibold mt-8 text-center">Mission</h1>
             <h1 className="p-4">
               Historically, Technology and Computer Science have been
