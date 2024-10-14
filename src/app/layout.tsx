@@ -5,6 +5,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { ClerkProvider, SignedOut } from "@clerk/nextjs";
 import { Toast, ToastProvider } from "@/components/ui/toast";
+import { GoogleTagManager } from "@next/third-parties/google";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -26,6 +27,7 @@ export default function RootLayout({
           {children}
           <Footer />
         </body>
+        <GoogleTagManager gtmId={String(process.env.NEXT_PUBLIC_GA_ID)} />
       </html>
     </ClerkProvider>
   );
