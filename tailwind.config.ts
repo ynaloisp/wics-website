@@ -1,5 +1,8 @@
 import type { Config } from "tailwindcss";
 
+const plugin = require("tailwindcss/plugin");
+
+
 const config: Config = {
   darkMode: ["class"],
   content: [
@@ -80,12 +83,15 @@ const config: Config = {
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
       },
+      fontFamily: {
+        inter: ["Inter", "sans-serif"],
+      },
     },
   },
   plugins: [
     require("tailwindcss-animate"),
     require("tailwindcss-textshadow"),
-    function ({ addBase }) {
+    plugin(function({ addBase } : {addBase: any}) {
       addBase({
         "html, body": {
           margin: "0",
@@ -93,8 +99,8 @@ const config: Config = {
           backgroundColor: "#fef8f8",
         },
       });
-    },
-  ],
+    })
+  ]
 };
 
 export default config;
