@@ -2,6 +2,7 @@
 
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import Image from "next/image";
 import {
   SignedIn,
@@ -38,11 +39,14 @@ export default function Navbar() {
     fetchPoints();
   }, [user]);
 
+  const path = usePathname();
+  console.log(path);
   return (
-    <header className="bg-white text-pink py-4 drop-shadow-xl relative">
-      <div className="container mx-auto px-6 w-full xl:w-6/12 lg:w-11/12">
-        <div className="flex justify-between items-center">
-          <div className="flex items-center">
+    <div className="bg-[#fef8f8]">
+      <header className="bg-white text-pink py-4 shadow-[0px_6px_13.3px_rgba(0,0,0,0.25)] relative rounded-full mt-[2%] mx-auto font-[inter] font-semibold w-fit pl-8 pr-8">
+        <div className="container">
+          <div className="flex justify-center items-center">
+            {/* <div className="flex items-center">
             <Image
               src="/images/WiCS-Logo.png"
               alt="WiCS Logo"
@@ -54,8 +58,8 @@ export default function Navbar() {
                 Hunter WiCS
               </Link>
             </h1>
-          </div>
-          <div className="md:hidden">
+          </div> */}
+            {/* <div className="md:hidden">
             <button
               onClick={() => setMenuOpen(!menuOpen)}
               className="text-pink focus:outline-none"
@@ -66,23 +70,75 @@ export default function Navbar() {
                 <MenuIcon className="w-6 h-6" />
               )}
             </button>
-          </div>
-          <div className="hidden md:flex md:flex-row items-center gap-4 text-pink">
-            <ul className="flex flex-row items-center gap-4">
-              <li className="pb-0.5">
-                <Link
-                  className="hover:text-lightp font-semibold text-sm"
-                  href="/"
-                  onClick={() => {
-                    setAboutDropdownOpen(false);
-                    setEventsDropdownOpen(false);
-                    setMenuOpen(false);
-                  }}
-                >
-                  Home
-                </Link>
-              </li>
-              <li className="relative">
+          </div> */}
+
+            <div className="hidden md:flex md:flex-row items-center text-grey ">
+              <ul className="flex flex-row items-center gap-10 md:text-lg lg:text-xl">
+                <li className="pb-0.5">
+                  <Link
+                    className={`font-semibold ${
+                      path == "/" ? "text-hotpink" : "text-grey"
+                    }`}
+                    href="/"
+                    onClick={() => {
+                      setAboutDropdownOpen(false);
+                      setEventsDropdownOpen(false);
+                      setMenuOpen(false);
+                    }}
+                  >
+                    Home
+                  </Link>
+                </li>
+
+                <li className="pb-0.5">
+                  <Link
+                    className={`font-semibold ${
+                      path == "/events" ? "text-hotpink" : "text-grey"
+                    }`}
+                    href="/events"
+                    onClick={() => {
+                      setAboutDropdownOpen(false);
+                      setEventsDropdownOpen(false);
+                      setMenuOpen(false);
+                    }}
+                  >
+                    Events
+                  </Link>
+                </li>
+
+                <li className="pb-0.5">
+                  <Link
+                    className={`font-semibold ${
+                      path == "/resources" ? "text-hotpink" : "text-grey"
+                    }`}
+                    href="/resources"
+                    onClick={() => {
+                      setAboutDropdownOpen(false);
+                      setEventsDropdownOpen(false);
+                      setMenuOpen(false);
+                    }}
+                  >
+                    Resources
+                  </Link>
+                </li>
+
+                <li className="pb-0.5">
+                  <Link
+                    className={`font-semibold ${
+                      path == "/team" ? "text-hotpink" : "text-grey"
+                    }`}
+                    href="/team"
+                    onClick={() => {
+                      setAboutDropdownOpen(false);
+                      setEventsDropdownOpen(false);
+                      setMenuOpen(false);
+                    }}
+                  >
+                    Team
+                  </Link>
+                </li>
+
+                {/* <li className="relative">
                 <button
                   className="hover:text-lightp font-semibold text-sm flex items-center"
                   onClick={() => {
@@ -115,8 +171,8 @@ export default function Navbar() {
                     </li>
                   </ul>
                 )}
-              </li>
-              {/* <li className="relative">
+              </li> */}
+                {/* <li className="relative">
                 <button
                   className="hover:text-lightp font-semibold text-sm flex items-center"
                   onClick={() => {
@@ -150,7 +206,7 @@ export default function Navbar() {
                   </ul>
                 )}
               </li> */}
-              <li className="pb-0.5">
+                {/* <li className="pb-0.5">
                 <Link
                   className="hover:text-lightp font-semibold text-sm"
                   href="/corporate"
@@ -193,12 +249,13 @@ export default function Navbar() {
                     <UserButton />
                   </div>
                 </SignedIn>
-              </li>
-            </ul>
+              </li> */}
+              </ul>
+            </div>
           </div>
         </div>
-      </div>
-      <Menu isOpen={menuOpen} onClose={() => setMenuOpen(false)} />
-    </header>
+        <Menu isOpen={menuOpen} onClose={() => setMenuOpen(false)} />
+      </header>
+    </div>
   );
 }
