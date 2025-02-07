@@ -11,7 +11,9 @@ const config: Config = {
     extend: {
       colors: {
         pink: "#FFAFCC",
+        hotpink: "#DB2777",
         lightp: "#B8C0FF",
+        grey: "#4B5563",
         background: "hsl(var(--background))",
         shadowp: "#C8B6FF",
         foreground: "hsl(var(--foreground))",
@@ -80,7 +82,19 @@ const config: Config = {
       },
     },
   },
-  plugins: [require("tailwindcss-animate"), require("tailwindcss-textshadow")],
+  plugins: [
+    require("tailwindcss-animate"),
+    require("tailwindcss-textshadow"),
+    function ({ addBase }) {
+      addBase({
+        "html, body": {
+          margin: "0",
+          padding: "0",
+          backgroundColor: "#fef8f8",
+        },
+      });
+    },
+  ],
 };
 
 export default config;
