@@ -15,12 +15,17 @@ export default function Footer() {
                 <div className="flex flex-col gap-5 justify-center items-center">
                     <div className="flex flex-row justify-between w-[90%] mx-auto items-center gap-8 text-600">
                         <h3 className="text-black font-bold text-l">
-                            Hunter WiCS
+                            <Link
+                                className="hover:text-hotpink transition duration-1000 ease-in-out"
+                                href="/"
+                            >
+                                Hunter WiCS
+                            </Link>
                         </h3>
                         <ul className="flex flex-col sm:flex-row sm:gap-8 items-center gap-2 text-sm  text-[#4B5563]">
                             <li>
                                 <Link
-                                    className="hover:text-lightp"
+                                    className="hover:text-hotpink"
                                     href="/about"
                                 >
                                     About
@@ -28,20 +33,20 @@ export default function Footer() {
                             </li>
                             <li>
                                 <Link
-                                    className="hover:text-lightp"
+                                    className="hover:text-hotpink"
                                     href="/events"
                                 >
                                     Events
                                 </Link>
                             </li>
                             {/* <li>
-                <Link className="hover:text-lightp " href="/events">
+                <Link className="hover:text-hotpink " href="/events">
                   Events
                 </Link>
               </li> */}
                             <li>
                                 <Link
-                                    className="hover:text-lightp "
+                                    className="hover:text-hotpink "
                                     href="/resources"
                                 >
                                     Resources
@@ -49,7 +54,7 @@ export default function Footer() {
                             </li>
                             <li>
                                 <Link
-                                    className="hover:text-lightp "
+                                    className="hover:text-hotpink "
                                     href="/about/officers"
                                 >
                                     Team
@@ -57,14 +62,14 @@ export default function Footer() {
                             </li>
                             <li>
                                 <Link
-                                    className="hover:text-lightp "
+                                    className="hover:text-hotpink "
                                     href="/contact"
                                 >
                                     Contact
                                 </Link>
                             </li>
                             {/* <li>
-                <Link className="hover:text-lightp " href="/blog">
+                <Link className="hover:text-hotpink " href="/blog">
                   Blog
                 </Link>
               </li> */}
@@ -75,7 +80,7 @@ export default function Footer() {
                                 target="_blank"
                                 className="px-2"
                             >
-                                <Mail className="hover:scale-150 hover:text-lightp w-6 h-6" />
+                                <Mail className="hover:scale-150 hover:text-hotpink w-6 h-6  duration-1000 ease-in-out" />
                             </a>
                             <a
                                 href="https://www.linkedin.com/company/hunterwics/"
@@ -84,7 +89,7 @@ export default function Footer() {
                             >
                                 <FontAwesomeIcon
                                     icon={faLinkedin}
-                                    className="hover:scale-150 hover:text-lightp w-6 h-6"
+                                    className="hover:scale-150 hover:text-hotpink w-6 h-6  duration-1000 ease-in-out"
                                 />
                             </a>
                             <a
@@ -94,7 +99,7 @@ export default function Footer() {
                             >
                                 <FontAwesomeIcon
                                     icon={faInstagram}
-                                    className="hover:scale-150 hover:text-lightp w-6 h-6"
+                                    className="hover:scale-150 hover:text-hotpink w-6 h-6 duration-1000 ease-in-out"
                                 />
                             </a>
                             <a
@@ -104,7 +109,7 @@ export default function Footer() {
                             >
                                 <FontAwesomeIcon
                                     icon={faDiscord}
-                                    className="hover:scale-150 hover:text-lightp w-6 h-6"
+                                    className="hover:scale-150 hover:text-hotpink w-6 h-6 duration-1000 ease-in-out"
                                 />
                             </a>
                         </div>
