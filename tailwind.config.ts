@@ -1,5 +1,8 @@
 import type { Config } from "tailwindcss";
 
+const plugin = require("tailwindcss/plugin");
+
+
 const config: Config = {
   darkMode: ["class"],
   content: [
@@ -11,7 +14,9 @@ const config: Config = {
     extend: {
       colors: {
         pink: "#FFAFCC",
+        hotpink: "#DB2777",
         lightp: "#B8C0FF",
+        grey: "#4B5563",
         background: "hsl(var(--background))",
         shadowp: "#C8B6FF",
         foreground: "hsl(var(--foreground))",
@@ -78,9 +83,24 @@ const config: Config = {
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
       },
+      fontFamily: {
+        inter: ["Inter", "sans-serif"],
+      },
     },
   },
-  plugins: [require("tailwindcss-animate"), require("tailwindcss-textshadow")],
+  plugins: [
+    require("tailwindcss-animate"),
+    require("tailwindcss-textshadow"),
+    plugin(function({ addBase } : {addBase: any}) {
+      addBase({
+        "html, body": {
+          margin: "0",
+          padding: "0",
+          backgroundColor: "#fef8f8",
+        },
+      });
+    })
+  ]
 };
 
 export default config;
