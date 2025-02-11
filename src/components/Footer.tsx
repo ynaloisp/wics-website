@@ -111,7 +111,7 @@ export default function Footer() {
                     </div>
                     <span className="block border-t border-[#4b55636b] my-4 w-[90%]"></span>
                     <h1 className=" text-[#4B5563] pb-2 text-sm">
-                        © 2025 Hunter WiCS All Rights Reserved.
+                        © 2025 Hunter WiCS. All rights reserved.
                     </h1>
                 </div>
             </div>
