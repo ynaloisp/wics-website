@@ -16,9 +16,11 @@ import { Calendar, Clock, MapPin } from "lucide-react";
 export default function Events() {
   return (
     <div className="font-inter ml-[10%] mr-[10%] mt-[5%] mb-[10%] space-y-16">
-      <div className="relative">
-        <div className="absolute inset-0 rotate-3 rounded-2xl bg-gradient-to-br from-[#FBCEEC] to-[#FDF2F8]"></div>
-        <div className="bg-white flex flex-col gap-5 rounded-2xl p-10 pb-[5%] -rotate-1">
+      <div
+        className="relative group transition-transform duration-500 hover:rotate-0"
+      >
+        <div className="absolute inset-0 rotate-3 rounded-2xl bg-gradient-to-br from-[#FBCEEC] to-[#FDF2F8] transition-transform duration-300 group-hover:rotate-0"></div>
+        <div className="bg-white flex flex-col gap-5 rounded-2xl p-10 pb-[5%] -rotate-1 transition-transform duration-300 group-hover:rotate-0">
           <h1 className="font-inter font-bold text-4xl">Upcoming Events</h1>
           <p className="font-inter text-lg">
             Join us for exciting workshops, talks, and networking opportunities!
