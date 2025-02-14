@@ -4,8 +4,8 @@
 @layer base {
   :root {
     --background: linear-gradient(90deg, rgba(253,242,248,1) 20%, rgba(255,255,255,1) 47%, rgba(253,242,248,1) 76%);
-    --card-background: linear-gradient(0deg, rgba(252,231,243,1) 0%, rgba(253,242,248,1) 100%);
-    --button-background : linear-gradient(0deg, rgba(219,39,119,1) 0%, rgba(252,231,243,1) 100%);
+    --card-background: linear-gradient(0deg, rgba(252,231,243,1) 0%, rgb(253, 242, 248) 17%);
+    --button-background: linear-gradient(90deg, rgba(251,206,236,1) 0%, rgba(252,231,243,1) 100%);
     --foreground: 0 0% 3.9%;
     --card: 0 0% 100%;
     --card-foreground: 0 0% 3.9%;
