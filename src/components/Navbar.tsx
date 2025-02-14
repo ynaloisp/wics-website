@@ -125,9 +125,9 @@ export default function Navbar() {
                 <li className="pb-0.5">
                   <Link
                     className={`font-semibold ${
-                      path == "/corporate " ? "text-hotpink" : "text-grey"
+                      path == "/about/officers" ? "text-hotpink" : "text-grey"
                     }`}
-                    href="/corporate"
+                    href="/about/officers"
                     onClick={() => {
                       setAboutDropdownOpen(false);
                       setEventsDropdownOpen(false);
