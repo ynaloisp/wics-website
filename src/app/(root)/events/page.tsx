@@ -15,9 +15,9 @@ import { Calendar, Clock, MapPin } from "lucide-react";
 
 export default function Events() {
   return (
-    <div className="bg-background-gradient mx-20 mt-20 mr-20 ml-20 space-y-8">
-      <div className="relative mr-20 ml-20 mt-20">
-        <div className="absolute inset-0 rotate-3 rounded-2xl bg-gradient-to-br from-[#FBCEEC] to-[#fef8f8]"></div>
+    <div className="ml-[10%] mr-[10%] mt-[5%] mb-[10%] space-y-16">
+      <div className="relative">
+        <div className="absolute inset-0 rotate-3 rounded-2xl bg-gradient-to-br from-[#FBCEEC] to-[#FDF2F8]"></div>
         <div className="bg-white flex flex-col gap-5 rounded-2xl p-10 pb-[5%] -rotate-1">
           <h1 className="font-inter font-bold text-4xl">Upcoming Events</h1>
           <p className="font-inter text-lg">
@@ -27,9 +27,9 @@ export default function Events() {
         </div>
       </div>
 
-      <div className="font-inter font-bold p-10 text-2xl space-y-4">
+      <div className="font-inter font-bold text-2xl space-y-4">
         <h1>Upcoming Event</h1>
-        <Card className="space-y-3">
+        <Card className="space-y-3 border-none">
           <CardHeader className="p-0">
             <Image
               src="https://th.bing.com/th/id/OIP.2N3yUqpMYG6VHxj1maGVpAHaEo?rs=1&pid=ImgDetMain"
@@ -70,11 +70,22 @@ export default function Events() {
         </Card>
       </div>
 
-      <div className="font-inter font-bold p-10 text-2xl space-y-4">
+      <div className="font-inter font-bold text-2xl space-y-2">
         Past Event Highlights
       </div>
 
-      <div className="rounded-2xl p-10">Want to Host an Event?</div>
+      <div className="bg-cardGradient rounded-2xl p-10 border border-1">
+        <div className="flex flex-col gap-4 items-center text-center space-y-4">
+          <h1 className="font-inter font-bold text-2xl">
+            Want to Host an Event?
+          </h1>
+          <p>
+            Have an idea for a workshop, tech talk, or any other event? We’d
+            love to hear from you!
+          </p>
+          <Button>Contact Us</Button>
+        </div>
+      </div>
     </div>
   );
 }
