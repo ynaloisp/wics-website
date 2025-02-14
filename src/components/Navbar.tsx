@@ -42,8 +42,8 @@ export default function Navbar() {
   const path = usePathname();
   console.log(path);
   return (
-    <div className="bg-[#fef8f8]">
-      <header className="bg-white text-pink py-4 shadow-[0px_6px_13.3px_rgba(0,0,0,0.25)] relative rounded-full mt-[2%] mx-auto font-inter font-semibold w-fit pl-8 pr-8">
+    <div className="">
+      <header className="text-pink py-4 shadow-[0px_6px_13.3px_rgba(0,0,0,0.25)] relative rounded-full mt-[2%] mx-auto font-inter font-semibold w-fit pl-8 pr-8">
         <div className="container">
           <div className="flex justify-center items-center">
             {/* <div className="flex items-center">
