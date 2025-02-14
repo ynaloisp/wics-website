@@ -15,20 +15,20 @@ import { Calendar, Clock, MapPin } from "lucide-react";
 
 export default function Events() {
   return (
-    <div className="font-inter ml-[10%] mr-[10%] mt-[5%] mb-[10%] space-y-16">
+    <div className="font-inter ml-[10%] mr-[10%] mt-[5%] mb-[13%] space-y-16">
       <div className="relative group transition-transform duration-500 hover:rotate-0">
-        <div className="absolute inset-0 rotate-3 rounded-2xl bg-gradient-to-br from-[#FBCEEC] to-[#FDF2F8] transition-transform duration-300 group-hover:rotate-0"></div>
+        <div className="absolute inset-0 rotate-3 rounded-2xl bg-bannerGradient transition-transform duration-300 group-hover:rotate-0"></div>
         <div className="bg-white flex flex-col gap-5 rounded-2xl p-10 pb-[5%] -rotate-1 transition-transform duration-300 group-hover:rotate-0">
-          <h1 className="font-inter font-bold text-4xl">Upcoming Events</h1>
-          <p className="font-inter text-lg">
+          <h1 className="font-bold text-4xl">Upcoming Events</h1>
+          <p className="text-lg">
             Join us for exciting workshops, talks, and networking opportunities!
           </p>
           <Button className="self-start w-fit">Submit an Event Idea</Button>
         </div>
       </div>
 
-      <div className="font-bold text-2xl space-y-6">
-        <h1>Upcoming Event</h1>
+      <div className="font-bold space-y-6">
+        <h1 className="text-2xl">Upcoming Event</h1>
         <Card className="space-y-3 border-none">
           <CardHeader className="p-0">
             <Image
@@ -43,23 +43,23 @@ export default function Events() {
           <CardContent className="space-y-4">
             <div>
               <p className="text-hotpink font-medium text-sm">Workshop</p>
-              <h2 className="font-[inter]">Web Development Fundamentals</h2>
+              <h2 className="text-xl">Web Development Fundamentals</h2>
             </div>
-            <div className="flex flex-col gap-2 text-sm text-500 text-lightg">
+            <div className="flex flex-col gap-2 text-sm font-medium text-lightg">
               <div className="flex items-center gap-2">
-                <Calendar className="h-4 w-4" />
+                <Calendar strokeWidth={3} className="h-4 w-4 font-lg" />
                 <span>March 15, 2025</span>
               </div>
               <div className="flex items-center gap-2">
-                <Clock className="h-4 w-4" />
+                <Clock strokeWidth={3} className="h-4 w-4" />
                 <span>2:00 PM - 4:00 PM</span>
               </div>
               <div className="flex items-center gap-2">
-                <MapPin className="h-4 w-4" />
+                <MapPin strokeWidth={3} className="h-4 w-4" />
                 <span>W605</span>
               </div>
             </div>
-            <p className="text-sm text-600 text-lightg">
+            <p className="text-sm font-medium text-lightg">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua.
             </p>
@@ -91,7 +91,7 @@ export default function Events() {
               </p>
             </CardContent>
             <CardFooter>
-              <button className="bg-white font-bold rounded-lg w-full border border-1 p-2">
+              <button className="bg-white font-semibold rounded-lg w-full border border-1 p-2">
                 View Recap
               </button>
             </CardFooter>
@@ -115,7 +115,7 @@ export default function Events() {
               </p>
             </CardContent>
             <CardFooter>
-              <button className="bg-white font-bold rounded-lg w-full border border-1 p-2">
+              <button className="bg-white font-semibold rounded-lg w-full border border-1 p-2">
                 View Recap
               </button>
             </CardFooter>
@@ -139,14 +139,14 @@ export default function Events() {
               </p>
             </CardContent>
             <CardFooter>
-              <button className="bg-white font-bold rounded-lg w-full border border-1 p-2">
+              <button className="bg-white font-semibold rounded-lg w-full border border-1 p-2">
                 View Recap
               </button>
             </CardFooter>
           </Card>
         </div>
         <div className="flex flex-col items-center">
-          <button className="bg-buttonGradient font-semibold rounded-lg p-2 pl-4 pr-4 text-grey mt-[2%]">
+          <button className="bg-buttonGradient font-semibold rounded-lg p-2 pl-5 pr-5 text-grey mt-[2%]">
             See More
           </button>
         </div>
@@ -155,7 +155,7 @@ export default function Events() {
       <div className="bg-cardGradient rounded-2xl p-10 border border-1">
         <div className="flex flex-col gap-4 items-center text-center space-y-4">
           <h1 className="font-bold text-2xl">Want to Host an Event?</h1>
-          <p>
+          <p className="font-medium text-grey">
             Have an idea for a workshop, tech talk, or any other event? We’d
             love to hear from you!
           </p>
