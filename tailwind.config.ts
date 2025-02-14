@@ -16,8 +16,9 @@ const config: Config = {
         pink: "#FFAFCC",
         hotpink: "#DB2777",
         lightp: "#B8C0FF",
+        lightg: "#71717A",
         grey: "#4B5563",
-        background: "hsl(var(--background))",
+        background: "var(--background)",
         shadowp: "#C8B6FF",
         foreground: "hsl(var(--foreground))",
         card: {
@@ -60,6 +61,10 @@ const config: Config = {
         },
       },
       backgroundImage: {
+        "background-gradient": "var(--background)",
+        "bannerGradient": "var(--banner-background)",
+        "cardGradient": "var(--card-background)",
+        "buttonGradient": "var(--button-background)",
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
@@ -88,19 +93,7 @@ const config: Config = {
       },
     },
   },
-  plugins: [
-    require("tailwindcss-animate"),
-    require("tailwindcss-textshadow"),
-    plugin(function({ addBase } : {addBase: any}) {
-      addBase({
-        "html, body": {
-          margin: "0",
-          padding: "0",
-          backgroundColor: "#fef8f8",
-        },
-      });
-    })
-  ]
+  plugins: [require("tailwindcss-animate"), require("tailwindcss-textshadow")],
 };
 
 export default config;
