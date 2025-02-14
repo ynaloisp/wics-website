@@ -2,7 +2,6 @@ import type { Config } from "tailwindcss";
 
 const plugin = require("tailwindcss/plugin");
 
-
 const config: Config = {
   darkMode: ["class"],
   content: [
@@ -88,19 +87,7 @@ const config: Config = {
       },
     },
   },
-  plugins: [
-    require("tailwindcss-animate"),
-    require("tailwindcss-textshadow"),
-    plugin(function({ addBase } : {addBase: any}) {
-      addBase({
-        "html, body": {
-          margin: "0",
-          padding: "0",
-          backgroundColor: "#fef8f8",
-        },
-      });
-    })
-  ]
+  plugins: [require("tailwindcss-animate"), require("tailwindcss-textshadow")],
 };
 
 export default config;
