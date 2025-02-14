@@ -63,6 +63,7 @@ const config: Config = {
       backgroundImage: {
         "background-gradient": "var(--background)",
         "cardGradient": "var(--card-background)",
+        "buttonGradient": "var(--card-background)",
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
