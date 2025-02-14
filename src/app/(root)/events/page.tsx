@@ -15,7 +15,7 @@ import { Calendar, Clock, MapPin } from "lucide-react";
 
 export default function Events() {
   return (
-    <div className="bg-[#fef8f8] mx-20 mt-20 mr-20 ml-20 space-y-8">
+    <div className="bg-background-gradient mx-20 mt-20 mr-20 ml-20 space-y-8">
       <div className="relative mr-20 ml-20 mt-20">
         <div className="absolute inset-0 rotate-3 rounded-2xl bg-gradient-to-br from-[#FBCEEC] to-[#fef8f8]"></div>
         <div className="bg-white flex flex-col gap-5 rounded-2xl p-10 pb-[5%] -rotate-1">
