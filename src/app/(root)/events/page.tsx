@@ -159,7 +159,9 @@ export default function Events() {
             Have an idea for a workshop, tech talk, or any other event? We’d
             love to hear from you!
           </p>
-          <Button>Contact Us</Button>
+          <a href="mailto:hunterwics@gmail.com">
+            <Button>Contact Us</Button>
+          </a>
         </div>
       </div>
     </div>
