@@ -76,7 +76,7 @@ export default function Navbar() {
               <ul className="flex flex-row items-center gap-10 md:text-lg lg:text-xl">
                 <li className="pb-0.5">
                   <Link
-                    className={`font-semibold ${
+                    className={`font-semibold text-grey hover:text-hotpink ${
                       path == "/" ? "text-hotpink" : "text-grey"
                     }`}
                     href="/"
@@ -92,7 +92,7 @@ export default function Navbar() {
 
                 <li className="pb-0.5">
                   <Link
-                    className={`font-semibold ${
+                    className={`font-semibold text-grey hover:text-hotpink ${
                       path == "/events" ? "text-hotpink" : "text-grey"
                     }`}
                     href="/events"
@@ -108,7 +108,7 @@ export default function Navbar() {
 
                 <li className="pb-0.5">
                   <Link
-                    className={`font-semibold ${
+                    className={`font-semibold text-grey hover:text-hotpink ${
                       path == "/resources" ? "text-hotpink" : "text-grey"
                     }`}
                     href="/resources"
@@ -124,7 +124,7 @@ export default function Navbar() {
 
                 <li className="pb-0.5">
                   <Link
-                    className={`font-semibold ${
+                    className={`font-semibold text-grey hover:text-hotpink ${
                       path == "/about/officers" ? "text-hotpink" : "text-grey"
                     }`}
                     href="/about/officers"
