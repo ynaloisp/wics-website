@@ -1,9 +1,19 @@
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Code, Laptop, Book, Users, Link } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import Image from "next/image";
 
 export default function Resources() {
   return (
-    <div className="font-inter min-h-screen space-y-16">
+    <div className="font-inter min-h-screen space-y-16 mb-[10%]">
       <div className="flex flex-col gap-4 items-center justify-center pt-10 ml-[25%] mr-[25%] text-center">
         <h1 className="text-4xl font-bold">Resources</h1>
         <p className="text-grey text-lg">
@@ -115,6 +125,28 @@ export default function Resources() {
             </div>
           </TabsContent>
         </Tabs>
+      </div>
+
+      <div className="bg-cardGradient p-10 rounded-lg grid grid-cols-2 gap-x-16 ml-[10%] mr-[10%] border border-[#E5E7EB]">
+        <div className="space-y-3">
+          <h1 className="font-bold text-2xl">
+            Featured: Coding Workshop Series
+          </h1>
+          <p className="text-grey">
+            Join our coding workshops where you’ll learn in-demand skills from
+            industry professionals. Perfect for beginners and intermediate
+            coders alike!
+          </p>
+          <Button variant="inverse">View Workshop Schedule</Button>
+        </div>
+        <Image
+          src="https://th.bing.com/th/id/OIP.2N3yUqpMYG6VHxj1maGVpAHaEo?rs=1&pid=ImgDetMain"
+          alt="External Image"
+          unoptimized
+          width={100}
+          height={200}
+          className="w-full h-[25vh] rounded-2xl"
+        />
       </div>
     </div>
   );
