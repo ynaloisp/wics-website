@@ -14,22 +14,27 @@ export default function Officers() {
     return (
         <div className="bg-[#fef8f8] min-h-screen">
             <div className="container mx-auto w-4/5 h-[40%] p-7 pt-20 sm:p-10 rounded-lg text-left flex flex-row items-center justify-between">
-              <div className="w-[50%] flex flex-col justify-center">
-                <h1 className="text-black text-5xl font-medium">
-                  Meet Our Team
-                </h1>
-                <p className="text-black text-l font-light">
-                  The dedicated individuals working to empower and promote
-                  women in technology at Hunter College.
-                </p>
-              </div>
-              <div className="flex flex-col items-center w-[50%]">
-                h3.text-black
-                <h1 className="text-2xl sm:text-3xl font-normal pt-4">
-                  Want to get more involved? Contact us at
-                  hunterwics@gmail.com
-                </h1>
-              </div>
+                <div className="w-[50%] flex flex-col justify-center">
+                    <h1 className="text-black text-5xl font-bold">
+                        Meet Our Team
+                    </h1>
+                    <p className="text-[#4B5563] text-l font-light">
+                        The dedicated individuals working to empower and promote
+                        women in technology at Hunter College.
+                    </p>
+                </div>
+                <div className="flex flex-col w-[45%] h-64 text-left items-left bg-white justify-center rounded-lg shadow-card">
+                    <h3 className="text-black text-l font-bold">Contact us:</h3>
+                    <p className="text-l font-normal pt-4 text-[#4B5563]">
+                        Reach the team:
+                    </p>
+                    <a
+                        href="mailto:hunterwics@gmail.com"
+                        className="text-[#f9679d] text-l font-normal underline hover:text-[#f9679d]"
+                    >
+                        hunterwics@gmail.com
+                    </a>
+                </div>
             </div>
             <div className="container mx-auto w-4/5 p-8 flex justify-around">
                 <div className="bg-[#cee1b9] h-auto w-72 py-4 m-8 text-center rounded-xl shadow-officer-card flex flex-col items-center">
