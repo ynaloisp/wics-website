@@ -23,17 +23,23 @@ export default function Officers() {
                         women in technology at Hunter College.
                     </p>
                 </div>
-                <div className="flex flex-col w-[45%] h-64 text-left items-left bg-white justify-center rounded-lg shadow-card">
-                    <h3 className="text-black text-l font-bold">Contact us:</h3>
-                    <p className="text-l font-normal pt-4 text-[#4B5563]">
-                        Reach the team:
-                    </p>
-                    <a
-                        href="mailto:hunterwics@gmail.com"
-                        className="text-[#f9679d] text-l font-normal underline hover:text-[#f9679d]"
-                    >
-                        hunterwics@gmail.com
-                    </a>
+                <div className="flex flex-col w-[45%] h-64 text-left items-left justify-center rounded-lg shadow-card padding-10 relative bg-white">
+                    <span className="bg-[#f9679d] blur-xl w-[100%] h-64 absolute top-0 left-0 z-0 opacity-50"></span>
+                    <span className="bg-white w-[100%] h-64 absolute top-0 left-0 opacity-50 justify-center rounded-lg"></span>
+                    <div className="z-3 opacity-100">
+                        <h3 className="text-black text-l font-bold opacity-100 z-2">
+                            Contact us:
+                        </h3>
+                        <p className="text-l font-normal pt-4 text-[#4B5563]">
+                            Reach the team:
+                        </p>
+                        <a
+                            href="mailto:hunterwics@gmail.com"
+                            className="text-[#f9679d] text-l font-normal underline hover:text-[#f9679d]"
+                        >
+                            hunterwics@gmail.com
+                        </a>
+                    </div>
                 </div>
             </div>
             <div className="container mx-auto w-4/5 p-8 flex justify-around">
