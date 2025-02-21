@@ -30,98 +30,166 @@ export default function Resources() {
           </TabsList>
           <TabsContent value="learning">
             <div className="grid grid-cols-2 grid-rows-2 gap-4 font-inter pt-8">
-              <div className="bg-white font-semibold p-3 border border-[#E5E7EB] rounded-lg">
-                <div className="flex items-center gap-2 p-2 justify-start pl-0">
-                  <Code
-                    strokeWidth={2}
-                    className="bg-[#FCE7F3] text-[#DB2777] rounded-full p-1.5 h-8 w-8"
-                  />
-                  <span className="text-xl">Introduction to Programming</span>
-                </div>
-                <a className="text-[#EC4899] text-sm">Learn More</a>
-              </div>
+              <Card>
+                <CardContent>
+                  <div className="space-y-2">
+                    <div className="flex items-center gap-4 pt-5 justify-start font-semibold">
+                      <Code
+                        strokeWidth={2}
+                        className="bg-[#FCE7F3] text-[#DB2777] rounded-full p-1.5 h-10 w-10"
+                      />
+                      <span className="text-xl">
+                        Introduction to Programming
+                      </span>
+                    </div>
+                    <div>
+                      <a className="text-[#EC4899] text-sm font-semibold">
+                        Learn More
+                      </a>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
 
-              <div className="bg-white font-semibold p-3 border border-[#E5E7EB] rounded-lg">
-                <div className="flex items-center gap-2 p-2 justify-start pl-0">
-                  <Laptop
-                    strokeWidth={2}
-                    className="bg-[#FCE7F3] text-[#DB2777] rounded-full p-1.5 h-8 w-8"
-                  />
-                  <span className="text-xl">Web Development Fundamentals</span>
-                </div>
-                <a className="text-[#EC4899] text-sm">Learn More</a>
-              </div>
+              <Card>
+                <CardContent>
+                  <div className="space-y-2">
+                    <div className="flex items-center gap-4 pt-5 justify-start font-semibold">
+                      <Laptop
+                        strokeWidth={2}
+                        className="bg-[#FCE7F3] text-[#DB2777] rounded-full p-1.5 h-10 w-10"
+                      />
+                      <span className="text-xl">
+                        Web Development Fundamentals
+                      </span>
+                    </div>
+                    <div>
+                      <a className="text-[#EC4899] text-sm font-semibold">
+                        Learn More
+                      </a>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
 
-              <div className="bg-white font-semibold p-3 border border-[#E5E7EB] rounded-lg">
-                <div className="flex items-center gap-2 p-2 justify-start pl-0">
-                  <Book
-                    strokeWidth={2}
-                    className="bg-[#FCE7F3] text-[#DB2777] rounded-full p-1.5 h-8 w-8"
-                  />
-                  <span className="text-xl">
-                    Data Structures and Algorithms
-                  </span>
-                </div>
-                <a className="text-[#EC4899] text-sm">Learn More</a>
-              </div>
+              <Card>
+                <CardContent>
+                  <div className="space-y-2">
+                    <div className="flex items-center gap-4 pt-5 justify-start font-semibold">
+                      <Book
+                        strokeWidth={2}
+                        className="bg-[#FCE7F3] text-[#DB2777] rounded-full p-1.5 h-10 w-10"
+                      />
+                      <span className="text-xl">
+                        Data Structures and Algorithms
+                      </span>
+                    </div>
+                    <div>
+                      <a className="text-[#EC4899] text-sm font-semibold">
+                        Learn More
+                      </a>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
 
-              <div className="bg-white font-semibold p-3 border border-[#E5E7EB] rounded-lg">
-                <div className="flex items-center gap-2 p-2 justify-start pl-0">
-                  <Book
-                    strokeWidth={2}
-                    className="bg-[#FCE7F3] text-[#DB2777] rounded-full p-1.5 h-8 w-8"
-                  />
-                  <span className="text-xl">Machine Learning Basics</span>
-                </div>
-                <a className="text-[#EC4899] text-sm">Learn More</a>
-              </div>
+              <Card>
+                <CardContent>
+                  <div className="space-y-2">
+                    <div className="flex items-center gap-4 pt-5 justify-start font-semibold">
+                      <Book
+                        strokeWidth={2}
+                        className="bg-[#FCE7F3] text-[#DB2777] rounded-full p-1.5 h-10 w-10"
+                      />
+                      <span className="text-xl">Machine Learning Basics</span>
+                    </div>
+                    <div>
+                      <a className="text-[#EC4899] text-sm font-semibold">
+                        Learn More
+                      </a>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
             </div>
           </TabsContent>
           <TabsContent value="career">
             <div className="grid grid-cols-2 grid-rows-2 gap-4 font-inter pt-8">
-              <div className="bg-white font-semibold p-3 border border-[#E5E7EB] rounded-lg">
-                <div className="flex items-center gap-2 p-2 justify-start pl-0">
-                  <Book
-                    strokeWidth={2}
-                    className="bg-[#FCE7F3] text-[#DB2777] rounded-full p-1.5 h-8 w-8"
-                  />
-                  <span className="text-xl">Resume Writing Guide</span>
-                </div>
-                <a className="text-[#EC4899] text-sm">Learn More</a>
-              </div>
+              <Card>
+                <CardContent>
+                  <div className="space-y-2">
+                    <div className="flex items-center gap-4 pt-5 justify-start font-semibold">
+                      <Book
+                        strokeWidth={2}
+                        className="bg-[#FCE7F3] text-[#DB2777] rounded-full p-1.5 h-10 w-10"
+                      />
+                      <span className="text-xl">Resume Writing Guide</span>
+                    </div>
+                    <div>
+                      <a className="text-[#EC4899] text-sm font-semibold">
+                        Learn More
+                      </a>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
 
-              <div className="bg-white font-semibold p-3 border border-[#E5E7EB] rounded-lg">
-                <div className="flex items-center gap-2 p-2 justify-start pl-0">
-                  <Users
-                    strokeWidth={2}
-                    className="bg-[#FCE7F3] text-[#DB2777] rounded-full p-1.5 h-8 w-8"
-                  />
-                  <span className="text-xl">Interview Preparation</span>
-                </div>
-                <a className="text-[#EC4899] text-sm">Learn More</a>
-              </div>
+              <Card>
+                <CardContent>
+                  <div className="space-y-2">
+                    <div className="flex items-center gap-4 pt-5 justify-start font-semibold">
+                      <Users
+                        strokeWidth={2}
+                        className="bg-[#FCE7F3] text-[#DB2777] rounded-full p-1.5 h-10 w-10"
+                      />
+                      <span className="text-xl">Interview Preparation</span>
+                    </div>
+                    <div>
+                      <a className="text-[#EC4899] text-sm font-semibold">
+                        Learn More
+                      </a>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
 
-              <div className="bg-white font-semibold p-3 border border-[#E5E7EB] rounded-lg">
-                <div className="flex items-center gap-2 p-2 justify-start pl-0">
-                  <Laptop
-                    strokeWidth={2}
-                    className="bg-[#FCE7F3] text-[#DB2777] rounded-full p-1.5 h-8 w-8"
-                  />
-                  <span className="text-xl">Internship Opportunities</span>
-                </div>
-                <a className="text-[#EC4899] text-sm">Learn More</a>
-              </div>
+              <Card>
+                <CardContent>
+                  <div className="space-y-2">
+                    <div className="flex items-center gap-4 pt-5 justify-start font-semibold">
+                      <Laptop
+                        strokeWidth={2}
+                        className="bg-[#FCE7F3] text-[#DB2777] rounded-full p-1.5 h-10 w-10"
+                      />
+                      <span className="text-xl">Internship Opportunities</span>
+                    </div>
+                    <div>
+                      <a className="text-[#EC4899] text-sm font-semibold">
+                        Learn More
+                      </a>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
 
-              <div className="bg-white font-semibold p-3 border border-[#E5E7EB] rounded-lg">
-                <div className="flex items-center gap-2 p-2 justify-start pl-0">
-                  <Link
-                    strokeWidth={2}
-                    className="bg-[#FCE7F3] text-[#DB2777] rounded-full p-1.5 h-8 w-8"
-                  />
-                  <span className="text-xl">Tech Industry Insights</span>
-                </div>
-                <a className="text-[#EC4899] text-sm">Learn More</a>
-              </div>
+              <Card>
+                <CardContent>
+                  <div className="space-y-2">
+                    <div className="flex items-center gap-4 pt-5 justify-start font-semibold">
+                      <Link
+                        strokeWidth={2}
+                        className="bg-[#FCE7F3] text-[#DB2777] rounded-full p-1.5 h-10 w-10"
+                      />
+                      <span className="text-xl">Tech Industry Insights</span>
+                    </div>
+                    <div>
+                      <a className="text-[#EC4899] text-sm font-semibold">
+                        Learn More
+                      </a>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
             </div>
           </TabsContent>
         </Tabs>
