@@ -195,8 +195,8 @@ export default function Resources() {
         </Tabs>
       </div>
 
-      <div className="bg-cardGradient p-10 rounded-lg grid grid-cols-2 gap-x-16 ml-[10%] mr-[10%] border border-[#E5E7EB]">
-        <div className="space-y-3">
+      <Card className="bg-cardGradient p-10 rounded-lg grid grid-cols-2 gap-x-16 ml-[10%] mr-[10%] border border-[#E5E7EB]">
+        <CardHeader className="space-y-3">
           <h1 className="font-bold text-2xl">
             Featured: Coding Workshop Series
           </h1>
@@ -205,17 +205,19 @@ export default function Resources() {
             industry professionals. Perfect for beginners and intermediate
             coders alike!
           </p>
-          <Button variant="inverse">View Workshop Schedule</Button>
-        </div>
-        <Image
-          src="https://th.bing.com/th/id/OIP.2N3yUqpMYG6VHxj1maGVpAHaEo?rs=1&pid=ImgDetMain"
-          alt="External Image"
-          unoptimized
-          width={100}
-          height={200}
-          className="w-full h-[25vh] rounded-2xl"
-        />
-      </div>
+          <Button className="w-fit" variant="inverse">View Workshop Schedule</Button>
+        </CardHeader>
+        <CardContent>
+          <Image
+            src="https://th.bing.com/th/id/OIP.2N3yUqpMYG6VHxj1maGVpAHaEo?rs=1&pid=ImgDetMain"
+            alt="External Image"
+            unoptimized
+            width={100}
+            height={200}
+            className="w-full h-[25vh] rounded-2xl"
+          />
+        </CardContent>
+      </Card>
     </div>
   );
 }
