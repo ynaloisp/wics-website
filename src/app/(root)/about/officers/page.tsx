@@ -7,14 +7,14 @@ import {
     ToastProvider,
 } from "@/components/ui/toast";
 import { SignedOut } from "@clerk/nextjs";
-
+import OfficerCard from "./card";
 //test
 
 export default function Officers() {
     return (
         <div className="bg-[#fef8f8] min-h-screen">
             <div className="container mx-auto w-4/5 h-[40%] p-7 pt-20 sm:p-10 rounded-lg text-left flex flex-row items-center justify-between">
-                <div className="w-[50%] flex flex-col justify-center">
+                <div className="w-[50%] h-40 flex flex-col justify-around">
                     <h1 className="text-black text-5xl font-bold">
                         Meet Our Team
                     </h1>
@@ -23,10 +23,8 @@ export default function Officers() {
                         women in technology at Hunter College.
                     </p>
                 </div>
-                <div className="flex flex-col w-[45%] h-64 text-left items-left justify-center rounded-lg shadow-card padding-10 relative bg-white">
-                    <span className="bg-[#f9679d] blur-xl w-[100%] h-64 absolute top-0 left-0 z-0 opacity-50"></span>
-                    <span className="bg-white w-[100%] h-64 absolute top-0 left-0 opacity-50 justify-center rounded-lg"></span>
-                    <div className="z-3 opacity-100">
+                <div className="flex flex-col w-[40%] h-48 text-left items-left justify-center rounded-lg shadow-card padding-10 relative bg-white">
+                    <div className="z-10 opacity-100 absolute left-[10%]">
                         <h3 className="text-black text-l font-bold opacity-100 z-2">
                             Contact us:
                         </h3>
@@ -40,8 +38,16 @@ export default function Officers() {
                             hunterwics@gmail.com
                         </a>
                     </div>
+                    {/* bg-[#f9679d] blur-xl w-[100%] min-h-48 absolute top-0 left-0 z-0 opacity-50 */}
+                    <span className="bg-[#f9679d] blur-xl w-[100%] min-h-48 absolute top-0 left-0 z-0 opacity-25"></span>
+                    <span className="bg-white w-[95%] h-auto absolute top-0 left-0 opacity-80 justify-center rounded-lg z-2"></span>
                 </div>
             </div>
+            <OfficerCard
+                title="Officer Title"
+                description="Officer Description"
+                imageUrl="/images/officers/Sarah-Levitan.jpg"
+            />
             <div className="container mx-auto w-4/5 p-8 flex justify-around">
                 <div className="bg-[#cee1b9] h-auto w-72 py-4 m-8 text-center rounded-xl shadow-officer-card flex flex-col items-center">
                     <Image
