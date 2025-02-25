@@ -22,7 +22,6 @@ const OfficerCard: React.FC<CardProps> = ({
                 src={imageUrl}
                 alt={title}
                 className="rounded-[50%] w-[30%] shadow-card object-cover z-10"
-                layout="responsive"
                 width={300}
                 height={300}
             />

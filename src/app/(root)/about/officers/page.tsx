@@ -12,7 +12,7 @@ import OfficerCard from "./card";
 
 export default function Officers() {
     return (
-        <div className="bg-[#fef8f8] min-h-screen">
+        <div className="min-h-screen from-[#fdf2f8] via-white to-[#fdf2f8]">
             <div className="container mx-auto w-4/5 h-[40%] p-7 pt-20 sm:p-10 rounded-lg text-left flex flex-row items-center justify-between">
                 <div className="w-[50%] h-40 flex flex-col justify-around">
                     <h1 className="text-black text-5xl font-bold">
@@ -43,6 +43,7 @@ export default function Officers() {
                     <span className="bg-white w-[95%] h-auto absolute top-0 left-0 opacity-80 justify-center rounded-lg z-2"></span>
                 </div>
             </div>
+
             <OfficerCard
                 title="Officer Title"
                 description="Officer Description"
