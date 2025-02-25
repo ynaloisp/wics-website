@@ -39,7 +39,7 @@ export default function Officers() {
                         </a>
                     </div>
                     {/* bg-[#f9679d] blur-xl w-[100%] min-h-48 absolute top-0 left-0 z-0 opacity-50 */}
-                    <span className="bg-[#f9679d] blur-xl w-[100%] min-h-48 absolute top-0 left-0 z-0 opacity-25"></span>
+                    <span className="bg-[#f9679d] blur-xl w-[100%] h-48 absolute top-0 left-0 z-0 opacity-25"></span>
                     <span className="bg-white w-[95%] h-auto absolute top-0 left-0 opacity-80 justify-center rounded-lg z-2"></span>
                 </div>
             </div>
@@ -47,6 +47,7 @@ export default function Officers() {
                 title="Officer Title"
                 description="Officer Description"
                 imageUrl="/images/officers/Sarah-Levitan.jpg"
+                major="Computer Science"
             />
             <div className="container mx-auto w-4/5 p-8 flex justify-around">
                 <div className="bg-[#cee1b9] h-auto w-72 py-4 m-8 text-center rounded-xl shadow-officer-card flex flex-col items-center">
@@ -55,7 +56,7 @@ export default function Officers() {
                         alt="Sarah Levitan"
                         width={300}
                         height={300}
-                        className="rounded-3xl w-3/5 shadow-card object-cover"
+                        className="rounded-3xl w-1/5 shadow-card object-cover"
                     />
                     <div className="p-4">
                         <h1 className="text-4xl font-medium text-[#fceee9] text-shadow-officer-name mb-2">
