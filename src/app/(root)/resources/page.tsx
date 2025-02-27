@@ -13,7 +13,7 @@ import Image from "next/image";
 
 export default function Resources() {
   return (
-    <div className="font-inter min-h-screen space-y-16 mb-[10%]">
+    <div className="font-inter min-h-screen space-y-16 mb-[15%] mt-[3%]">
       <div className="flex flex-col gap-4 items-center justify-center pt-10 ml-[25%] mr-[25%] text-center">
         <h1 className="text-4xl font-bold">Resources</h1>
         <p className="text-grey text-lg">
@@ -205,7 +205,9 @@ export default function Resources() {
             industry professionals. Perfect for beginners and intermediate
             coders alike!
           </p>
-          <Button className="w-fit" variant="inverse">View Workshop Schedule</Button>
+          <Button className="w-fit" variant="inverse">
+            View Workshop Schedule
+          </Button>
         </CardHeader>
         <CardContent>
           <Image
@@ -218,6 +220,30 @@ export default function Resources() {
           />
         </CardContent>
       </Card>
+
+      <div className="ml-[10%] mr-[10%] space-y-10">
+        <h1 className="font-bold text-2xl text-center">External Resources</h1>
+        <div className="grid grid-cols-3 gap-x-6">
+          <Card className="space-y-0 pb-0">
+            <CardHeader>
+              <p className="font-semibold text-lg">Girls Who Code</p>
+              <a className="text-hotpink text-sm">Visit Website</a>
+            </CardHeader>
+          </Card>
+          <Card className="space-y-0 pb-0">
+            <CardHeader>
+              <p className="font-semibold text-lg">Codeacademy</p>
+              <a className="text-hotpink text-sm">Visit Website</a>
+            </CardHeader>
+          </Card>
+          <Card className="space-y-0 pb-0">
+            <CardHeader>
+              <p className="font-semibold text-lg">Wecode</p>
+              <a className="text-hotpink text-sm">Visit Website</a>
+            </CardHeader>
+          </Card>
+        </div>
+      </div>
     </div>
   );
 }
