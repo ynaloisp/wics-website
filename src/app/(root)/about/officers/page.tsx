@@ -155,7 +155,7 @@ export default function Officers() {
                     <span className="bg-white w-[95%] h-auto absolute top-0 left-0 opacity-80 justify-center rounded-lg z-2"></span>
                 </div>
             </div>
-            <Tabs defaultValue="account" className="w-[400px]">
+            <Tabs defaultValue="faculty" className="w-[400px]">
                 <TabsList className="ml-[10%]">
                     <TabsTrigger value="faculty">Faculty Advisor</TabsTrigger>
                     <TabsTrigger value="eboard">Executive Board</TabsTrigger>
@@ -231,6 +231,22 @@ export default function Officers() {
                     </div>
                 </TabsContent>
             </Tabs>
+            <div className="flex flex-col w-[40%] h-48 text-left items-left justify-center rounded-lg shadow-card padding-10 relative bg-white">
+                <div className="z-10 opacity-100 absolute left-[10%]">
+                    <h3 className="text-black text-l font-bold opacity-100 z-2">
+                        Contact us:
+                    </h3>
+                    <p className="text-l font-normal pt-4 text-[#4B5563]">
+                        Reach the team:
+                    </p>
+                    <a
+                        href="mailto:hunterwics@gmail.com"
+                        className="text-[#f9679d] text-l font-normal underline hover:text-[#f9679d]"
+                    >
+                        hunterwics@gmail.com
+                    </a>
+                </div>
+            </div>
         </div>
     );
 }
