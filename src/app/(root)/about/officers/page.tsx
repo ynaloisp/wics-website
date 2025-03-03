@@ -26,14 +26,98 @@ const eboard = [
         imageUrl: "/images/officers/ynalois-pangilinan2.jpg",
     },
     {
-        title: "Selina Zheng",
-        description: "Web Master",
+        title: "Michelle Rivera Perez",
+        description: "Co-Secretary",
         major: "Computer Science",
         imageUrl: "/images/officers/Sarah-Levitan.jpg",
     },
     {
+        title: "Madina Monowara",
+        description: "Co-Secretary",
+        major: "Computer Science",
+        imageUrl: "/images/officers/Sarah-Levitan.jpg",
+    },
+    {
+        title: "Monae White",
+        description: "Treasurer",
+        major: "Computer Science",
+        imageUrl: "/images/officers/Sarah-Levitan.jpg",
+    },
+];
+const team = [
+    {
+        title: "Tarina Priti",
+        description: "Community Officer",
+        major: "Computer Science",
+        imageUrl: "/images/officers/Sarah-Levitan.jpg",
+    },
+    {
+        title: "Sanjida Fairuse",
+        description: "Community Officer",
+        major: "Computer Science",
+        imageUrl: "/images/officers/Sarah-Levitan.jpg",
+    },
+    {
+        title: "Kripamoye Biswas",
+        description: "Social Media Manager",
+        major: "Computer Science & Math Major",
+        imageUrl: "/images/officers/Sarah-Levitan.jpg",
+    },
+    {
+        title: "Angela Zhang",
+        description: "Social Media Manager",
+        major: "Computer Science",
+        imageUrl: "/images/officers/Sarah-Levitan.jpg",
+    },
+    {
+        title: "Valentina Quiroga",
+        description: "Graphic Designer",
+        major: "Computer Science",
+        imageUrl: "/images/officers/Sarah-Levitan.jpg",
+    },
+];
+const web = [
+    {
         title: "Selina Zheng",
         description: "Web Master",
+        major: "Computer Science and Chinese",
+        imageUrl: "/images/officers/Sarah-Levitan.jpg",
+    },
+    {
+        title: "Anita Prova",
+        description: "Web Master",
+        major: "Computer Science",
+        imageUrl: "/images/officers/Sarah-Levitan.jpg",
+    },
+];
+const workshop = [
+    {
+        title: "Ashleigh Wong",
+        description: "Tech Workshop Coordinator",
+        major: "Computer Science",
+        imageUrl: "/images/officers/AshleighWong.jpg",
+    },
+    {
+        title: "Makiya Laurenza",
+        description: "Tech Workshop Coordinator",
+        major: "Computer Science",
+        imageUrl: "/images/officers/Sarah-Levitan.jpg",
+    },
+    {
+        title: "Marie Cari",
+        description: "Tech Workshop Coordinator",
+        major: "Computer Science & Math Major",
+        imageUrl: "/images/officers/Sarah-Levitan.jpg",
+    },
+    {
+        title: "Bode Chiu",
+        description: "Tech Workshop Coordinator",
+        major: "Computer Science",
+        imageUrl: "/images/officers/Sarah-Levitan.jpg",
+    },
+    {
+        title: "Sy’rai Pierre",
+        description: "Tech Workshop Coordinator",
         major: "Computer Science",
         imageUrl: "/images/officers/Sarah-Levitan.jpg",
     },
@@ -97,6 +181,45 @@ export default function Officers() {
                 <TabsContent value="eboard" className="w-screen">
                     <div className="container mx-auto w-4/5 h-auto p-7 pt-20 sm:p-10 rounded-lg text-left flex flex-wrap items-center justify-around">
                         {eboard.map((item, index) => (
+                            <OfficerCard
+                                key={index}
+                                title={item.title}
+                                description={item.description}
+                                imageUrl={item.imageUrl}
+                                major={item.major}
+                            />
+                        ))}
+                    </div>
+                </TabsContent>
+                <TabsContent value="team" className="w-screen">
+                    <div className="container mx-auto w-4/5 h-auto p-7 pt-20 sm:p-10 rounded-lg text-left flex flex-wrap items-center justify-around">
+                        {team.map((item, index) => (
+                            <OfficerCard
+                                key={index}
+                                title={item.title}
+                                description={item.description}
+                                imageUrl={item.imageUrl}
+                                major={item.major}
+                            />
+                        ))}
+                    </div>
+                </TabsContent>
+                <TabsContent value="web" className="w-screen">
+                    <div className="container mx-auto w-4/5 h-auto p-7 pt-20 sm:p-10 rounded-lg text-left flex flex-wrap items-center justify-around">
+                        {web.map((item, index) => (
+                            <OfficerCard
+                                key={index}
+                                title={item.title}
+                                description={item.description}
+                                imageUrl={item.imageUrl}
+                                major={item.major}
+                            />
+                        ))}
+                    </div>
+                </TabsContent>
+                <TabsContent value="workshop" className="w-screen">
+                    <div className="container mx-auto w-4/5 h-auto p-7 pt-20 sm:p-10 rounded-lg text-left flex flex-wrap items-center justify-around">
+                        {workshop.map((item, index) => (
                             <OfficerCard
                                 key={index}
                                 title={item.title}
