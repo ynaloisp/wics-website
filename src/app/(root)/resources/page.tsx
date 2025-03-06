@@ -13,7 +13,7 @@ import Image from "next/image";
 
 export default function Resources() {
   return (
-    <div className="font-inter min-h-screen space-y-16 mb-[15%] mt-[3%]">
+    <div className="font-inter min-h-screen space-y-16 mb-[15%] mt-[1%]">
       <div className="flex flex-col gap-4 items-center justify-center pt-10 ml-[25%] mr-[25%] text-center">
         <h1 className="text-4xl font-bold">Resources</h1>
         <p className="text-grey text-lg">
@@ -24,7 +24,7 @@ export default function Resources() {
 
       <div className="ml-[10%] mr-[10%]">
         <Tabs defaultValue="career" className="">
-          <TabsList className="w-full">
+          <TabsList className="w-full bg-pink/25">
             <TabsTrigger value="career">Career</TabsTrigger>
             <TabsTrigger value="learning">Learning</TabsTrigger>
           </TabsList>
@@ -196,7 +196,7 @@ export default function Resources() {
       </div>
 
       <Card className="bg-cardGradient p-10 rounded-lg grid grid-cols-2 gap-x-16 ml-[10%] mr-[10%] border border-[#E5E7EB]">
-        <CardHeader className="space-y-3">
+        <CardHeader className="flex justify-center space-y-3">
           <h1 className="font-bold text-2xl">
             Featured: Coding Workshop Series
           </h1>
@@ -205,7 +205,10 @@ export default function Resources() {
             industry professionals. Perfect for beginners and intermediate
             coders alike!
           </p>
-          <Button className="w-fit" variant="inverse">
+          <Button
+            className="w-fit hover:bg-hotpink hover:text-white hover:animate-scale-up-center"
+            variant="inverse"
+          >
             View Workshop Schedule
           </Button>
         </CardHeader>
