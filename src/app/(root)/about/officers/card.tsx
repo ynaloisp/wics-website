@@ -9,6 +9,9 @@ interface CardProps {
     description: string;
     major: string;
     imageUrl: string;
+    linkedin: string;
+    github: string;
+    email: string;
 }
 
 const OfficerCard: React.FC<CardProps> = ({
@@ -16,6 +19,9 @@ const OfficerCard: React.FC<CardProps> = ({
     description,
     major,
     imageUrl,
+    linkedin,
+    github,
+    email,
 }) => {
     return (
         <div className="flex flex-col w-[45%] h-80 items-left justify-center items-center rounded-lg shadow-card padding-10 relative bg-white text-center mb-10 shadow-md">
@@ -44,7 +50,10 @@ const OfficerCard: React.FC<CardProps> = ({
                         target="_blank"
                         className="px-2"
                     >
-                        <Mail className="hover:scale-150 hover:text-hotpink w-6 h-6  duration-1000 ease-in-out" />
+                        <Mail
+                            href={email}
+                            className="hover:scale-150 hover:text-hotpink w-6 h-6  duration-1000 ease-in-out"
+                        />
                     </a>
                     <a
                         href="https://www.linkedin.com/company/hunterwics/"
@@ -53,6 +62,7 @@ const OfficerCard: React.FC<CardProps> = ({
                     >
                         <FontAwesomeIcon
                             icon={faLinkedin}
+                            href={linkedin}
                             className="hover:scale-150 hover:text-hotpink w-6 h-6  duration-1000 ease-in-out"
                         />
                     </a>
@@ -63,6 +73,7 @@ const OfficerCard: React.FC<CardProps> = ({
                     >
                         <FontAwesomeIcon
                             icon={faGithub}
+                            href={github}
                             className="hover:scale-150 hover:text-hotpink w-6 h-6  duration-1000 ease-in-out"
                         />
                     </a>
