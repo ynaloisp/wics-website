@@ -230,6 +230,9 @@ export default function Officers() {
                                 description={item.description}
                                 imageUrl={item.imageUrl}
                                 major={item.major}
+                                linkedin={item.linkedin}
+                                github={item.github}
+                                email={item.email}
                             />
                         ))}
                     </div>
@@ -243,6 +246,9 @@ export default function Officers() {
                                 description={item.description}
                                 imageUrl={item.imageUrl}
                                 major={item.major}
+                                linkedin={item.linkedin}
+                                github={item.github}
+                                email={item.email}
                             />
                         ))}
                     </div>
@@ -256,6 +262,9 @@ export default function Officers() {
                                 description={item.description}
                                 imageUrl={item.imageUrl}
                                 major={item.major}
+                                linkedin={item.linkedin}
+                                github={item.github}
+                                email={item.email}
                             />
                         ))}
                     </div>
@@ -269,6 +278,9 @@ export default function Officers() {
                                 description={item.description}
                                 imageUrl={item.imageUrl}
                                 major={item.major}
+                                linkedin={item.linkedin}
+                                github={item.github}
+                                email={item.email}
                             />
                         ))}
                     </div>
@@ -282,6 +294,9 @@ export default function Officers() {
                                 description={item.description}
                                 imageUrl={item.imageUrl}
                                 major={item.major}
+                                linkedin={item.linkedin}
+                                github={item.github}
+                                email={item.email}
                             />
                         ))}
                     </div>
