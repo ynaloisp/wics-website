@@ -2,7 +2,6 @@ import type { Config } from "tailwindcss";
 
 const plugin = require("tailwindcss/plugin");
 
-
 const config: Config = {
   darkMode: ["class"],
   content: [

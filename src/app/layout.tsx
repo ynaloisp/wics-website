@@ -22,7 +22,9 @@ export default function RootLayout({
   return (
     <ClerkProvider>
       <html lang="en">
-        <body className={inter.className}>
+        <body
+          className={`{inter.className} bg-gradient-to-r from-[#fdf2f8] via-white to-[#fdf2f8]`}
+        >
           <Navbar />
           {children}
           <Footer />
