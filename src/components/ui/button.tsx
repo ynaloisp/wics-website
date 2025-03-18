@@ -11,6 +11,8 @@ const buttonVariants = cva(
       variant: {
         default:
           "bg-hotpink text-primary-foreground shadow hover:bg-primary/90",
+        inverse: 
+          "bg-white text-hotpink border border-hotpink border-2",
         destructive:
           "bg-destructive text-destructive-foreground shadow-sm hover:bg-destructive/90",
         outline:
