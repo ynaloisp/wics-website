@@ -24,9 +24,9 @@ const OfficerCard: React.FC<CardProps> = ({
     email,
 }) => {
     return (
-        <div className="flex flex-col w-[45%] h-80 items-left justify-center items-center rounded-lg shadow-card padding-10 relative bg-white text-center mb-10 shadow-md">
-            <span className="bg-[#f9679d] blur-3xl w-[100%] h-[100%] absolute top-0 left-0 z-0 opacity-25"></span>
-            <span className="bg-white w-[95%] h-auto absolute top-0 left-0 justify-center rounded-lg z-2 shadow-xl"></span>
+        <div className="flex flex-col w-[45%] h-80 items-left justify-center items-center rounded-lg shadow-card padding-10 relative text-center mb-10 shadow-md">
+            <span className="absolute inset-0 bg-gradient-to-r from-[#ec4899] to-[#f472b6] rounded-lg blur-lg opacity-25 group-hover:opacity-40 transition-opacity w-[101%] h-[101%]"></span>
+            <span className="absolute bg-white/50 backdrop-blur-sm border-0 rounded-lg w-[98%] h-[100%]"></span>
             <Image
                 src={imageUrl}
                 alt={title}
