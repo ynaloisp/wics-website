@@ -191,8 +191,8 @@ export default function Officers() {
                         women in technology at Hunter College.
                     </p>
                 </div>
-                <div className="flex flex-col w-[40%] h-48 text-left items-left justify-center rounded-lg shadow-card padding-10 relative bg-white">
-                    <div className="z-10 opacity-100 absolute left-[10%]">
+                <div className="flex flex-col w-[40%] h-48 text-left items-left justify-center rounded-lg shadow-card padding-10 relative">
+                    <div className="z-10 opacity-100 absolute left-[10%] ">
                         <h3 className="text-black text-l font-bold opacity-100 z-2">
                             Contact us:
                         </h3>
@@ -207,8 +207,8 @@ export default function Officers() {
                         </a>
                     </div>
                     {/* bg-[#f9679d] blur-xl w-[100%] min-h-48 absolute top-0 left-0 z-0 opacity-50 */}
-                    <span className="bg-[#f9679d] blur-xl w-[100%] h-48 absolute top-0 left-0 z-0 opacity-25"></span>
-                    <span className="bg-white w-[95%] h-auto absolute top-0 left-0 opacity-80 justify-center rounded-lg z-2"></span>
+                    <span className="absolute inset-0 bg-gradient-to-r from-[#ec4899] to-[#f472b6] rounded-lg blur-lg opacity-25 group-hover:opacity-40 transition-opacity w-[101%] h-[101%]"></span>
+                    <span className="relative bg-white/50 backdrop-blur-sm border-0 rounded-lg w-[98%] h-[100%]"></span>
                 </div>
             </div>
             <Tabs defaultValue="faculty" className="w-[400px]">

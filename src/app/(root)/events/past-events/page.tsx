@@ -1,7 +1,135 @@
-export default function PastEvents() {
-  return (
-    <div className="bg-background min-h-screen">
-      <h1>Past events</h1>
-    </div>
-  );
+import { Button } from "@/components/ui/button";
+import {
+    Card,
+    CardContent,
+    CardDescription,
+    CardFooter,
+    CardHeader,
+    CardTitle,
+} from "@/components/ui/card";
+import Image from "next/image";
+
+import { Car } from "lucide-react";
+import { Badge } from "@/components/ui/badge";
+import { Calendar, Clock, MapPin } from "lucide-react";
+import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
+import Link from "next/link";
+
+export default function Events() {
+    return (
+        <div className="font-inter ml-[10%] mr-[10%] mt-[5%] mb-[13%] space-y-16">
+            <div className="font-bold space-y-6">
+                <h1 className="text-4xl">Break Through Tech</h1>
+                <div className="flex flex-row gap-2 text-sm font-medium text-lightg">
+                    <div className="flex items-center gap-2">
+                        <Calendar strokeWidth={3} className="h-4 w-4 font-lg" />
+                        <span>March 15, 2025</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                        <Clock strokeWidth={3} className="h-4 w-4" />
+                        <span>2:00 PM - 4:00 PM</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                        <MapPin strokeWidth={3} className="h-4 w-4" />
+                        <span>W605</span>
+                    </div>
+                </div>
+                <Tabs defaultValue="highlights" className="w-full">
+                    <TabsList className="bg-[#fdf2f8] text-grey">
+                        <TabsTrigger value="highlights">Highlights</TabsTrigger>
+                        <TabsTrigger value="gallery">Gallery</TabsTrigger>
+                    </TabsList>
+                    <TabsContent value="highlights" className="space-y-4">
+                        <Card className="space-y-3 border border-gray-300  items-center justify-center">
+                            <CardContent className="space-y-4">
+                                <div className="flex flex-row gap-4 w-[100%] items-center justify-center padding-10">
+                                    <div className="flex flex-col items-left gap-4 w-[45%]">
+                                        <h2 className="text-2xl">
+                                            Event Highlights
+                                        </h2>
+                                        <p className=" font-medium text-sm">
+                                            Lorem ipsum dolor sit amet,
+                                            consectetur adipiscing elit, sed do
+                                            eiusmod tempor incididunt ut labore
+                                            et dolore magna aliqua. Ut enim ad
+                                            minim veniam, quis nostrud
+                                            exercitation ullamco laboris nisi ut
+                                            aliquip
+                                        </p>
+                                        <h2 className="text-xl">
+                                            Key Takeaways
+                                        </h2>
+                                        <ul className="list-disc pl-5 space-y-2 font-medium text-sm">
+                                            <li>
+                                                Networking opportunities with
+                                                industry professionals
+                                            </li>
+                                            <li>
+                                                Insights into the latest
+                                                technology trends
+                                            </li>
+                                            <li>
+                                                Hands-on workshops and
+                                                interactive sessions
+                                            </li>
+                                        </ul>
+                                        <h2 className="text-xl">Speakers</h2>
+                                        <ul className="list-disc pl-5 space-y-2 font-medium text-sm">
+                                            <li>
+                                                Networking opportunities with
+                                                industry professionals
+                                            </li>
+                                            <li>
+                                                Insights into the latest
+                                                technology trends
+                                            </li>
+                                            <li>
+                                                Hands-on workshops and
+                                                interactive sessions
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div className="w-[50%] h-[100%] items-center justify-center">
+                                        <Image
+                                            src="\images\event\BTT-Info-Session.png"
+                                            alt="External Image"
+                                            unoptimized
+                                            width={100}
+                                            height={200}
+                                            className="w-[95%] h-[85vh] rounded-xl margin-0"
+                                        />
+                                    </div>
+                                </div>
+                            </CardContent>
+                        </Card>
+                    </TabsContent>
+                    <TabsContent
+                        value="gallery"
+                        className="space-y-4 items-center justify-center"
+                    >
+                        <Card className="space-y-3 border border-gray-300">
+                            <CardContent className="space-y-4">
+                                <div className="flex flex-col items-left gap-4 w-[100%]">
+                                    <div className="flex flex-col items-left gap-4">
+                                        <h2 className="text-2xl">
+                                            Event Gallery
+                                        </h2>
+
+                                        <Image
+                                            src="https://th.bing.com/th/id/OIP.2N3yUqpMYG6VHxj1maGVpAHaEo?rs=1&pid=ImgDetMain"
+                                            alt="External Image"
+                                            unoptimized
+                                            width={100}
+                                            height={200}
+                                            className="w-[100%] h-[55vh] rounded-xl"
+                                        />
+                                    </div>
+                                </div>
+                            </CardContent>
+                        </Card>
+                    </TabsContent>
+                </Tabs>
+            </div>
+        </div>
+    );
 }
