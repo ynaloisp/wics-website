@@ -128,9 +128,9 @@ export default function Events() {
                                                 src="https://th.bing.com/th/id/OIP.2N3yUqpMYG6VHxj1maGVpAHaEo?rs=1&pid=ImgDetMain"
                                                 alt="External Image"
                                                 unoptimized
-                                                width={100}
+                                                width={1000}
                                                 height={200}
-                                                className="w-[90%] h-[55vh] rounded-xl items-center justify-center"
+                                                className="w-[70vw] h-[55vh] rounded-xl items-center justify-center"
                                             />
                                         </div>
                                         <div className="flex flex-col items-center gap-4 w-[100%] h-[20%] justify-center">
