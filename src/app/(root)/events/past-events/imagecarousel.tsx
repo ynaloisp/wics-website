@@ -15,20 +15,20 @@ interface ImageProps {
 
 const ImageCarouselContent: React.FC<ImageProps> = ({ images }) => {
     return (
-        <Carousel className="w-full max-w-xs">
+        <Carousel className="w-full ">
             <CarouselContent>
                 {images.map((imageUrl, index) => (
                     <CarouselItem
                         key={index}
-                        className="md:basis-1/2 lg:basis-1/3"
+                        className="md:basis-1/2 lg:basis-1/4"
                     >
-                        <div className="p-1">
+                        <div className="items-center justify-center flex">
                             <Image
                                 width={500}
                                 height={200}
                                 src={imageUrl}
                                 alt={`Image ${index + 1}`}
-                                className="aspect-video rounded-md object-cover"
+                                className="w-[13.5vw] h-[20vh] rounded-md object-cover"
                             />
                         </div>
                     </CarouselItem>
