@@ -14,6 +14,15 @@ import { Badge } from "@/components/ui/badge";
 import { Calendar, Clock, MapPin } from "lucide-react";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 import Link from "next/link";
+import ImageCarouselContent from "./imagecarousel";
+
+const imageList = [
+    "/images/officers/Sarah-Levitan.jpg",
+    "/images/event/Behavioral-Interview-Prep.png",
+    "/images/event/BTT-Info-Session.png",
+    "/images/event/cookie-decorating-team.jpg",
+    "/images/event/cookie-decorating-team.jpg",
+];
 
 export default function Events() {
     return (
@@ -42,7 +51,7 @@ export default function Events() {
                     <TabsContent value="highlights" className="space-y-4">
                         <Card className="space-y-3 border border-gray-300  items-center justify-center">
                             <CardContent className="space-y-4">
-                                <div className="flex flex-row gap-4 w-[100%] items-center justify-center padding-10">
+                                <div className="flex flex-row gap-4 w-[100%] h-[90vh] items-center justify-center padding-10">
                                     <div className="flex flex-col items-left gap-4 w-[45%]">
                                         <h2 className="text-2xl">
                                             Event Highlights
@@ -89,14 +98,14 @@ export default function Events() {
                                             </li>
                                         </ul>
                                     </div>
-                                    <div className="w-[50%] h-[100%] items-center justify-center">
+                                    <div className="flex flex-col items-right gap-4 w-[40%] h-[90%] justify-center">
                                         <Image
                                             src="\images\event\BTT-Info-Session.png"
                                             alt="External Image"
                                             unoptimized
                                             width={100}
                                             height={200}
-                                            className="w-[95%] h-[85vh] rounded-xl margin-0"
+                                            className="w-[90%] h-[100%] rounded-xl margin-0"
                                         />
                                     </div>
                                 </div>
@@ -109,20 +118,26 @@ export default function Events() {
                     >
                         <Card className="space-y-3 border border-gray-300">
                             <CardContent className="space-y-4">
-                                <div className="flex flex-col items-left gap-4 w-[100%]">
-                                    <div className="flex flex-col items-left gap-4">
-                                        <h2 className="text-2xl">
-                                            Event Gallery
-                                        </h2>
-
-                                        <Image
-                                            src="https://th.bing.com/th/id/OIP.2N3yUqpMYG6VHxj1maGVpAHaEo?rs=1&pid=ImgDetMain"
-                                            alt="External Image"
-                                            unoptimized
-                                            width={100}
-                                            height={200}
-                                            className="w-[100%] h-[55vh] rounded-xl"
-                                        />
+                                <div className="flex flex-col items-center gap-4 w-[100%] justify-center padding-10">
+                                    <div className="flex flex-col items-center justify-center gap-4">
+                                        <div className="flex flex-col  items-right justify-center padding-10 h-[20%]">
+                                            <h2 className="text-2xl left-0 top-10">
+                                                Event Gallery
+                                            </h2>
+                                            <Image
+                                                src="https://th.bing.com/th/id/OIP.2N3yUqpMYG6VHxj1maGVpAHaEo?rs=1&pid=ImgDetMain"
+                                                alt="External Image"
+                                                unoptimized
+                                                width={100}
+                                                height={200}
+                                                className="w-[90%] h-[55vh] rounded-xl items-center justify-center"
+                                            />
+                                        </div>
+                                        <div className="flex flex-col items-center gap-4 w-[100%] h-[20%] justify-center">
+                                            <ImageCarouselContent
+                                                images={imageList}
+                                            />
+                                        </div>
                                     </div>
                                 </div>
                             </CardContent>
