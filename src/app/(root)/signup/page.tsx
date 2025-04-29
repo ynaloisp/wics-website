@@ -1,8 +1,12 @@
 "use client";
 import { useState } from "react";
-import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
-import { useRouter } from "next/navigation";
-import { auth } from "../../../firebase";
+import {
+  getAuth,
+  createUserWithEmailAndPassword,
+  sendEmailVerification,
+} from "firebase/auth";
+import { getFirestore, collection, getDocs } from "firebase/firestore";
+import { db } from "../../../firebase.js";
 import { Button } from "@/components/ui/button";
 
 export default function Login() {
@@ -11,21 +15,36 @@ export default function Login() {
   const [error, setError] = useState("");
 
   const auth = getAuth();
-  const handleSignUp = (e) => {
-    e.preventDefault();
+  const handleSignUp = async (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
     setError("");
-    createUserWithEmailAndPassword(auth, email, password)
-      .then((userCredential) => {
-        const user = userCredential.user;
-        console.log(user);
-      })
-      .catch((error) => {
-        const errorCode = error.code;
-        const errorMessage = error.message;
-      });
+    try {
+      const snapshot = await getDocs(collection(db, "whitelist"));
+      const isWhitelisted = snapshot.docs.some(
+        (doc) => doc.data().email.toLowerCase() === email.toLowerCase()
+      );
 
-    setEmail("");
-    setPassword("");
+      if (!isWhitelisted) {
+        setError("This email is not authorized to sign up.");
+        return;
+      }
+
+      const userCredential = await createUserWithEmailAndPassword(
+        auth,
+        email,
+        password
+      ).then(async (userCredentials) => {
+        const user = userCredentials.user;
+        await sendEmailVerification(user);
+        alert("Go to your email and verify your account.")
+      });
+      
+      setEmail("");
+      setPassword("");
+    } catch (err: any) {
+      console.error(err);
+      setError(err.message || "Something went wrong.");
+    }
   };
 
   return (
