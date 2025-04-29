@@ -1,6 +1,9 @@
 "use client";
 import { useState } from "react";
-import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
+import {
+  getAuth,
+  signInWithEmailAndPassword,
+} from "firebase/auth";
 import { useRouter } from "next/navigation";
 import { auth } from "../../../firebase"; 
 import { Button } from "@/components/ui/button";
@@ -9,12 +12,19 @@ export default function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
+  const router = useRouter();
 
   const handleLogin = async (e) => {
 		e.preventDefault();
+    const { currentUser } = getAuth();
+    console.log(currentUser);
     try {
-      await signInWithEmailAndPassword(auth, email, password);
-      console.log("Success");
+      if (currentUser && currentUser.emailVerified) {
+        await signInWithEmailAndPassword(auth, email, password);
+        console.log("Success");
+      } else {
+        console.log(currentUser, "Not verified");
+      }
     } catch (error) {
       setError("Invalid email or password");
     }
@@ -43,6 +53,14 @@ export default function Login() {
         <Button type="submit" className="w-fit">
           Login
         </Button>
+        <p
+          className="w-fit text-xs underline"
+          onClick={() => {
+            router.push("/forgetPassword");
+          }}
+        >
+          Forget Password
+        </p>
       </form>
       {error && <p style={{ color: "red" }}>{error}</p>}
     </div>
