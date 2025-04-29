@@ -1,16 +1,21 @@
 "use client";
 import { useState } from "react";
 import { sendPasswordResetEmail } from "firebase/auth";
-import { auth } from "../../../firebase"; 
+import { auth } from "../../../firebase";
 import { Button } from "@/components/ui/button";
 
 export default function Login() {
   const [email, setEmail] = useState("");
   const [error, setError] = useState("");
 
-  const resetEmail = async () => {
-    await sendPasswordResetEmail(auth, email);
-    console.log("Password reset email sent");
+  const resetEmail = async (e) => {
+    e.preventDefault();
+    try {
+      await sendPasswordResetEmail(auth, email);
+      console.log("Password reset email sent");
+    } catch (error) {
+      setError("Invalid email or password");
+    }
   };
 
   return (
