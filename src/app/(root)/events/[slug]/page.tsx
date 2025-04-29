@@ -38,8 +38,7 @@ const Events: React.FC<CardProps> = () => {
     console.log("Slug:", slug);
     const post = blogPosts.find((post) => post.slug === slug);
 
-    const id = post ? blogPosts.indexOf(post) : 1; // Handle undefined post by assigning -1
-
+    const id = post ? blogPosts.indexOf(post) : 1;
     return (
         <div className="font-inter ml-[10%] mr-[10%] mt-[5%] mb-[13%] space-y-16">
             <div className="font-bold space-y-6">
