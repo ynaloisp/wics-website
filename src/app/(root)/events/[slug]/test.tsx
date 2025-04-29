@@ -38,6 +38,6 @@ export const blogPosts = [
         date: "March 15, 2025",
         time: "10:00 AM - 12:00 PM",
         location: "W605",
-        speakers: ["Mary Sue", "Xiao Ming", "Li Bai"],
+        speakers: ["Selina Zheng", "Xiao Ming", "Li Bai"],
     },
 ];
