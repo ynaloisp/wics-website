@@ -1,3 +1,5 @@
+"use client";
+
 import { Button } from "@/components/ui/button";
 import {
     Card,
@@ -15,6 +17,9 @@ import { Calendar, Clock, MapPin } from "lucide-react";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 import Link from "next/link";
 import ImageCarouselContent from "./imagecarousel";
+import { useRouter } from "next/navigation";
+import { blogPosts } from "./test";
+import { useSearchParams } from "next/navigation";
 
 const imageList = [
     "/images/officers/Sarah-Levitan.jpg",
@@ -24,23 +29,33 @@ const imageList = [
     "/images/event/cookie-decorating-team.jpg",
 ];
 
-export default function Events() {
+interface CardProps {}
+
+const Events: React.FC<CardProps> = () => {
+    const router = useRouter();
+    const searchParams = useSearchParams();
+    const slug = searchParams.get("slug");
+
+    const idFromRouter = slug ? parseInt(slug, 10) : 0; // Convert slug to a number
+
+    const id = slug ? parseInt(slug, 10) : idFromRouter; // Use idFromRouter as fallback
+
     return (
         <div className="font-inter ml-[10%] mr-[10%] mt-[5%] mb-[13%] space-y-16">
             <div className="font-bold space-y-6">
-                <h1 className="text-4xl">Break Through Tech</h1>
+                <h1 className="text-4xl">{blogPosts[id].title}</h1>
                 <div className="flex flex-row gap-2 text-sm font-medium text-lightg">
                     <div className="flex items-center gap-2">
                         <Calendar strokeWidth={3} className="h-4 w-4 font-lg" />
-                        <span>March 15, 2025</span>
+                        <span>{blogPosts[id].date}</span>
                     </div>
                     <div className="flex items-center gap-2">
                         <Clock strokeWidth={3} className="h-4 w-4" />
-                        <span>2:00 PM - 4:00 PM</span>
+                        <span>{blogPosts[id].time}</span>
                     </div>
                     <div className="flex items-center gap-2">
                         <MapPin strokeWidth={3} className="h-4 w-4" />
-                        <span>W605</span>
+                        <span>{blogPosts[id].location}</span>
                     </div>
                 </div>
                 <Tabs defaultValue="highlights" className="w-full">
@@ -57,13 +72,7 @@ export default function Events() {
                                             Event Highlights
                                         </h2>
                                         <p className=" font-medium text-sm">
-                                            Lorem ipsum dolor sit amet,
-                                            consectetur adipiscing elit, sed do
-                                            eiusmod tempor incididunt ut labore
-                                            et dolore magna aliqua. Ut enim ad
-                                            minim veniam, quis nostrud
-                                            exercitation ullamco laboris nisi ut
-                                            aliquip
+                                            {blogPosts[id].content}
                                         </p>
                                         <h2 className="text-xl">
                                             Key Takeaways
@@ -84,23 +93,18 @@ export default function Events() {
                                         </ul>
                                         <h2 className="text-xl">Speakers</h2>
                                         <ul className="list-disc pl-5 space-y-2 font-medium text-sm">
-                                            <li>
-                                                Networking opportunities with
-                                                industry professionals
-                                            </li>
-                                            <li>
-                                                Insights into the latest
-                                                technology trends
-                                            </li>
-                                            <li>
-                                                Hands-on workshops and
-                                                interactive sessions
-                                            </li>
+                                            {blogPosts[id].speakers.map(
+                                                (speaker, index) => (
+                                                    <li key={index}>
+                                                        {speaker}
+                                                    </li>
+                                                )
+                                            )}
                                         </ul>
                                     </div>
                                     <div className="flex flex-col items-right gap-4 w-[40%] h-[90%] justify-center">
                                         <Image
-                                            src="\images\event\BTT-Info-Session.png"
+                                            src={blogPosts[id].coverImage}
                                             alt="External Image"
                                             unoptimized
                                             width={100}
@@ -147,4 +151,6 @@ export default function Events() {
             </div>
         </div>
     );
-}
+};
+
+export default Events;
