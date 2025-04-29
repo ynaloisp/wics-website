@@ -19,7 +19,7 @@ import Link from "next/link";
 import ImageCarouselContent from "./imagecarousel";
 import { useRouter } from "next/navigation";
 import { blogPosts } from "./test";
-import { useSearchParams } from "next/navigation";
+import { useParams } from "next/navigation";
 
 const imageList = [
     "/images/officers/Sarah-Levitan.jpg",
@@ -33,12 +33,12 @@ interface CardProps {}
 
 const Events: React.FC<CardProps> = () => {
     const router = useRouter();
-    const searchParams = useSearchParams();
-    const slug = searchParams.get("slug");
+    const { slug } = useParams();
 
-    const idFromRouter = slug ? parseInt(slug, 10) : 0; // Convert slug to a number
+    console.log("Slug:", slug);
+    const post = blogPosts.find((post) => post.slug === slug);
 
-    const id = slug ? parseInt(slug, 10) : idFromRouter; // Use idFromRouter as fallback
+    const id = post ? blogPosts.indexOf(post) : 1; // Handle undefined post by assigning -1
 
     return (
         <div className="font-inter ml-[10%] mr-[10%] mt-[5%] mb-[13%] space-y-16">

@@ -111,10 +111,7 @@ export default function Events() {
                             </CardContent>
                             <CardFooter>
                                 <button className="bg-white font-semibold rounded-lg w-full border border-1 p-2">
-                                    <Link
-                                        href={`/events/${post.slug}`}
-                                        id={`recap-${post.id}`}
-                                    >
+                                    <Link href={`/events/${post.slug}`}>
                                         View Recap
                                     </Link>
                                 </button>
