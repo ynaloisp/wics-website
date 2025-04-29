@@ -13,6 +13,7 @@ import { Car } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Calendar, Clock, MapPin } from "lucide-react";
 import Link from "next/link";
+import { blogPosts } from "./[slug]/test";
 
 export default function Events() {
     return (
@@ -110,7 +111,7 @@ export default function Events() {
                         <CardFooter>
                             <Link
                                 className="bg-white font-semibold rounded-lg w-full border border-1 p-2"
-                                href="/events/past-events"
+                                href={`/events/${blogPosts[0].slug}`}
                             >
                                 View Recap
                             </Link>
