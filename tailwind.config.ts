@@ -61,9 +61,9 @@ const config: Config = {
       },
       backgroundImage: {
         "background-gradient": "var(--background)",
-        "bannerGradient": "var(--banner-background)",
-        "cardGradient": "var(--card-background)",
-        "buttonGradient": "var(--button-background)",
+        bannerGradient: "var(--banner-background)",
+        cardGradient: "var(--card-background)",
+        buttonGradient: "var(--button-background)",
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
@@ -89,6 +89,20 @@ const config: Config = {
       },
       fontFamily: {
         inter: ["Inter", "sans-serif"],
+      },
+      animation: {
+        "scale-up-center":
+          "scale-up-center 0.5s cubic-bezier(0.390, 0.575, 0.565, 1.000) 0.15s both",
+      },
+      keyframes: {
+        "scale-up-center": {
+          "0%": {
+            transform: "scale(1.15)",
+          },
+          to: {
+            transform: "scale(1)",
+          },
+        },
       },
     },
   },
