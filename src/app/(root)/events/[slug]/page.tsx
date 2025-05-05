@@ -125,21 +125,8 @@ const Events: React.FC<CardProps> = () => {
                                     <div className="flex flex-col items-center justify-center gap-4 ">
                                         <div className="flex flex-col  items-right justify-center padding-10 h-[65vh] top-10">
                                             <h2 className="text-2xl left-0 ">
-                                                Event Gallery
+                                                TO BE FINISHED...
                                             </h2>
-                                            <Image
-                                                src="https://th.bing.com/th/id/OIP.2N3yUqpMYG6VHxj1maGVpAHaEo?rs=1&pid=ImgDetMain"
-                                                alt="External Image"
-                                                unoptimized
-                                                width={1000}
-                                                height={200}
-                                                className="w-[68vw] h-[55vh] rounded-xl items-center justify-center"
-                                            />
-                                        </div>
-                                        <div className="flex flex-col items-center gap-4 w-[88%] h-[20%] justify-center">
-                                            <ImageCarouselContent
-                                                images={imageList}
-                                            />
                                         </div>
                                     </div>
                                 </div>
