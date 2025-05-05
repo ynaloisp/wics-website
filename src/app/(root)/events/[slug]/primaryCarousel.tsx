@@ -9,6 +9,8 @@ import {
     CarouselNext,
     CarouselPrevious,
 } from "@/components/ui/carousel";
+
+import { useEffect, useState } from "react";
 const imageLinks = [
     "/images/officers/Sarah-Levitan.jpg",
     "/images/event/Behavioral-Interview-Prep.png",
