@@ -16,10 +16,11 @@ import { Badge } from "@/components/ui/badge";
 import { Calendar, Clock, MapPin } from "lucide-react";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 import Link from "next/link";
-import ImageCarouselContent from "./imagecarousel";
+import ImageCarouselContent from "./bottomCarousel";
 import { useRouter } from "next/navigation";
 import { blogPosts } from "./test";
 import { useParams } from "next/navigation";
+import { PrimaryCarousel } from "./primaryCarousel";
 
 const imageList = [
     "/images/officers/Sarah-Levitan.jpg",
@@ -127,14 +128,7 @@ const Events: React.FC<CardProps> = () => {
                                             <h2 className="text-2xl left-0 ">
                                                 Event Gallery
                                             </h2>
-                                            <Image
-                                                src="https://th.bing.com/th/id/OIP.2N3yUqpMYG6VHxj1maGVpAHaEo?rs=1&pid=ImgDetMain"
-                                                alt="External Image"
-                                                unoptimized
-                                                width={1000}
-                                                height={200}
-                                                className="w-[68vw] h-[55vh] rounded-xl items-center justify-center"
-                                            />
+                                            <PrimaryCarousel />
                                         </div>
                                         <div className="flex flex-col items-center gap-4 w-[88%] h-[20%] justify-center">
                                             <ImageCarouselContent
