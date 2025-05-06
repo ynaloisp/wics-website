@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { FormEvent, useState } from "react";
 import { sendPasswordResetEmail } from "firebase/auth";
 import { auth } from "../../../firebase";
 import { Button } from "@/components/ui/button";
@@ -8,7 +8,7 @@ export default function Login() {
   const [email, setEmail] = useState("");
   const [error, setError] = useState("");
 
-  const resetEmail = async (e) => {
+  const resetEmail = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     try {
       await sendPasswordResetEmail(auth, email);

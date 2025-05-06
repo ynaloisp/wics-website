@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { FormEvent, useState } from "react";
 import {
   getAuth,
   signInWithEmailAndPassword,
@@ -14,7 +14,7 @@ export default function Login() {
   const [error, setError] = useState("");
   const router = useRouter();
 
-  const handleLogin = async (e) => {
+  const handleLogin = async (e : FormEvent<HTMLFormElement>) => {
 		e.preventDefault();
     const { currentUser } = getAuth();
     console.log(currentUser);
