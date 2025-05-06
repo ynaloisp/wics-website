@@ -42,8 +42,8 @@ export default function Navbar() {
   const path = usePathname();
   console.log(path);
   return (
-    <div className="bg-[#fef8f8]">
-      <header className="bg-white text-pink py-4 shadow-[0px_6px_13.3px_rgba(0,0,0,0.25)] relative rounded-full mt-[2%] mx-auto font-inter font-semibold w-fit pl-8 pr-8">
+    <div className="">
+      <header className="text-pink py-4 shadow-[0px_6px_13.3px_rgba(0,0,0,0.25)] relative rounded-full mt-[2%] mx-auto font-inter font-semibold w-fit pl-8 pr-8">
         <div className="container">
           <div className="flex justify-center items-center">
             {/* <div className="flex items-center">
@@ -76,7 +76,7 @@ export default function Navbar() {
               <ul className="flex flex-row items-center gap-10 md:text-lg lg:text-xl">
                 <li className="pb-0.5">
                   <Link
-                    className={`font-semibold ${
+                    className={`font-semibold text-grey hover:text-hotpink ${
                       path == "/" ? "text-hotpink" : "text-grey"
                     }`}
                     href="/"
@@ -92,7 +92,7 @@ export default function Navbar() {
 
                 <li className="pb-0.5">
                   <Link
-                    className={`font-semibold ${
+                    className={`font-semibold text-grey hover:text-hotpink ${
                       path == "/events" ? "text-hotpink" : "text-grey"
                     }`}
                     href="/events"
@@ -108,7 +108,7 @@ export default function Navbar() {
 
                 <li className="pb-0.5">
                   <Link
-                    className={`font-semibold ${
+                    className={`font-semibold text-grey hover:text-hotpink ${
                       path == "/resources" ? "text-hotpink" : "text-grey"
                     }`}
                     href="/resources"
@@ -124,10 +124,10 @@ export default function Navbar() {
 
                 <li className="pb-0.5">
                   <Link
-                    className={`font-semibold ${
-                      path == "/corporate " ? "text-hotpink" : "text-grey"
+                    className={`font-semibold text-grey hover:text-hotpink ${
+                      path == "/about/officers" ? "text-hotpink" : "text-grey"
                     }`}
-                    href="/corporate"
+                    href="/about/officers"
                     onClick={() => {
                       setAboutDropdownOpen(false);
                       setEventsDropdownOpen(false);
