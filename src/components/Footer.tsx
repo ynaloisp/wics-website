@@ -10,7 +10,7 @@ import { Mail } from "lucide-react";
 
 export default function Footer() {
     return (
-        <footer className="bg-[#fef8f8] text-black py-8">
+        <footer className="text-black py-8">
             <div className="container mx-auto px-10">
                 <div className="flex flex-col gap-5 justify-center items-center">
                     <div className="flex flex-row justify-between w-[90%] mx-auto items-center gap-8 text-600">
