@@ -79,22 +79,6 @@ export default function Navbar() {
                     className={`font-semibold text-grey hover:text-hotpink ${
                       path == "/" ? "text-hotpink" : "text-grey"
                     }`}
-                    href="/dashboard"
-                    onClick={() => {
-                      setAboutDropdownOpen(false);
-                      setEventsDropdownOpen(false);
-                      setMenuOpen(false);
-                    }}
-                  >
-                    Dashboard
-                  </Link>
-                </li>
-
-                <li className="pb-0.5">
-                  <Link
-                    className={`font-semibold text-grey hover:text-hotpink ${
-                      path == "/" ? "text-hotpink" : "text-grey"
-                    }`}
                     href="/"
                     onClick={() => {
                       setAboutDropdownOpen(false);
