@@ -16,12 +16,14 @@ export default function Login() {
 
   const handleLogin = async (e : FormEvent<HTMLFormElement>) => {
 		e.preventDefault();
-    const { currentUser } = getAuth();
-    console.log(currentUser);
     try {
+      const userCredential = await signInWithEmailAndPassword(auth, email, password);
+      const currentUser = userCredential.user;
+      await currentUser.reload();
+      
       if (currentUser && currentUser.emailVerified) {
-        await signInWithEmailAndPassword(auth, email, password);
-        console.log("Success");
+        router.push("/dashboard");
+        console.log("Success", currentUser);
       } else {
         console.log(currentUser, "Not verified");
       }
