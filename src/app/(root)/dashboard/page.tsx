@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { useState } from "react";
 import { auth } from "../../../firebase"; 
 import ProtectedRoute from "../../../components/ProtectedRoutes";
-import { getFirestore, collection, addDoc } from "firebase/firestore";
+import { getFirestore, collection, addDoc, setDoc, doc } from "firebase/firestore";
 import { db } from "../../../firebase.js";
 
 export default function Login() {
@@ -11,13 +11,9 @@ export default function Login() {
   console.log(auth.currentUser);
 
   const AddToWhiteList = async() => {
-    const myCollection = collection(db, "whitelist");
-    const myDocumentData = {
+    await setDoc(doc(db, "whitelist", email), {
       email: email,
-    };
-
-    const newDocRef = await addDoc(myCollection, myDocumentData);
-    console.log("New document added with ID:", newDocRef.id);
+    });
   }
 
   return (
