@@ -1,20 +1,25 @@
 "use client";
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
-import { auth } from "../../../firebase"; 
+import { auth } from "../../../firebase";
 import ProtectedRoute from "../../../components/ProtectedRoutes";
-import { getFirestore, collection, addDoc, setDoc, doc } from "firebase/firestore";
+import { setDoc, doc } from "firebase/firestore";
 import { db } from "../../../firebase.js";
 
 export default function Login() {
   const [email, setEmail] = useState("");
-  console.log(auth.currentUser);
+  const [error, setError] = useState("");
 
-  const AddToWhiteList = async() => {
-    await setDoc(doc(db, "whitelist", email), {
-      email: email,
-    });
-  }
+  const AddToWhiteList = async () => {
+    try {
+      await setDoc(doc(db, "whitelist", email), {
+        email: email,
+      });
+    } catch (err: any) {
+      console.error("Cant add to whitelist", err);
+      setError(err.message || "Something went wrong.");
+    }
+  };
 
   return (
     <ProtectedRoute>
@@ -32,6 +37,7 @@ export default function Login() {
           <Button onClick={AddToWhiteList} className="w-fit">
             Add Email to Whitelist
           </Button>
+          {error && <p style={{ color: "red" }}>{error}</p>}
         </div>
 
         <Button onClick={() => auth.signOut()} className="w-fit">
