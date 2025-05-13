@@ -1,56 +1,45 @@
 "use client";
-
 import { Button } from "@/components/ui/button";
-import { useRef } from "react";
-import { getFirestore } from "firebase/firestore";
-import { addDoc, collection } from "firebase/firestore";
-import "firebase/firestore";
-export default function Blog() {
-    const eventNameRef = useRef<HTMLInputElement>(null);
-    const firestore = getFirestore();
-    const ref = collection(firestore, "blogPosts");
-    const handleSave = async (e: React.FormEvent) => {
-        e.preventDefault();
-        console.log("Event Name:", eventNameRef.current?.value);
+import { useState } from "react";
+import { auth } from "../../../firebase";
+import ProtectedRoute from "../../../components/ProtectedRoutes";
+import { setDoc, doc } from "firebase/firestore";
+import { db } from "../../../firebase.js";
+
+export default function BlogUpdates() {
+    const [eventName, setEvent] = useState("");
+    const [error, setError] = useState<string | null>(null);
+
+    const AddEvent = async () => {
         try {
-            await addDoc(ref, {
-                eventName: eventNameRef.current?.value,
+            await setDoc(doc(db, "event", eventName), {
+                eventName: eventName,
             });
-            const statusMessage = document.getElementById("statusMessage");
-            if (statusMessage) {
-                statusMessage.innerHTML =
-                    "<p class='text-green-500'>Event name saved successfully!</p>";
-            }
-        } catch (error) {
-            console.error("Error saving event name:", error);
+        } catch (err: any) {
+            console.error("Cant add event", err);
+            setError(err.message || "Something went wrong.");
         }
     };
-    return (
-        <div>
-            <form
-                className="space-y-4 flex flex-col items-center padding-10"
-                onSubmit={handleSave}
-            >
-                <h1 className="text-2xl font-bold">Blog Updates</h1>
-                <label htmlFor="eventName" className="text-xl">
-                    Enter Event Name
-                </label>
-                <input
-                    type="text"
-                    id="eventName"
-                    placeholder="Event Name"
-                    ref={eventNameRef}
-                    required
-                />
-                <Button
-                    type="submit"
-                    className="bg-buttonGradient font-semibold rounded-lg p-2 pl-5 pr-5 text-grey mt-[2%]"
-                >
-                    Save
-                </Button>
-            </form>
 
-            <div id="statusMessage"></div>
-        </div>
+    return (
+        <ProtectedRoute>
+            <div className="font-inter ml-[10%] mr-[10%] mt-[5%] mb-[10%] w-fit flex  flex-col gap-y-10">
+                <h1 className="font-bold text-3xl">Add Events</h1>
+                <div className="flex flex-col gap-y-3">
+                    <input
+                        type="text"
+                        placeholder="Event Name"
+                        value={eventName}
+                        onChange={(e) => setEvent(e.target.value)}
+                        required
+                        className="p-2 rounded-sm"
+                    />
+                    <Button onClick={AddEvent} className="w-fit">
+                        Add Event to Event List
+                    </Button>
+                    {error && <p style={{ color: "red" }}>{error}</p>}
+                </div>
+            </div>
+        </ProtectedRoute>
     );
 }
