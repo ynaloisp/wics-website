@@ -8,6 +8,7 @@ import { db } from "../../../firebase.js";
 
 export default function Login() {
   const [email, setEmail] = useState("");
+  const [success, setSuccess] = useState("");
   const [error, setError] = useState("");
 
   const AddToWhiteList = async () => {
@@ -15,9 +16,11 @@ export default function Login() {
       await setDoc(doc(db, "whitelist", email), {
         email: email,
       });
+      setSuccess("You sucessfully added it!");
     } catch (err: any) {
       console.error("Cant add to whitelist", err);
       setError(err.message || "Something went wrong.");
+      setSuccess("");
     }
   };
 
@@ -37,6 +40,7 @@ export default function Login() {
           <Button onClick={AddToWhiteList} className="w-fit">
             Add Email to Whitelist
           </Button>
+          {success && <p style={{ color: "red" }}>{success}</p>}
           {error && <p style={{ color: "red" }}>{error}</p>}
         </div>
 
