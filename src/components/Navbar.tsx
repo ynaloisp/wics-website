@@ -1,21 +1,21 @@
-"use client";
+'use client';
 
-import React, { useEffect, useState } from "react";
-import Link from "next/link";
-import { usePathname } from "next/navigation";
-import Image from "next/image";
+import React, { useEffect, useState } from 'react';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
+import Image from 'next/image';
 import {
   SignedIn,
   SignedOut,
   SignInButton,
   UserButton,
   useUser,
-} from "@clerk/nextjs";
-import { Badge } from "@/components/ui/badge";
-import { ChevronDown, Menu as MenuIcon, X } from "lucide-react";
-import Menu from "@/components/Menu";
-import { getDoc, doc } from "firebase/firestore";
-import { db } from "@/firebase";
+} from '@clerk/nextjs';
+import { Badge } from '@/components/ui/badge';
+import { ChevronDown, Menu as MenuIcon, X } from 'lucide-react';
+import Menu from '@/components/Menu';
+import { getDoc, doc } from 'firebase/firestore';
+import { db } from '@/firebase';
 
 export default function Navbar() {
   const [aboutDropdownOpen, setAboutDropdownOpen] = useState(false);
@@ -27,7 +27,7 @@ export default function Navbar() {
   useEffect(() => {
     async function fetchPoints() {
       if (user) {
-        const userDocRef = doc(db, "users", user.id);
+        const userDocRef = doc(db, 'users', user.id);
         const userDoc = await getDoc(userDocRef);
 
         if (userDoc.exists()) {
@@ -77,7 +77,7 @@ export default function Navbar() {
                 <li className="pb-0.5">
                   <Link
                     className={`font-semibold text-grey hover:text-hotpink ${
-                      path == "/" ? "text-hotpink" : "text-grey"
+                      path == '/' ? 'text-hotpink' : 'text-grey'
                     }`}
                     href="/"
                     onClick={() => {
@@ -93,7 +93,7 @@ export default function Navbar() {
                 <li className="pb-0.5">
                   <Link
                     className={`font-semibold text-grey hover:text-hotpink ${
-                      path == "/events" ? "text-hotpink" : "text-grey"
+                      path == '/events' ? 'text-hotpink' : 'text-grey'
                     }`}
                     href="/events"
                     onClick={() => {
@@ -109,7 +109,7 @@ export default function Navbar() {
                 <li className="pb-0.5">
                   <Link
                     className={`font-semibold text-grey hover:text-hotpink ${
-                      path == "/resources" ? "text-hotpink" : "text-grey"
+                      path == '/resources' ? 'text-hotpink' : 'text-grey'
                     }`}
                     href="/resources"
                     onClick={() => {
@@ -125,7 +125,7 @@ export default function Navbar() {
                 <li className="pb-0.5">
                   <Link
                     className={`font-semibold text-grey hover:text-hotpink ${
-                      path == "/about/officers" ? "text-hotpink" : "text-grey"
+                      path == '/about/officers' ? 'text-hotpink' : 'text-grey'
                     }`}
                     href="/about/officers"
                     onClick={() => {

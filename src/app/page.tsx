@@ -1,13 +1,13 @@
-"use client";
-import Image from "next/image";
-import { MoveUpRight } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { Sparkles, ArrowRight } from "lucide-react";
-import { Card, CardContent } from "@/components/ui/card";
-import { Calendar, Instagram, Users, Github, Linkedin } from "lucide-react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faDiscord } from "@fortawesome/free-brands-svg-icons";
-import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
+'use client';
+import Image from 'next/image';
+import { MoveUpRight } from 'lucide-react';
+import { Button } from '@/components/ui/button';
+import { Sparkles, ArrowRight } from 'lucide-react';
+import { Card, CardContent } from '@/components/ui/card';
+import { Calendar, Instagram, Users, Github, Linkedin } from 'lucide-react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faDiscord } from '@fortawesome/free-brands-svg-icons';
+import { Tabs, TabsList, TabsTrigger, TabsContent } from '@/components/ui/tabs';
 
 export default function Home() {
   return (
@@ -145,10 +145,10 @@ export default function Home() {
         <div className="container mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
-              { label: "Active Members", value: "150+" },
-              { label: "Events per Semester", value: "3+" },
-              { label: "Industry Partners", value: "2+" },
-              { label: "Project Collaborations", value: "4+" },
+              { label: 'Active Members', value: '150+' },
+              { label: 'Events per Semester', value: '3+' },
+              { label: 'Industry Partners', value: '2+' },
+              { label: 'Project Collaborations', value: '4+' },
             ].map((stat, i) => (
               <div key={i} className="relative group">
                 <div className="absolute inset-0 bg-gradient-to-r from-[#ec4899] to-hotpink rounded-lg blur-lg opacity-25 group-hover:opacity-40 transition-opacity" />

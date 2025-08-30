@@ -1,26 +1,26 @@
-"use client";
+'use client';
 
-import { Card, CardContent } from "@/components/ui/card";
-import Image from "next/image";
-import { useState } from "react";
+import { Card, CardContent } from '@/components/ui/card';
+import Image from 'next/image';
+import { useState } from 'react';
 import {
   Calendar,
   Clock,
   MapPin,
   ChevronLeft,
   ChevronRight,
-} from "lucide-react";
-import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
-import { useRouter } from "next/navigation";
-import { blogPosts } from "./test";
-import { useParams } from "next/navigation";
+} from 'lucide-react';
+import { Tabs, TabsList, TabsTrigger, TabsContent } from '@/components/ui/tabs';
+import { useRouter } from 'next/navigation';
+import { blogPosts } from './test';
+import { useParams } from 'next/navigation';
 
 const imageList = [
-  "/images/officers/Sarah-Levitan.jpg",
-  "/images/event/Behavioral-Interview-Prep.png",
-  "/images/event/BTT-Info-Session.png",
-  "/images/event/cookie-decorating-team.jpg",
-  "/images/event/cookie-decorating-team.jpg",
+  '/images/officers/Sarah-Levitan.jpg',
+  '/images/event/Behavioral-Interview-Prep.png',
+  '/images/event/BTT-Info-Session.png',
+  '/images/event/cookie-decorating-team.jpg',
+  '/images/event/cookie-decorating-team.jpg',
 ];
 
 interface CardProps {}
@@ -30,7 +30,7 @@ const Events: React.FC<CardProps> = () => {
   const { slug } = useParams();
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
-  console.log("Slug:", slug);
+  console.log('Slug:', slug);
   const post = blogPosts.find((post) => post.slug === slug);
 
   const id = post ? blogPosts.indexOf(post) : 1;
@@ -161,8 +161,8 @@ const Events: React.FC<CardProps> = () => {
                         onClick={() => setCurrentImageIndex(index)}
                         className={`h-2 w-2 rounded-full transition-colors ${
                           currentImageIndex === index
-                            ? "bg-[#db2777]"
-                            : "bg-gray-300"
+                            ? 'bg-[#db2777]'
+                            : 'bg-gray-300'
                         }`}
                         aria-label={`Go to image ${index + 1}`}
                       />
@@ -177,8 +177,8 @@ const Events: React.FC<CardProps> = () => {
                         onClick={() => setCurrentImageIndex(index)}
                         className={`relative aspect-[16/9] cursor-pointer overflow-hidden rounded-lg border-2 transition-all ${
                           currentImageIndex === index
-                            ? "border-[#db2777]"
-                            : "border-transparent hover:border-[#db277780]"
+                            ? 'border-[#db2777]'
+                            : 'border-transparent hover:border-[#db277780]'
                         }`}
                       >
                         <Image

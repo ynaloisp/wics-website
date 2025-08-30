@@ -1,31 +1,31 @@
-"use client";
-import { useState } from "react";
+'use client';
+import { useState } from 'react';
 import {
   getAuth,
   createUserWithEmailAndPassword,
   sendEmailVerification,
-} from "firebase/auth";
-import { getFirestore, collection, getDocs } from "firebase/firestore";
-import { db } from "../../../firebase.js";
-import { Button } from "@/components/ui/button";
+} from 'firebase/auth';
+import { getFirestore, collection, getDocs } from 'firebase/firestore';
+import { db } from '../../../firebase.js';
+import { Button } from '@/components/ui/button';
 
 export default function Login() {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [error, setError] = useState("");
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [error, setError] = useState('');
 
   const auth = getAuth();
   const handleSignUp = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    setError("");
+    setError('');
     try {
-      const snapshot = await getDocs(collection(db, "whitelist"));
+      const snapshot = await getDocs(collection(db, 'whitelist'));
       const isWhitelisted = snapshot.docs.some(
         (doc) => doc.data().email.toLowerCase() === email.toLowerCase()
       );
 
       if (!isWhitelisted) {
-        setError("This email is not authorized to sign up.");
+        setError('This email is not authorized to sign up.');
         return;
       }
 
@@ -36,14 +36,14 @@ export default function Login() {
       ).then(async (userCredentials) => {
         const user = userCredentials.user;
         await sendEmailVerification(user);
-        alert("Go to your email and verify your account.")
+        alert('Go to your email and verify your account.');
       });
-      
-      setEmail("");
-      setPassword("");
+
+      setEmail('');
+      setPassword('');
     } catch (err: any) {
       console.error(err);
-      setError(err.message || "Something went wrong.");
+      setError(err.message || 'Something went wrong.');
     }
   };
 
@@ -71,7 +71,7 @@ export default function Login() {
           Sign Up
         </Button>
       </form>
-      {error && <p style={{ color: "red" }}>{error}</p>}
+      {error && <p style={{ color: 'red' }}>{error}</p>}
     </div>
   );
 }

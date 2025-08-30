@@ -1,33 +1,35 @@
-"use client";
-import { FormEvent, useState } from "react";
-import {
-  signInWithEmailAndPassword,
-} from "firebase/auth";
-import { useRouter } from "next/navigation";
-import { auth } from "../../../firebase"; 
-import { Button } from "@/components/ui/button";
+'use client';
+import { FormEvent, useState } from 'react';
+import { signInWithEmailAndPassword } from 'firebase/auth';
+import { useRouter } from 'next/navigation';
+import { auth } from '../../../firebase';
+import { Button } from '@/components/ui/button';
 
 export default function Login() {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [error, setError] = useState("");
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [error, setError] = useState('');
   const router = useRouter();
 
-  const handleLogin = async (e : FormEvent<HTMLFormElement>) => {
-		e.preventDefault();
+  const handleLogin = async (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
     try {
-      const userCredential = await signInWithEmailAndPassword(auth, email, password);
+      const userCredential = await signInWithEmailAndPassword(
+        auth,
+        email,
+        password
+      );
       const currentUser = userCredential.user;
       await currentUser.reload();
-      
+
       if (currentUser && currentUser.emailVerified) {
-        router.push("/dashboard");
-        console.log("Success", currentUser);
+        router.push('/dashboard');
+        console.log('Success', currentUser);
       } else {
-        console.log(currentUser, "Not verified");
+        console.log(currentUser, 'Not verified');
       }
     } catch (error) {
-      setError("Invalid email or password");
+      setError('Invalid email or password');
     }
   };
 
@@ -57,13 +59,13 @@ export default function Login() {
         <p
           className="w-fit text-xs underline"
           onClick={() => {
-            router.push("/forgetPassword");
+            router.push('/forgetPassword');
           }}
         >
           Forget Password
         </p>
       </form>
-      {error && <p style={{ color: "red" }}>{error}</p>}
+      {error && <p style={{ color: 'red' }}>{error}</p>}
     </div>
   );
 }

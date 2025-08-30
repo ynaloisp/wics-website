@@ -1,45 +1,39 @@
-import React from "react";
-import Link from "next/link";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import React from 'react';
+import Link from 'next/link';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faDiscord,
   faLinkedin,
   faInstagram,
-} from "@fortawesome/free-brands-svg-icons";
-import { Mail } from "lucide-react";
+} from '@fortawesome/free-brands-svg-icons';
+import { Mail } from 'lucide-react';
 
 export default function Footer() {
-    return (
-        <footer className="text-black py-8">
-            <div className="container mx-auto px-10">
-                <div className="flex flex-col gap-5 justify-center items-center">
-                    <div className="flex flex-row justify-between w-[90%] mx-auto items-center gap-8 text-600">
-                        <h3 className="text-black font-bold text-l">
-                            <Link
-                                className="hover:text-hotpink transition duration-1000 ease-in-out"
-                                href="/"
-                            >
-                                Hunter WiCS
-                            </Link>
-                        </h3>
-                        <ul className="flex flex-col sm:flex-row sm:gap-8 items-center gap-2 text-sm  text-[#4B5563]">
-                            <li>
-                                <Link
-                                    className="hover:text-hotpink"
-                                    href="/about"
-                                >
-                                    About
-                                </Link>
-                            </li>
-                            <li>
-                                <Link
-                                    className="hover:text-hotpink"
-                                    href="/events"
-                                >
-                                    Events
-                                </Link>
-                            </li>
-                            {/* <li>
+  return (
+    <footer className="text-black py-8">
+      <div className="container mx-auto px-10">
+        <div className="flex flex-col gap-5 justify-center items-center">
+          <div className="flex flex-row justify-between w-[90%] mx-auto items-center gap-8 text-600">
+            <h3 className="text-black font-bold text-l">
+              <Link
+                className="hover:text-hotpink transition duration-1000 ease-in-out"
+                href="/"
+              >
+                Hunter WiCS
+              </Link>
+            </h3>
+            <ul className="flex flex-col sm:flex-row sm:gap-8 items-center gap-2 text-sm  text-[#4B5563]">
+              <li>
+                <Link className="hover:text-hotpink" href="/about">
+                  About
+                </Link>
+              </li>
+              <li>
+                <Link className="hover:text-hotpink" href="/events">
+                  Events
+                </Link>
+              </li>
+              {/* <li>
                 <Link className="hover:text-hotpink " href="/events">
                   Events
                 </Link>

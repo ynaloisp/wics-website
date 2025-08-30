@@ -1,7 +1,7 @@
-"use client";
-import { useState, useEffect } from "react";
-import { collection, getDocs, doc, setDoc } from "@firebase/firestore";
-import { db } from "@/firebase";
+'use client';
+import { useState, useEffect } from 'react';
+import { collection, getDocs, doc, setDoc } from '@firebase/firestore';
+import { db } from '@/firebase';
 
 interface User {
   id: string;
@@ -16,11 +16,11 @@ export default function AdminPage() {
   const [editingPoints, setEditingPoints] = useState<{ [key: string]: number }>(
     {}
   );
-  const [searchQuery, setSearchQuery] = useState<string>("");
+  const [searchQuery, setSearchQuery] = useState<string>('');
 
   useEffect(() => {
     async function fetchUsers() {
-      const querySnapshot = await getDocs(collection(db, "users"));
+      const querySnapshot = await getDocs(collection(db, 'users'));
       const fetchedUsers: User[] = [];
 
       querySnapshot.forEach((doc) => {
@@ -46,12 +46,12 @@ export default function AdminPage() {
 
   const savePoints = async (userId: string) => {
     const points = editingPoints[userId];
-    const userDocRef = doc(db, "users", userId);
+    const userDocRef = doc(db, 'users', userId);
     await setDoc(userDocRef, { points }, { merge: true });
     setUsers((prev) =>
       prev.map((user) => (user.id === userId ? { ...user, points } : user))
     );
-    console.log("Points updated successfully");
+    console.log('Points updated successfully');
   };
 
   const filteredUsers = users.filter(

@@ -1,6 +1,6 @@
-import React, { useState } from "react";
-import Link from "next/link";
-import { useUser } from "@clerk/nextjs";
+import React, { useState } from 'react';
+import Link from 'next/link';
+import { useUser } from '@clerk/nextjs';
 
 interface MenuProps {
   isOpen: boolean;
@@ -103,7 +103,7 @@ export default function Menu({ isOpen, onClose }: MenuProps) {
             Corporate
           </Link>
         </li>
-        {user?.primaryEmailAddress?.emailAddress === "hunterwics@gmail.com" && (
+        {user?.primaryEmailAddress?.emailAddress === 'hunterwics@gmail.com' && (
           <li className="pb-0.5">
             <Link
               className="hover:text-lightp font-semibold text-sm"

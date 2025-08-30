@@ -1,4 +1,4 @@
-import { Button } from "@/components/ui/button";
+import { Button } from '@/components/ui/button';
 import {
   Card,
   CardContent,
@@ -6,14 +6,14 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from "@/components/ui/card";
-import Image from "next/image";
+} from '@/components/ui/card';
+import Image from 'next/image';
 
-import { Car } from "lucide-react";
-import { Badge } from "@/components/ui/badge";
-import { Calendar, Clock, MapPin } from "lucide-react";
-import Link from "next/link";
-import { blogPosts } from "./[slug]/test";
+import { Car } from 'lucide-react';
+import { Badge } from '@/components/ui/badge';
+import { Calendar, Clock, MapPin } from 'lucide-react';
+import Link from 'next/link';
+import { blogPosts } from './[slug]/test';
 
 export default function Events() {
   return (

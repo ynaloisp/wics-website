@@ -1,18 +1,18 @@
-import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-import "@/app/globals.css";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
-import { ClerkProvider, SignedOut } from "@clerk/nextjs";
-import { Toast, ToastProvider } from "@/components/ui/toast";
-import { GoogleTagManager } from "@next/third-parties/google";
-import { AuthProvider } from "../context/AuthContenxt";
+import type { Metadata } from 'next';
+import { Inter } from 'next/font/google';
+import '@/app/globals.css';
+import Navbar from '@/components/Navbar';
+import Footer from '@/components/Footer';
+import { ClerkProvider, SignedOut } from '@clerk/nextjs';
+import { Toast, ToastProvider } from '@/components/ui/toast';
+import { GoogleTagManager } from '@next/third-parties/google';
+import { AuthProvider } from '../context/AuthContenxt';
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: "Womxn in Computer Science",
-  description: "Hunter College WiCS Club",
+  title: 'Womxn in Computer Science',
+  description: 'Hunter College WiCS Club',
 };
 
 export default function RootLayout({
