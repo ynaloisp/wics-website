@@ -1,0 +1,187 @@
+const faculty = [
+  {
+    title: 'Sarah Ita Levitan',
+    description: 'Faculty Advisor',
+    major: 'Assistant Professor of Computer Science',
+    imageUrl: '/images/officers/Sarah-Levitan.jpg',
+    linkedin: 'https://www.linkedin.com/in/sarah-ita-levitan-7b1b3b1b/',
+    github: '',
+    email: 'mailto:hunterwics@gmail.com',
+  },
+];
+
+const eboard = [
+  {
+    title: 'Emily-Ann Willix',
+    description: 'President',
+    major: 'Computer Science',
+    imageUrl: '/images/officers/Emily-Ann-Willix.jpeg',
+    linkedin: 'https://www.linkedin.com/in/sarah-ita-levitan-7b1b3b1b/',
+    github: '',
+    email: 'mailto:hunterwics@gmail.com',
+  },
+  {
+    title: 'Ynalois Pangilinan',
+    description: 'Vice President',
+    major: 'Computer Science',
+    imageUrl: '/images/officers/ynalois-pangilinan2.jpg',
+    linkedin: 'https://www.linkedin.com/in/sarah-ita-levitan-7b1b3b1b/',
+    github: '',
+    email: 'mailto:hunterwics@gmail.com',
+  },
+  {
+    title: 'Michelle Rivera Perez',
+    description: 'Co-Secretary',
+    major: 'Computer Science',
+    imageUrl: '/images/officers/Sarah-Levitan.jpg',
+    linkedin: 'https://www.linkedin.com/in/sarah-ita-levitan-7b1b3b1b/',
+    github: '',
+    email: 'mailto:hunterwics@gmail.com',
+  },
+  {
+    title: 'Madina Monowara',
+    description: 'Co-Secretary',
+    major: 'Computer Science',
+    imageUrl: '/images/officers/Madina-Monowara.jpg',
+    linkedin: 'https://www.linkedin.com/in/sarah-ita-levitan-7b1b3b1b/',
+    github: '',
+    email: 'mailto:hunterwics@gmail.com',
+  },
+  {
+    title: 'Monae White',
+    description: 'Treasurer',
+    major: 'Computer Science',
+    imageUrl: '/images/officers/Monae-White.jpg',
+    linkedin: 'https://www.linkedin.com/in/sarah-ita-levitan-7b1b3b1b/',
+    github: '',
+    email: 'mailto:hunterwics@gmail.com',
+  },
+];
+
+const team = [
+  {
+    title: 'Tarina Priti',
+    description: 'Community Officer',
+    major: 'Computer Science',
+    imageUrl: '/images/officers/Tarina-Priti.jpeg',
+    linkedin: 'https://www.linkedin.com/in/sarah-ita-levitan-7b1b3b1b/',
+    github: '',
+    email: 'mailto:hunterwics@gmail.com',
+  },
+  {
+    title: 'Sanjida Fairuse',
+    description: 'Community Officer',
+    major: 'Computer Science',
+    imageUrl: '/images/officers/sanjida-f.jpeg',
+    linkedin: 'https://www.linkedin.com/in/sarah-ita-levitan-7b1b3b1b/',
+    github: '',
+    email: 'mailto:hunterwics@gmail.com',
+  },
+  {
+    title: 'Kripamoye Biswas',
+    description: 'Social Media Manager',
+    major: 'Computer Science & Math Major',
+    imageUrl: '/images/officers/Kripamoye-Biswas.png',
+    linkedin: 'https://www.linkedin.com/in/sarah-ita-levitan-7b1b3b1b/',
+    github: '',
+    email: 'mailto:hunterwics@gmail.com',
+  },
+  {
+    title: 'Angela Zhang',
+    description: 'Social Media Manager',
+    major: 'Computer Science',
+    imageUrl: '/images/officers/angela-z.jpeg',
+    linkedin: 'https://www.linkedin.com/in/sarah-ita-levitan-7b1b3b1b/',
+    github: '',
+    email: 'mailto:hunterwics@gmail.com',
+  },
+  {
+    title: 'Valentina Quiroga',
+    description: 'Graphic Designer',
+    major: 'Computer Science',
+    imageUrl: '/images/officers/valentina-q.jpeg',
+    linkedin: 'https://www.linkedin.com/in/sarah-ita-levitan-7b1b3b1b/',
+    github: '',
+    email: 'mailto:hunterwics@gmail.com',
+  },
+];
+
+const webMaster = [
+  {
+    title: 'Selina Zheng',
+    description: 'Web Master',
+    major: 'Computer Science and Chinese',
+    imageUrl: '/images/officers/selina-z.jpeg',
+    linkedin: 'https://www.linkedin.com/in/sarah-ita-levitan-7b1b3b1b/',
+    github: '',
+    email: 'mailto:hunterwics@gmail.com',
+  },
+  {
+    title: 'Anita Prova',
+    description: 'Web Master',
+    major: 'Computer Science',
+    imageUrl: '/images/officers/anita-p.jpg',
+    linkedin: 'https://www.linkedin.com/in/sarah-ita-levitan-7b1b3b1b/',
+    github: '',
+    email: 'mailto:hunterwics@gmail.com',
+  },
+  {
+    title: 'Vincent Zhong',
+    description: 'Web Master',
+    major: 'Computer Science and Chinese',
+    imageUrl: '',
+    linkedin: 'https://www.linkedin.com/in/sarah-ita-levitan-7b1b3b1b/',
+    github: '',
+    email: 'mailto:hunterwics@gmail.com',
+  }
+];
+
+const workshop = [
+  {
+    title: 'Ashleigh Wong',
+    description: 'Tech Workshop Coordinator',
+    major: 'Computer Science',
+    imageUrl: '/images/officers/ashleigh-w.jpg',
+    linkedin: 'https://www.linkedin.com/in/sarah-ita-levitan-7b1b3b1b/',
+    github: '',
+    email: 'mailto:hunterwics@gmail.com',
+  },
+  {
+    title: 'Makiya Laurenza',
+    description: 'Tech Workshop Coordinator',
+    major: 'Computer Science',
+    imageUrl: '/images/officers/makiya-l.heic',
+    linkedin: 'https://www.linkedin.com/in/sarah-ita-levitan-7b1b3b1b/',
+    github: '',
+    email: 'mailto:hunterwics@gmail.com',
+  },
+  {
+    title: 'Marie Cari',
+    description: 'Tech Workshop Coordinator',
+    major: 'Computer Science & Math Major',
+    imageUrl: '/images/officers/marie-c.jpg',
+    linkedin: 'https://www.linkedin.com/in/sarah-ita-levitan-7b1b3b1b/',
+    github: '',
+    email: 'mailto:hunterwics@gmail.com',
+  },
+  {
+    title: 'Bode Chiu',
+    description: 'Tech Workshop Coordinator',
+    major: 'Computer Science',
+    imageUrl: '/images/officers/bode-c.jpeg',
+    linkedin: 'https://www.linkedin.com/in/sarah-ita-levitan-7b1b3b1b/',
+    github: '',
+    email: 'mailto:hunterwics@gmail.com',
+  },
+  {
+    title: 'Sy\'rai Pierre',
+    description: 'Tech Workshop Coordinator',
+    major: 'Computer Science',
+    imageUrl: '/images/officers/syrai-pierre.jpeg',
+    linkedin: 'https://www.linkedin.com/in/sarah-ita-levitan-7b1b3b1b/',
+    github: '',
+    email: 'mailto:hunterwics@gmail.com',
+  },
+];
+
+export { faculty, eboard, team, webMaster, workshop };
