@@ -1,8 +1,9 @@
-import Image from "next/image";
+import Image from 'next/image';
 
 function About() {
   return (
     <div className="bg-[#fef8f8] min-h-screen">
+      {/* Banner Section */}
       <div className="bg-banner bg-cover bg-center h-96 flex items-center justify-center">
         <div className="bg-white bg-opacity-50 p-4 py-8 md:p-12 mx-7 md:mx-7 rounded-lg text-center">
           <h1 className="text-black text-lg sm:text-4xl font-bold">
@@ -15,6 +16,7 @@ function About() {
         </div>
       </div>
 
+      {/* Mission Section */}
       <div className="w-full my-20">
         <div className="grid grid-cols-1 md:grid-cols-2 justify-center place-items-center items-center gap-8">
           <Image
@@ -45,15 +47,17 @@ function About() {
             </h1>
           </div>
         </div>
+
+        {/* Purpose Section */}
         <div className="w-5/6 container mx-auto mt-20">
           <h1 className="text-4xl font-semibold text-center mt-8">Purpose</h1>
           <h1 className="text-center p-4">
             We aim to make a positive impact in the Computer Science community
             at Hunter and serve as a support group for students. We create
-            events and opporunities to help our members develop their technical
+            events and opportunities to help our members develop their technical
             skills, secure opportunities, and fortify the confidence in their
             chosen careers. Developing the technical and interpersonal skills
-            required for transiting into the tech industry after graduation is
+            required for transitioning into the tech industry after graduation is
             difficult but, we, at WiCS are here to support your journey.
           </h1>
         </div>
