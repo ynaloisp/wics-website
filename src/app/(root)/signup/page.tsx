@@ -5,9 +5,9 @@ import {
   createUserWithEmailAndPassword,
   sendEmailVerification,
 } from "firebase/auth";
-import { getFirestore, collection, getDocs } from "firebase/firestore";
+import { collection, getDocs } from "firebase/firestore";
 import { db } from "../../../firebase.js";
-import { Button } from "@/components/ui/button";
+import SignUpForm from "./SignUpForm";
 
 export default function Login() {
   const [email, setEmail] = useState("");
@@ -23,26 +23,20 @@ export default function Login() {
       const isWhitelisted = snapshot.docs.some(
         (doc) => doc.data().email.toLowerCase() === email.toLowerCase()
       );
-
       if (!isWhitelisted) {
         setError("This email is not authorized to sign up.");
         return;
       }
-
-      const userCredential = await createUserWithEmailAndPassword(
+      const userCredentials = await createUserWithEmailAndPassword(
         auth,
         email,
         password
-      ).then(async (userCredentials) => {
-        const user = userCredentials.user;
-        await sendEmailVerification(user);
-        alert("Go to your email and verify your account.")
-      });
-      
+      );
+      await sendEmailVerification(userCredentials.user);
+      alert("Go to your email and verify your account.");
       setEmail("");
       setPassword("");
     } catch (err: any) {
-      console.error(err);
       setError(err.message || "Something went wrong.");
     }
   };
@@ -50,28 +44,14 @@ export default function Login() {
   return (
     <div className="font-inter ml-[10%] mr-[10%] mt-[5%] mb-[10%]">
       <h2 className="font-bold text-2xl">Admin Sign Up</h2>
-      <form onSubmit={handleSignUp} className="flex flex-col space-y-5 w-fit">
-        <input
-          type="email"
-          placeholder="Email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          required
-          className="p-2 rounded-sm"
-        />
-        <input
-          type="password"
-          placeholder="Password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          required
-          className="p-2 rounded-sm"
-        />
-        <Button type="submit" className="w-fit">
-          Sign Up
-        </Button>
-      </form>
-      {error && <p style={{ color: "red" }}>{error}</p>}
+      <SignUpForm
+        email={email}
+        password={password}
+        setEmail={setEmail}
+        setPassword={setPassword}
+        handleSignUp={handleSignUp}
+        error={error}
+      />
     </div>
   );
 }
