@@ -3,7 +3,6 @@ import { FormEvent, useState, useEffect } from "react";
 import {
   signInWithEmailAndPassword,
   onAuthStateChanged,
-  signOut,
 } from "firebase/auth";
 import { useRouter } from "next/navigation";
 import { auth } from "../../../firebase"; 
