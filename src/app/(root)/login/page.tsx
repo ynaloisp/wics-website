@@ -8,6 +8,8 @@ import {
 import { useRouter } from "next/navigation";
 import { auth } from "../../../firebase"; 
 import { Button } from "@/components/ui/button";
+import LoginForm from "./LoginForm";
+import LoggedInMessage from "./LoggedInMessage";
 
 export default function Login() {
   const [email, setEmail] = useState("");
@@ -49,53 +51,20 @@ export default function Login() {
     <div className="min-h-screen flex items-center justify-center font-inter px-4">
       <div className="w-full max-w-md space-y-6">
         <h2 className="font-bold text-2xl text-center">Admin Login</h2>
-
         {currentUser && (
-          <div className="mb-4 p-2 bg-green-100 rounded text-center">
-            You are already logged in as {currentUser.email}.
-            <Button
-              className="ml-2"
-              onClick={async () => {
-                await signOut(auth);
-                setCurrentUser(null);
-              }}
-            >
-              Logout
-            </Button>
-          </div>
+          <LoggedInMessage currentUser={currentUser} auth={auth} setCurrentUser={setCurrentUser} />
         )}
-
-        <form onSubmit={handleLogin} className="flex flex-col space-y-5">
-          <input
-            type="email"
-            placeholder="Email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            required
-            className="p-2 rounded-sm border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-400"
+        {!currentUser && (
+          <LoginForm
+            email={email}
+            password={password}
+            setEmail={setEmail}
+            setPassword={setPassword}
+            handleLogin={handleLogin}
+            error={error}
+            router={router}
           />
-          <input
-            type="password"
-            placeholder="Password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            required
-            className="p-2 rounded-sm border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-400"
-          />
-          <Button type="submit" className="w-full">
-            Login
-          </Button>
-          <p
-            className="text-xs underline text-center cursor-pointer"
-            onClick={() => {
-              router.push("/forgetPassword");
-            }}
-          >
-            Forget Password?
-          </p>
-        </form>
-
-        {error && <p className="text-red-500 text-sm text-center">{error}</p>}
+        )}
       </div>
     </div>
   );
