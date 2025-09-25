@@ -1,5 +1,3 @@
-import { time } from "console";
-
 export const blogPosts = [
   {
     id: 1,
